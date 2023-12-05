@@ -1,0 +1,189 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.content {
+  @include flex-column;
+  width: 100%;
+  margin: 0 20px;
+  z-index: 1;
+  background: $middle-grey;
+
+  @media (min-width: $breakMobile) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  &__box {
+    @include flex-column;
+    position: relative;
+    align-items: center;
+    justify-content: end;
+    border-radius: 0px;
+    padding: 20px;
+    background-color: $primary-white;
+
+    @media (min-width: $breakMobile) {
+      flex-direction: row;
+      overflow: hidden;
+      height: 660px;
+      width: 43%;
+      padding: 20px 20px 0 0;
+      border-radius: 20px 20px 0px 0px;
+    }
+
+    &_image {
+      display: flex;
+      box-sizing: border-box;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      height: 660px;
+      width: calc(100vw - 40px);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("../../../public/images/Group_76.png");
+      border-radius: 12px;
+
+      @media (min-width: $breakMobile) {
+        position: absolute;
+        right: 266px;
+        justify-content: end;
+        width: 857px;
+        height: 660px;
+        border-radius: 12px 12px 0px 0px;
+      }
+
+      &__buttons {
+        display: flex;
+        box-sizing: border-box;
+        height: 60px;
+        gap: 8px;
+
+        &_button {
+          @include button-blur;
+        }
+      }
+    }
+
+    &_set {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      gap: 10px;
+
+      @media (min-width: $breakMobile) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 0;
+        gap: 20px;
+        height: 660px;
+      }
+
+      &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(50vw - 25px);
+        height: 155px;
+        border-radius: 12px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media (min-width: $breakMobile) {
+          width: 224px;
+          height: 155px;
+          border-radius: 12px;
+
+          &:last-child {
+            border-radius: 12px 12px 0 0;
+          }
+        }
+      }
+
+      &__one {
+        background-image: url("../../../public/images/Rectangle 83.png");
+      }
+
+      &__two {
+        background-image: url("../../../public/images/Rectangle 90.png");
+      }
+
+      &__three {
+        background-image: url("../../../public/images/Rectangle 91.png");
+      }
+
+      &__four {
+        background-image: url("../../../public/images/Rectangle 92.png");
+      }
+
+      &__button {
+        border-radius: 28px;
+        background: rgba(9, 19, 29, 0.5);
+        padding: 3px 12px 5px 12px;
+        backdrop-filter: blur(2px);
+        color: $primary-white;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__desc {
+    @include flex-column;
+    padding: 60px 20px;
+
+    @media (min-width: $breakMobile) {
+      padding: 60px 200px 0 126px;
+      width: 57%;
+    }
+
+    &_title {
+      @include a-2;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    &_description {
+      @include h-2;
+      margin-top: 30px;
+      letter-spacing: -0.8px;
+    }
+
+    &_list {
+      @include flex-column;
+      justify-content: space-between;
+      margin-top: 30px;
+      gap: 8px;
+
+      @media (min-width: $breakMobile) {
+        flex-direction: row;
+      }
+
+      &__column {
+        @include flex-column;
+        gap: 8px;
+      }
+
+      &__item {
+        @include p-1;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+
+    &_bottom {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+      @include p-1;
+      text-decoration: none;
+      color: $primary-blue;
+    }
+  }
+}

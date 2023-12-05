@@ -1,0 +1,87 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.container {
+  @include flex-column;
+  padding: 60px 20px 0;
+
+  @media (min-width: $breakMobile) {
+    padding: 100px 196px 0px;
+  }
+}
+
+.contacts {
+  @include flex-column;
+  gap: 24px;
+
+  @media (min-width: $breakMobile) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 202px;
+  }
+}
+
+.contact {
+  @include flex-column;
+  gap: 8px;
+
+  @media (min-width: $breakMobile) {
+    gap: 14px;
+  }
+}
+
+.title {
+  @include a-2;
+  color: $primary-blue;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+
+  @media (min-width: $breakMobile) {
+    margin-bottom: 22px;
+  }
+}
+
+.link {
+  @include p-1;
+  color: $primary-white;
+  text-decoration: none;
+}
+
+.bottom {
+  background-color: $light-grey;
+  height: 1px;
+  width: calc(100vw - 40px);
+  margin-top: 40px;
+  opacity: 0.5;
+
+  @media (min-width: $breakMobile) {
+    width: calc(100vw - 420px);
+    margin-top: 98px;
+  }
+}
+
+.policy {
+  @include flex-column;
+  margin: 20px 0;
+  opacity: 0.75;
+
+  @media (min-width: $breakMobile) {
+    flex-direction: row;
+    margin: 34px 0;
+    gap: 60px;
+  }
+
+  &__text {
+    color: $primary-white;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 25px;
+    text-decoration: none;
+  
+    @media (min-width: $breakMobile) {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,172 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.container {
+  @include flex-column;
+  position: relative;
+  align-items: center;
+}
+
+.wave_top {
+  display: none;
+  position: absolute;
+  top: 200px;
+
+  @media (min-width: $breakMobile) {
+    display: block;
+    height: 600px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../../public/icons/Waves_5.svg");
+  }
+}
+
+.title {
+  @include h-2;
+  position: relative;
+  margin: 60px 20px;
+  text-align: center;
+  color: $primary-white;
+
+  @media (min-width: $breakMobile) {
+    @include h-1;
+    margin: 80px 312px;
+  }
+
+  &__tip {
+    @include a-2;
+    position: absolute;
+    top: 0;
+    right: 190px;
+    text-transform: uppercase;
+  }
+}
+
+.content {
+  @include flex-column;
+  width: 100%;
+  padding: 20px;
+
+  @media (min-width: $breakMobile) {
+    padding: 0;
+    width: auto;
+    flex-direction: row;
+    margin: 80px 194px 80px 292px;
+  }
+}
+
+.form {
+  @include flex-column;
+  align-items: center;
+  z-index: 1;
+
+  gap: 20px;
+  padding: 20px 10px;
+  border-radius: 20px;
+  background: #283442;
+
+  @media (min-width: $breakMobile) {
+    min-width: 560px;
+    height: 712px;
+    padding: 48px 28px;
+    gap: 14px;
+    margin-right: 126px;
+  }
+
+  &__title {
+    @include h-2;
+    color: $primary-white;
+    margin-bottom: 20px;
+  }
+}
+
+.input {
+  box-sizing: border-box;
+  @include p-1;
+  width: 100%;
+  border-radius: 8px;
+  padding: 17px 20px;
+}
+
+.input_area {
+  width: 100%;
+  position: relative;
+
+  &__button {
+    @include button-transparent;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 137px;
+    height: 36px;
+    border-radius: 36px;
+    color: $primary-blue;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-blue;
+      color: $primary-white;
+    }
+  }
+}
+
+.button {
+  @include button-blue;
+  @include p-1;
+  width: 100%;
+  height: 56px;
+  border-radius: 50px;
+  color: $primary-white;
+
+  @media (min-width: $breakMobile) {
+    margin-top: 5px;
+  }
+}
+
+.desc {
+  @include flex-column;
+  z-index: 1;
+  margin-top: 40px;
+
+  @media (min-width: $breakMobile) {
+    margin-top: 220px;
+  }
+
+  &__title {
+    @include h-3;
+    color: $primary-white;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    @include p-1;
+    color: $primary-white;
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    @include flex-column;
+    gap: 12px;
+
+    &_item {
+      @include p-1;
+      position: relative;
+      color: $primary-white;
+      padding-left: 30px;
+    }
+    &_item::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $primary-blue;
+      content: "";
+    }
+  }
+}

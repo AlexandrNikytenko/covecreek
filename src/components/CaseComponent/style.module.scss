@@ -1,0 +1,68 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.case {
+  @include flex-column;
+  z-index: 1;
+  width: 100%;
+  padding: 60px 20px;
+  background-color: $primary-white;
+
+  @media (min-width: $breakMobile) {
+    flex-direction: row;
+    padding: 160px 194px;
+  }
+
+  &__desc {
+    @include flex-column;
+    padding: 60px 20px;
+
+    @media (min-width: $breakMobile) {
+      padding: 60px 44px 0 0px;
+    }
+
+    &_title {
+      @include a-2;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    &_description {
+      @include h-2;
+      margin-top: 30px;
+      letter-spacing: -0.8px;
+    }
+
+    &_text {
+      @include p-1;
+      margin-top: 30px;
+      color: $dark-grey;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../../public/images/Rectangle 70.png");
+    border-radius: 20px;
+    height: 460px;
+    width: calc(100vw - 40px);
+
+    @media (min-width: $breakMobile) {
+      height: 460px;
+      min-width: 740px;
+    }
+
+    &__button {
+      @include button-blue;
+      width: 203px;
+      height: 60px;
+      border-radius: 50px;
+    }
+  }
+}

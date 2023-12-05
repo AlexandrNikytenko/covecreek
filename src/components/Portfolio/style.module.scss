@@ -1,0 +1,174 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.container {
+  @include flex-column;
+  position: relative;
+  align-items: center;
+}
+
+.wave_top {
+  display: none;
+  position: absolute;
+  top: 144px;
+
+  @media (min-width: $breakMobile) {
+    display: block;
+    height: 600px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../../public/icons/Waves_1.svg");
+  }
+}
+
+.title {
+  @include h-2;
+  margin: 60px 20px;
+  text-align: center;
+  color: $primary-white;
+
+  @media (min-width: $breakMobile) {
+    @include h-1;
+    margin: 80px 194px;
+  }
+}
+
+.grid_container {
+  @include flex-column;
+  width: 100%;
+  z-index: 2;
+  gap: 20px;
+  padding: 0 0 80px;
+
+  @media (min-width: $breakMobile) {
+    padding: 0 194px 160px;
+  }
+}
+
+.row {
+  @include flex-column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+
+  @media (min-width: $breakMobile) {
+    flex-direction: row;
+  }
+}
+
+.card {
+  @include flex-column;
+  justify-content: flex-end;
+  padding: 20px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.25) inset;
+
+  &__title {
+    @include h-3;
+    margin-bottom: 15px;
+    line-height: 44px;
+    color: $primary-white;
+
+    @media (min-width: $breakMobile) {
+      @include h-2;
+    }
+  }
+
+  &__desc {
+    @include p-2;
+    color: $primary-white;
+  }
+}
+
+.single {
+  width: calc(100% - 40px);
+  aspect-ratio: 3 / 4.125;
+
+  @media (min-width: $breakMobile) {
+    width: calc(100% / 3);
+  }
+}
+
+.double {
+  width: calc(100% - 40px);
+  aspect-ratio: 3 / 4.125;
+
+  @media (min-width: $breakMobile) {
+    width: calc(100% / 3 * 2 + 20px);
+    aspect-ratio: 6 / 4.028;
+  }
+}
+
+.frames {
+  @include flex-column;
+  width: 100%;
+  padding: 80px 20px;
+  gap: 28px;
+  background-color: $primary-white;
+
+  @media (min-width: $breakMobile) {
+    flex-direction: row;
+    padding: 160px 194px;
+  }
+}
+
+.frame {
+  @include flex-column;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+  border-radius: 20px;
+  background-color: $middle-grey;
+
+  @media (min-width: $breakMobile) {
+    width: 50%;
+  }
+
+  &__top {
+    width: 100%;
+    aspect-ratio: 14 / 9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &_image_one {
+      background-image: url("../../../public/images/Portfolio_1.png");
+    }
+
+    &_image_two {
+      background-image: url("../../../public/images/Portfolio_4.png");
+    }
+
+    @media (min-width: $breakMobile) {
+    }
+  }
+
+  &__title {
+    @include a-2;
+    color: $primary-blue;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    margin-top: 40px;
+  }
+
+  &__text {
+    @include h-2;
+    letter-spacing: -0.8px;
+    margin: 30px 40px;
+    text-align: center;
+  }
+
+  &__link {
+    @include button-blue;
+    width: 214px;
+    height: 60px;
+    border-radius: 50px;
+    margin-top: auto;
+    margin-bottom: 48px;
+  }
+}

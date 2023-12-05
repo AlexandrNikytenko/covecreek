@@ -1,0 +1,103 @@
+@import "./colors.scss";
+
+@mixin flex-column {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+@mixin button-blue {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: $primary-blue;
+  color: $primary-white;
+}
+
+@mixin button-transparent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1.5px solid $primary-blue;
+  color: $primary-white;
+}
+
+@mixin button-blur {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  gap: 4px;
+  border-radius: 42px;
+  border: 1px solid $primary-white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: $primary-white;
+}
+
+@mixin t-1 {
+  font-size: 130px;
+  line-height: 130px;
+  font-weight: 700;
+}
+@mixin t-2 {
+  font-size: 90px;
+  line-height: 90px;
+  font-weight: 700;
+}
+@mixin h-1 {
+  font-size: 60px;
+  line-height: 64px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+}
+@mixin h-2 {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+@mixin h-3 {
+  font-size: 30px;
+  line-height: 35px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+}
+@mixin h-4 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+}
+@mixin h-5 {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+}
+@mixin p-1 {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+  color: $dark-grey;
+}
+@mixin p-2 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  color: $dark-grey;
+}
+@mixin a-1 {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: $primary-blue;
+}
+@mixin a-2 {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  color: $primary-blue;
+}

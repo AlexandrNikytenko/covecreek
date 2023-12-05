@@ -1,0 +1,297 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.container {
+  @include flex-column;
+  position: relative;
+  align-items: center;
+}
+
+.wave_top {
+  display: none;
+  position: absolute;
+  top: 144px;
+
+  @media (min-width: $breakMobile) {
+    display: block;
+    height: 600px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../../public/icons/Waves_1.svg");
+  }
+}
+
+.image_box {
+  @include flex-column;
+  align-items: center;
+  z-index: 1;
+  margin: 40px 20px 60px;
+  height: 467px;
+  width: calc(100vw - 40px);
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.25) inset;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url("../../../public/images/Group_73.png");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: lightgray;
+
+  @media (min-width: $breakMobile) {
+    height: 500px;
+    width: 756px;
+    margin-top: 100px;
+    border-radius: 32px;
+  }
+}
+
+.image_title {
+  text-align: center;
+  margin-top: 98px;
+  @include t-2;
+  font-size: 72px;
+  line-height: 72px;
+  color: $primary-white;
+
+  @media (min-width: $breakMobile) {
+    @include t-1;
+    margin-top: 160px;
+    white-space: nowrap;
+  }
+}
+
+.image_desc {
+  text-align: center;
+  margin-top: 32px;
+  @include p-1;
+  color: $primary-white;
+
+  @media (min-width: $breakMobile) {
+    @include h-4;
+    margin-top: 26px;
+  }
+}
+
+.arrow_down {
+  display: none;
+
+  @media (min-width: $breakMobile) {
+    display: block;
+    z-index: 2;
+    cursor: pointer;
+    margin-top: 60px;
+  }
+}
+
+.leading {
+  @include flex-column;
+  margin-bottom: 98px;
+
+  @media (min-width: $breakMobile) {
+    flex-direction: row;
+    margin-top: 160px;
+    margin-bottom: 156px;
+  }
+
+  &__tours {
+    margin: 40px 20px 0;
+    font-size: 11px;
+    line-height: 13px;
+    color: $primary-blue;
+    text-wrap: nowrap;
+    text-transform: uppercase;
+
+    @media (min-width: $breakMobile) {
+      margin: 6px 0 0 294px;
+      @include a-2;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  &__desc {
+    margin: 20px 30px 0px 20px;
+    font-size: 32px;
+    line-height: 40px;
+    color: $primary-white;
+
+    @media (min-width: $breakMobile) {
+      margin: 0 194px 0 126px;
+      @include h-2;
+      letter-spacing: -0.5px;
+    }
+
+    span {
+      color: $primary-blue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.button_see {
+  @include button-transparent;
+  @include p-1;
+  width: 204px;
+  height: 60px;
+  border-radius: 50px;
+  margin: 40px 0 100px;
+  margin-bottom: 100px;
+  text-decoration: none;
+  color: $primary-white;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-blue;
+  }
+
+  @media (min-width: $breakMobile) {
+    margin: 80px 0 160px;
+  }
+}
+
+.presentation {
+  @include flex-column;
+  overflow: hidden;
+  width: 100%;
+  padding: 102px 20px 0;
+  background-color: $primary-white;
+
+  @media (min-width: $breakMobile) {
+    flex-direction: row;
+    padding: 160px 0 0;
+  }
+
+  &__direct {
+    padding-bottom: 100px;
+    @media (min-width: $breakMobile) {
+      flex-direction: row-reverse;
+      padding-bottom: 0;
+    }
+  }
+
+  &__desc {
+    @include flex-column;
+    margin-bottom: 40px;
+
+    @media (min-width: $breakMobile) {
+      padding: 95px 120px 0 195px;
+    }
+
+    &_top {
+      @include a-2;
+      text-transform: uppercase;
+      color: $primary-blue;
+      margin-bottom: 20px;
+      letter-spacing: 0.8px;
+
+      @media (min-width: $breakMobile) {
+        margin-bottom: 30px;
+        letter-spacing: 1.2px;
+      }
+    }
+
+    &_title {
+      @include h-2;
+      line-height: 44px;
+      margin-bottom: 20px;
+
+      @media (min-width: $breakMobile) {
+        @include h-1;
+        margin-bottom: 30px;
+      }
+    }
+
+    &_bottom {
+      display: flex;
+      align-items: center;
+      @include p-1;
+      text-decoration: none;
+      color: $primary-blue;
+    }
+  }
+
+  &__image {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    height: 467px;
+    width: auto;
+
+    @media (min-width: $breakMobile) {
+      height: 546px;
+      min-width: 50%;
+    }
+
+    &_att {
+      background-image: url("../../../public/images/Group_75.png");
+      @media (min-width: $breakMobile) {
+        left: 15px;
+      }
+    }
+
+    &_make {
+      background-image: url("../../../public/images/Group_74.png");
+      display: flex;
+      box-sizing: border-box;
+      align-items: end;
+      justify-content: center;
+      padding: 30px;
+
+      @media (min-width: $breakMobile) {
+        right: 15px;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    box-sizing: border-box;
+    gap: 8px;
+
+    &_button {
+      @include button-blur;
+    }
+  }
+}
+
+.preference {
+  display: none;
+
+  @media (min-width: $breakMobile) {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-white;
+    width: 100%;
+    padding: 160px 190px;
+  }
+
+  &__list {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 20px;
+    background-color: $middle-grey;
+    padding: 48px;
+
+    &_items {
+      @include flex-column;
+      gap: 16px;
+    }
+
+    &_item {
+      @include h-5;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+}

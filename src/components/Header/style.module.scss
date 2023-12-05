@@ -1,0 +1,209 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.container {
+  @include flex-column;
+  position: relative;
+}
+
+.shadow {
+  position: absolute;
+  top: -50vw;
+  width: 95vw;
+  height: 100vw;
+  border-radius: 50%;
+  opacity: 0.35;
+  filter: blur(50px);
+  background: radial-gradient(
+    circle at center,
+    rgba(48, 118, 190, 0.5) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.head {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  height: 77px;
+  border-bottom: 1px solid $light-grey;
+
+  @media (min-width: $breakMobile) {
+    min-height: 100px;
+    border-bottom: none;
+  }
+}
+
+.linked {
+  position: relative;
+  height: 36px;
+  width: 157.33px;
+  margin-left: 20px;
+  top: 6px;
+  background-size: cover;
+  background-image: url("../../../public/icons/Logo-White.svg");
+  transition: background-image 0.5s ease;
+
+  @media (min-width: $breakMobile) {
+    height: 46px;
+    width: 204px;
+    top: -6px;
+    margin-left: 50px;
+  }
+
+  &:hover {
+    background-image: url("../../../public/icons/Logo-Fill.svg");
+  }
+}
+
+.logo {
+  position: relative;
+  height: 36px;
+  width: 157.33px;
+  margin-left: 20px;
+  top: 6px;
+
+  @media (min-width: $breakMobile) {
+    height: 46px;
+    width: 204px;
+    top: -6px;
+    margin-left: 50px;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.button_get {
+  @include button-transparent;
+  width: 128px;
+  height: 44px;
+  border-radius: 40px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-blue;
+  }
+
+  @media (min-width: $breakMobile) {
+    @include p-1;
+    color: $primary-white;
+    width: 165px;
+    height: 60px;
+    border-radius: 50px;
+    margin-right: 20px;
+  }
+}
+
+.burger {
+  width: 44px;
+  height: 44px;
+  margin-right: 20px;
+
+  @media (min-width: $breakMobile) {
+    width: 60px;
+    height: 60px;
+    margin-right: 50px;
+  }
+}
+
+.menu {
+  @include flex-column;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  background-color: $primary-black;
+  height: 100vh;
+  width: 100%;
+  transition: top 0.5s ease;
+
+  @media (min-width: $breakMobile) {
+    top: 0;
+    height: 100vh;
+  }
+}
+
+.menuOpen {
+  .menu {
+    top: -100vh;
+  }
+}
+
+.full_portfolio {
+  display: none;
+  @include a-1;
+  color: rgba($color: $primary-white, $alpha: 0.5);
+  margin-left: 50px;
+
+  @media (min-width: $breakMobile) {
+    display: flex;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  margin-top: 56px;
+}
+
+.link {
+  @include h-2;
+  color: $primary-white;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+
+  &__underline {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -14px;
+      left: 0;
+      width: 0;
+      height: 6px;
+      background-color: $primary-blue;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    @media (min-width: $breakMobile) {
+      @include t-2;
+    }
+  }
+}
+
+.contacts {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+  gap: 29px;
+  margin-top: auto;
+  margin-bottom: 40px;
+  @include p-1;
+  color: $primary-white;
+
+  &__devider {
+    display: block;
+    width: 1px;
+    height: 17px;
+    background-color: $primary-blue;
+  }
+
+  @media (min-width: $breakMobile) {
+    display: flex;
+  }
+}

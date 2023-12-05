@@ -1,0 +1,33 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.why {
+  @include flex-column;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  background: $middle-grey;
+
+  &__title {
+    @include a-2;
+    margin-top: 80px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+
+    @media (min-width: $breakMobile) {
+      margin-top: 160px;
+    }
+  }
+
+  &__desc {
+    @include h-2;
+    margin: 20px 20px 80px;
+    letter-spacing: -0.8px;
+    text-align: center;
+
+    @media (min-width: $breakMobile) {
+      margin: 30px 200px 160px;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+@mixin slider-card {
+  @include flex-column;
+  justify-content: flex-end;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  border-radius: 20px;
+  margin-right: 40px;
+  margin-left: 20px;
+  height: 400px;
+  width: 334px;
+  @media (min-width: $breakMobile) {
+    height: 420px;
+    width: 560px;
+  }
+}
+
+.slide_1 {
+  @include slider-card;
+  background-image: url("../../../public/images/Home_Carousel_1.png");
+}
+.slide_2 {
+  @include slider-card;
+  background-image: url("../../../public/images/Home_Carousel_2.png");
+}
+.slide_3 {
+  @include slider-card;
+  background-image: url("../../../public/images/Home_Carousel_3.png");
+}
+.slide_4 {
+  @include slider-card;
+  background-image: url("../../../public/images/Home_Carousel_4.png");
+}
+
+.title {
+  @include h-2;
+  margin-bottom: 15px;
+  line-height: 44px;
+  color: $primary-white;
+
+  @media (min-width: $breakMobile) {
+    @include h-1;
+  }
+}
+
+.desc {
+  @include p-1;
+  color: $primary-white;
+}
