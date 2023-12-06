@@ -88,8 +88,9 @@ function Portfolio() {
     <div className={styles.container}>
       <div className={styles.wave_top}></div>
       <p className={styles.title}>
-        Our eye-catching imagery captivates users, with over a decade of fine
-        tuning our process to deliver premium virtual tour content
+        We combine<span> beautiful imagery </span>
+        and <span> innovative design </span>
+        to create a premium virtual tour experience
       </p>
       <section className={styles.grid_container}>
         {data.map((row, index) => (

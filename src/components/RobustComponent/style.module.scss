@@ -19,7 +19,7 @@
     @include flex-column;
     position: relative;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     border-radius: 0px;
     padding: 20px;
     background-color: $primary-white;
