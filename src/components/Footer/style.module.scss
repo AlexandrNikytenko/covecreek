@@ -14,11 +14,13 @@
 .contacts {
   @include flex-column;
   gap: 24px;
+  margin: 60px 0;
 
   @media (min-width: $breakMobile) {
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 202px;
+    // margin-right: 202px;
+    margin: 100px 202px 100px 0;
   }
 }
 
@@ -50,15 +52,13 @@
 }
 
 .bottom {
-  background-color: $light-grey;
+  background-color: rgba(255, 255, 255, 0.15);;
   height: 1px;
   width: calc(100vw - 40px);
-  margin-top: 40px;
   opacity: 0.5;
 
   @media (min-width: $breakMobile) {
     width: calc(100vw - 420px);
-    margin-top: 98px;
   }
 }
 

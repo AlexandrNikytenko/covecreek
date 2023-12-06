@@ -5,6 +5,7 @@ import styles from "./style.module.scss";
 function Footer() {
   return (
     <div className={styles.container}>
+      <div className={styles.bottom}></div>
       <div className={styles.contacts}>
         <div className={styles.contact}>
           <p className={styles.title}>Get in touch</p>

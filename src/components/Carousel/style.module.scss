@@ -13,6 +13,8 @@
   margin-left: 20px;
   height: 400px;
   width: 334px;
+  user-select: none;
+  
   @media (min-width: $breakMobile) {
     height: 420px;
     width: 560px;
