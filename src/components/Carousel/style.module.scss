@@ -5,19 +5,20 @@
 @mixin slider-card {
   @include flex-column;
   justify-content: flex-end;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 20px;
   border-radius: 20px;
-  margin-right: 40px;
   margin-left: 20px;
   height: 400px;
   width: 334px;
   user-select: none;
-  
+
   @media (min-width: $breakMobile) {
     height: 420px;
-    width: 560px;
+    width: 95%;
+    margin-left: 0px;
   }
 }
 

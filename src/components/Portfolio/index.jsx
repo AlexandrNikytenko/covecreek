@@ -86,13 +86,13 @@ const data = [
 function Portfolio() {
   return (
     <div className={styles.container}>
-      <div className={styles.wave_top}></div>
       <p className={styles.title}>
-        We combine<span> beautiful imagery </span>
-        and <span> innovative design </span>
-        to create a premium virtual tour experience
+        We combine&nbsp;<span>beautiful imagery</span>&nbsp;and&nbsp;
+        <span>innovative design</span>&nbsp;to create a premium virtual tour
+        experience
       </p>
       <section className={styles.grid_container}>
+      <div className={styles.wave_top}></div>
         {data.map((row, index) => (
           <div className={styles.row} key={index}>
             {row.map((item) => (

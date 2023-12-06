@@ -51,7 +51,9 @@ function Home() {
           className={`${styles.presentation__image} ${styles.presentation__image_att}`}
         ></div>
       </section>
-      <section className={`${styles.presentation} ${styles.presentation__direct}`}>
+      <section
+        className={`${styles.presentation} ${styles.presentation__direct}`}
+      >
         <div className={styles.presentation__desc}>
           <p className={styles.presentation__desc_top}>Advanced CMS</p>
           <p className={styles.presentation__desc_title}>

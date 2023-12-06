@@ -7,8 +7,8 @@ import styles from "./style.module.scss";
 function HomeCarousel() {
   const responsive = {
     0: { items: 1 },
-    1280: { items: 2 },
-    1784: { items: 3, itemsFit: "contain" },
+    768: { items: 3 },
+    1784: { items: 4, itemsFit: "contain" },
   };
 
   const items = [
