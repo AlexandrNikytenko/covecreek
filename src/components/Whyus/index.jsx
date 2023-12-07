@@ -17,6 +17,9 @@ const ourComitten = {
   text: "We are committed to delivering the very best virtual tour experiences. We are proud of what we have accomplished, and are constantly striving to raise the bar.",
 };
 
+const case_text =
+  "Explore 30 historical tours, from the shores of Normandy to the Pacific Theater Operations.  This ambitious project covered 11 countries and over 150 shooting days.F";
+
 function Whyus() {
   return (
     <div className={styles.container}>
@@ -74,7 +77,7 @@ function Whyus() {
         </section>
       </div>
 
-      <CaseComponent />
+      <CaseComponent  text={case_text}/>
       <ContactComponent />
     </div>
   );

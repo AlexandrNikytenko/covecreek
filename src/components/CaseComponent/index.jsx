@@ -1,6 +1,6 @@
 import styles from "./style.module.scss";
 
-function CaseComponent() {
+function CaseComponent({text}) {
   return (
     <section className={styles.case}>
       <div className={styles.case__desc}>
@@ -9,13 +9,11 @@ function CaseComponent() {
           The American Battle Monuments Commission
         </p>
         <p className={styles.case__desc_text}>
-          Explore 30 historical tours, from the shores of Normandy to the
-          Pacific Theater Operations. This ambitious project covered 11
-          countries and over 150 shooting days.
+          {text}
         </p>
       </div>
       <div className={styles.case__image}>
-        <button>View Case Study</button>
+        <button className={styles.case__image_button}>View Case Study</button>
       </div>
     </section>
   );

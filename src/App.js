@@ -9,6 +9,7 @@ import Careers from "./components/Careers";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import University from "./components/University";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/case_study" element={<Casestudy />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/university" element={<University />} />
       </Routes>
       <Footer />
     </div>

@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
 
 import styles from "./style.module.scss";
 
 function HomeCarousel() {
-  const responsive = {
-    0: { items: 1 },
-    768: { items: 3 },
-    1784: { items: 4, itemsFit: "contain" },
-  };
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isWideScreen = windowWidth > 768;
 
   const items = [
-    <div className="item" data-value="1">
+    <div className="item">
       <div className={styles.slide_1}>
         <p className={styles.title}>Normandy</p>
         <p className={styles.desc}>
@@ -21,7 +31,7 @@ function HomeCarousel() {
         </p>
       </div>
     </div>,
-    <div className="item" data-value="2">
+    <div className="item">
       <div className={styles.slide_2}>
         <p className={styles.title}>University of Toledo</p>
         <p className={styles.desc}>
@@ -30,7 +40,7 @@ function HomeCarousel() {
         </p>
       </div>
     </div>,
-    <div className="item" data-value="3">
+    <div className="item">
       <div className={styles.slide_3}>
         <p className={styles.title}>NYC Tousism</p>
         <p className={styles.desc}>
@@ -38,7 +48,7 @@ function HomeCarousel() {
         </p>
       </div>
     </div>,
-    <div className="item" data-value="4">
+    <div className="item">
       <div className={styles.slide_4}>
         <p className={styles.title}>University</p>
         <p className={styles.desc}>
@@ -48,25 +58,33 @@ function HomeCarousel() {
         </p>
       </div>
     </div>,
-   
   ];
 
+  const commonProps = {
+    mouseTracking: true,
+    items: items,
+    responsive: {
+      0: { items: 1 },
+      768: { items: 3 },
+      1784: { items: 4, itemsFit: "contain" },
+    },
+    controlsStrategy: "alternate",
+    disableDotsControls: true,
+    disableButtonsControls: true,
+  };
+
+  const wideScreenProps = {
+    autoPlay: true,
+    animationEasingFunction: "linear",
+    infinite: true,
+    autoPlayStrategy: "none",
+    autoPlayInterval: 0,
+    animationDuration: 20000,
+    animationType: "fadeout",
+  };
+
   return (
-    <AliceCarousel
-      animationEasingFunction={"linear"}
-      autoPlay
-      infinite
-      autoPlayStrategy="none"
-      autoPlayInterval={0}
-      animationDuration={14000}
-      animationType="fadeout"
-      mouseTracking
-      items={items}
-      responsive={responsive}
-      controlsStrategy="alternate"
-      disableDotsControls
-      disableButtonsControls
-    />
+    <AliceCarousel {...commonProps} {...(isWideScreen && wideScreenProps)} />
   );
 }
 

@@ -3,6 +3,107 @@
 @import "../../styles/colors.scss";
 
 .container {
-  display: flex;
+  @include flex-column;
+  align-items: center;
+}
+
+.top_section {
+  @include flex-column;
+  align-items: center;
   position: relative;
+  padding: 80px 0 80px;
+  width: 100%;
+  
+  @media (min-width: $breakMobile) {
+    background-position: center top 330px;
+    background-repeat: no-repeat;
+    background-image: url("../../../public/icons/Waves_7.svg");
+    padding: 80px 0 160px;
+  }
+}
+
+.title {
+  @include h-1;
+  margin: 0 20px 40px;
+  text-align: center;
+  color: $primary-white;
+  z-index: 2;
+
+  @media (min-width: $breakMobile) {
+    @include t-2;
+    margin: 0 194px 40px;
+    letter-spacing: -1.8px;
+  }
+}
+
+.carousel_frame {
+  width: 100%;
+  margin: 160px 0 80px
+}
+
+.blue_button {
+  @include button-blue;
+  width: 207px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+.transp_button {
+  @include button-transparent;
+  width: 204px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+
+
+.image_container {
+  @include flex-column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 0px 20px;
+  background-color: $primary-white;
+
+  @media (min-width: $breakMobile) {
+    padding: 0px 194px;
+  }
+}
+
+
+.image_premium {
+  @include flex-column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  width: calc(100vw - 40px);
+  height: 648px;
+  border-radius: 20px;
+  background-image: url("../../../public/images/Rectangle 92.png");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+  @media (min-width: $breakMobile) {
+    aspect-ratio: 3 / 4.125;
+    width: 100%;
+  }
+
+  &__title {
+    @include h-3;
+    color: $primary-white;
+    margin-bottom: 60px;
+    text-align: center;
+
+    @media (min-width: $breakMobile) {
+      @include h-1;
+    }
+  }
+
+}
+
+.carousel {
+  width: 100%;
+  background-color: $primary-white;
 }
