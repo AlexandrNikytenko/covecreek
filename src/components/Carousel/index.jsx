@@ -48,10 +48,18 @@ function HomeCarousel() {
         </p>
       </div>
     </div>,
+   
   ];
 
   return (
     <AliceCarousel
+      animationEasingFunction={"linear"}
+      autoPlay
+      infinite
+      autoPlayStrategy="none"
+      autoPlayInterval={0}
+      animationDuration={14000}
+      animationType="fadeout"
       mouseTracking
       items={items}
       responsive={responsive}
