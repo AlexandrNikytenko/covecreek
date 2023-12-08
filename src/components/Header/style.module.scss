@@ -44,7 +44,7 @@
   margin-left: 20px;
   top: 6px;
   background-size: cover;
-  background-image: url("../../../public/icons/Logo-White.svg");
+
   transition: background-image 0.5s ease;
 
   @media (min-width: $breakMobile) {
@@ -54,7 +54,15 @@
     margin-left: 50px;
   }
 
-  &:hover {
+  &__no_privacy {
+    background-image: url("../../../public/icons/Logo-White.svg");
+
+    &:hover {
+      background-image: url("../../../public/icons/Logo-Fill.svg");
+    }
+  }
+
+  &__privacy {
     background-image: url("../../../public/icons/Logo-Fill.svg");
   }
 }
@@ -80,16 +88,12 @@
 }
 
 .button_get {
-  @include button-transparent;
   width: 128px;
   height: 44px;
   border-radius: 40px;
   margin-right: 10px;
   transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: $primary-blue;
-  }
+  text-decoration: none;
 
   @media (min-width: $breakMobile) {
     @include p-1;
@@ -98,6 +102,18 @@
     height: 60px;
     border-radius: 50px;
     margin-right: 20px;
+  }
+
+  &__no_privacy {
+    @include button-transparent;
+
+    &:hover {
+      background-color: $primary-blue;
+    }
+  }
+
+  &__privacy {
+    @include button-blue;
   }
 }
 

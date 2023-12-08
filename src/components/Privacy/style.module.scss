@@ -1,0 +1,38 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.container {
+  @include flex-column;
+  background-color: $primary-white;
+  width: 100%;
+  padding: 80px 20px;
+  
+  @media (min-width: $breakMobile) {
+    padding: 100px 390px;
+  }
+
+  &__title {
+    @include h-2;
+    margin-bottom: 40px;
+  }
+
+  &__article {
+    @include h-4;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    @include p-2;
+    margin-bottom: 20px;
+  }
+  &__contact {
+    @include p-2;
+
+  }
+
+  &__link {
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+}

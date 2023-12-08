@@ -1,20 +1,37 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./style.module.scss";
 import { useState } from "react";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const location = useLocation();
+  const isPrivacy = location.pathname === "/privacy";
+
   return (
     <div
       className={`${styles.container} ${!isMenuOpen ? styles.menuOpen : ""}`}
     >
-      <div className={styles.shadow}></div>
+      {!isPrivacy && <div className={styles.shadow}></div>}
       {!isMenuOpen && (
         <div className={styles.head}>
-          <Link to="/" className={styles.linked}></Link>
+          <Link
+            to="/"
+            className={`${styles.linked} ${
+              !isPrivacy ? styles.linked__no_privacy : styles.linked__privacy
+            }`}
+          ></Link>
           <div className={styles.buttons}>
-            <button className={styles.button_get}>Get in touch</button>
+            <Link
+              to="/contact"
+              className={`${styles.button_get} ${
+                !isPrivacy
+                  ? styles.button_get__no_privacy
+                  : styles.button_get__privacy
+              }`}
+            >
+              Get in touch
+            </Link>
             <button type="button" onClick={() => setIsMenuOpen(true)}>
               <img
                 src="/icons/Burger_close.svg"
@@ -31,9 +48,19 @@ function Header() {
         {isMenuOpen && (
           <>
             <div className={styles.head}>
-              <Link to="/" className={styles.linked}></Link>
+              <Link
+                to="/"
+                onClick={() => setIsMenuOpen(false)}
+                className={`${styles.linked} ${styles.linked__no_privacy}`}
+              ></Link>
               <div className={styles.buttons}>
-                <button className={styles.button_get}>Get in touch</button>
+                <Link
+                  to="/contact"
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`${styles.button_get} ${styles.button_get__no_privacy}`}
+                >
+                  Get in touch
+                </Link>
                 <button type="button" onClick={() => setIsMenuOpen(false)}>
                   <img
                     src="/icons/Burger_open.svg"

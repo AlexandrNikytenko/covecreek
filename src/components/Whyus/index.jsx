@@ -69,7 +69,7 @@ function Whyus() {
               amazing results.
             </p>
 
-            <Link to="/" className={styles.team__desc_bottom}>
+            <Link to="/careers" className={styles.team__desc_bottom}>
               View careers
               <img src="/icons/Arrow_right_blue.svg" alt="Link" />
             </Link>

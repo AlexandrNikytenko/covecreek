@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.scss";
 import Home from "./components/Home";
 import Whyus from "./components/Whyus";
@@ -10,10 +10,21 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import University from "./components/University";
+import Privacy from "./components/Privacy";
+import AllTours from "./components/AllTours";
 
 function App() {
+  const location = useLocation();
+
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={
+        location.pathname === "/privacy"
+          ? { backgroundColor: "#FFFFFF" }
+          : { backgroundColor: "#09131D" }
+      }
+    >
       <ScrollToTop />
       <Header />
       <Routes>
@@ -24,6 +35,8 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/university" element={<University />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/all_tours" element={<AllTours />} />
       </Routes>
       <Footer />
     </div>

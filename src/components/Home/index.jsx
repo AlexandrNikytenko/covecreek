@@ -3,6 +3,11 @@ import styles from "./style.module.scss";
 import HomeCarousel from "../Carousel";
 import ContactComponent from "../ContactComponent";
 
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import VideoHomeComponent from "./VideoHomeComponent";
+
 function Home() {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -10,20 +15,35 @@ function Home() {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+  //here start animation side
+  const controls = useAnimation();
+  const controlsSecond = useAnimation();
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+
+  const [refSecond, inViewSecond] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, x: 0 });
+    }
+
+    if (inViewSecond) {
+      controlsSecond.start({ opacity: 1, x: 0 });
+    }
+  }, [inView, inViewSecond, controls, controlsSecond]);
 
   return (
     <div className={styles.container}>
       <div className={styles.wave_top}></div>
-      <section className={styles.image_box}>
-        <p className={styles.image_title}>360° Virtual Tours</p>
-        <p className={styles.image_desc}>Premium Quality, Intuitive Control</p>
-      </section>
-      <img
-        src="/icons/Arrow_down_blue.svg"
-        alt="Logo"
-        className={styles.arrow_down}
-        onClick={() => scrollToSection("mySection")}
-      />
+      <VideoHomeComponent scrollToSection={scrollToSection} />
+
       <section className={styles.leading} id="mySection">
         <p className={styles.leading__tours}>premium 360° tours</p>
         <p className={styles.leading__desc}>
@@ -32,12 +52,20 @@ function Home() {
           and <span>tourism</span> locations worldwide
         </p>
       </section>
+
       <HomeCarousel />
+
       <Link to="/portfolio" className={styles.button_see}>
         See Our Portfolio
       </Link>
-      <section className={styles.presentation}>
-        <div className={styles.presentation__desc}>
+
+      <section className={styles.presentation} ref={ref}>
+        <motion.div
+          className={styles.presentation__desc}
+          initial={{ opacity: 0, x: 100 }}
+          animate={controls}
+          transition={{ duration: 1 }}
+        >
           <p className={styles.presentation__desc_top}>Unmatched Quality</p>
           <p className={styles.presentation__desc_title}>
             Attention to detail like you’ve never seen before
@@ -46,15 +74,25 @@ function Home() {
             What makes us unique
             <img src="/icons/Arrow_right_blue.svg" alt="Checked" />
           </Link>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 1000 }}
+          animate={controls}
+          transition={{ duration: 0.75 }}
           className={`${styles.presentation__image} ${styles.presentation__image_att}`}
-        ></div>
+        ></motion.div>
       </section>
+
       <section
+        ref={refSecond}
         className={`${styles.presentation} ${styles.presentation__direct}`}
       >
-        <div className={styles.presentation__desc}>
+        <motion.div
+          className={styles.presentation__desc}
+          initial={{ opacity: 0, x: -100 }}
+          animate={controlsSecond}
+          transition={{ duration: 1 }}
+        >
           <p className={styles.presentation__desc_top}>Advanced CMS</p>
           <p className={styles.presentation__desc_title}>
             Make it yours in minutes with our advanced CMS
@@ -63,8 +101,11 @@ function Home() {
             Learn more
             <img src="/icons/Arrow_right_blue.svg" alt="Checked" />
           </Link>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -1000 }}
+          animate={controlsSecond}
+          transition={{ duration: 0.75 }}
           className={`${styles.presentation__image} ${styles.presentation__image_make}`}
         >
           <div className={styles.presentation__buttons}>
@@ -77,8 +118,9 @@ function Home() {
               Set View
             </button>
           </div>
-        </div>
+        </motion.div>
       </section>
+
       <section className={styles.preference}>
         <div className={styles.preference__list}>
           <div className={styles.preference__list_items}>
@@ -125,6 +167,7 @@ function Home() {
           </div>
         </div>
       </section>
+
       <ContactComponent />
     </div>
   );

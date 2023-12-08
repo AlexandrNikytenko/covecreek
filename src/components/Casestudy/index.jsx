@@ -108,7 +108,7 @@ function Casestudy() {
           (San Francisco), West Coast Memorial (New York), and the newly
           constructed World War 1 Memorial adjacent to the White House.
         </p>
-        <Link to="/" className={styles.link}>
+        <Link to="/all_tours" className={styles.link}>
           View all 30 tours
           <img src="/icons/Arrow_right_blue.svg" alt="Link" />
         </Link>
@@ -174,7 +174,7 @@ function Casestudy() {
           learn more about the great sacrifices made by the previous
           generations.
         </p>
-        <Link to="/" className={styles.link}>
+        <Link to="/all_tours" className={styles.link}>
           View all 30 tours
           <img src="/icons/Arrow_right_blue.svg" alt="Link" />
         </Link>

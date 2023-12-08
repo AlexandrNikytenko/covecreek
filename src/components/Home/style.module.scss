@@ -11,7 +11,7 @@
 .wave_top {
   display: none;
   position: absolute;
-  top: 144px;
+  top: 120px;
 
   @media (min-width: $breakMobile) {
     display: block;
@@ -23,71 +23,102 @@
   }
 }
 
-.image_box {
+.video_box {
   @include flex-column;
+  position: relative;
+  width: 100%;
+  padding: 100px 20px;
   align-items: center;
-  z-index: 1;
-  margin: 40px 20px 60px;
-  height: 467px;
-  width: calc(100vw - 40px);
-  border-radius: 20px;
-  box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.25) inset;
-  background-image: linear-gradient(
+  justify-content: center;
+  user-select: none;
+
+  @media (min-width: $breakMobile) {
+    padding: 100px 200px 160px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    width: calc(100vw - 40px);
+    overflow: hidden;
+    border-radius: 20px;
+
+    @media (min-width: $breakMobile) {
+      height: 500px;
+      width: 750px;
+      border-radius: 32px;
+      margin-bottom: 120px;
+    }
+  }
+
+  &__video {
+    @include flex-column;
+    align-items: center;
+    z-index: 1;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.25) inset;
+    background-image: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.2) 0%,
       rgba(0, 0, 0, 0.2) 100%
-    ),
-    url("../../../public/images/Group_73.png");
-  background-position: 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: lightgray;
-
-  @media (min-width: $breakMobile) {
-    height: 500px;
-    width: 756px;
-    margin-top: 100px;
-    border-radius: 32px;
+    );
   }
-}
 
-.image_title {
-  text-align: center;
-  margin-top: 98px;
-  @include t-2;
-  font-size: 72px;
-  line-height: 72px;
-  color: $primary-white;
-
-  @media (min-width: $breakMobile) {
-    @include t-1;
-    margin-top: 160px;
-    white-space: nowrap;
-  }
-}
-
-.image_desc {
-  text-align: center;
-  margin-top: 32px;
-  @include p-1;
-  color: $primary-white;
-
-  @media (min-width: $breakMobile) {
-    @include h-4;
-    margin-top: 26px;
-  }
-}
-
-.arrow_down {
-  display: none;
-
-  @media (min-width: $breakMobile) {
-    display: block;
+  &__text {
+    @include flex-column;
     z-index: 2;
-    cursor: pointer;
-    margin-top: 60px;
+    position: absolute;
+    top: 0;
+    padding: 0 60px;
+    margin-top: 98px;
+
+    &_title {
+      text-align: center;
+      margin-top: 98px;
+      font-size: 72px;
+      line-height: 72px;
+      font-weight: 700;
+      letter-spacing: -1.44px;
+      color: $primary-white;
+
+      @media (min-width: $breakMobile) {
+        @include t-1;
+        margin-top: 164px;
+        white-space: nowrap;
+        text-shadow: 0px 0px 40px rgba(0, 0, 0, 0.08);
+        letter-spacing: -2.6px;
+      }
+    }
+
+    &_desc {
+      text-align: center;
+      margin-top: 32px;
+      @include p-1;
+      color: $primary-white;
+
+      @media (min-width: $breakMobile) {
+        @include h-4;
+        font-weight: 600;
+        letter-spacing: -0.48px;
+        margin-top: 26px;
+      }
+    }
+  }
+
+  &__arrow_down {
+    display: none;
+  
+    @media (min-width: $breakMobile) {
+      display: block;
+      z-index: 2;
+      cursor: pointer;
+      margin-top: 60px;
+    }
   }
 }
+
+
 
 .leading {
   @include flex-column;
@@ -95,7 +126,7 @@
 
   @media (min-width: $breakMobile) {
     flex-direction: row;
-    margin-top: 160px;
+    // margin-top: 160px;
     margin-bottom: 156px;
   }
 

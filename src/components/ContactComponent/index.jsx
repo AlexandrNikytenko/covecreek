@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import styles from "./style.module.scss";
 import InputForm from "../InputForm";
 
