@@ -71,15 +71,15 @@ function HomeCarousel() {
     controlsStrategy: "alternate",
     disableDotsControls: true,
     disableButtonsControls: true,
+    autoPlay: true,
+    animationEasingFunction: "linear",
+    autoPlayInterval: 0,
+    animationDuration: 20000,
+    infinite: true,
+    autoPlayStrategy: "none",
   };
 
   const wideScreenProps = {
-    autoPlay: true,
-    animationEasingFunction: "linear",
-    infinite: true,
-    autoPlayStrategy: "none",
-    autoPlayInterval: 0,
-    animationDuration: 20000,
     animationType: "fadeout",
   };
 
