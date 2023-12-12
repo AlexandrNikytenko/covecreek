@@ -104,11 +104,25 @@ function Header() {
               </Link>
             </div>
             <div className={styles.contacts}>
-              <p>213-770-8211</p>
+              <a href="tel:+12137708211" className={styles.contacts__link}>
+                213-770-8211
+              </a>
               <div className={styles.contacts__devider}></div>
-              <p>info@covecreekproductions.com</p>
+              <a
+                href="mailto:info@covecreekproductions.com"
+                className={styles.contacts__link}
+              >
+                info@covecreekproductions.com
+              </a>
               <div className={styles.contacts__devider}></div>
-              <p>2390 E Camelback Rd, Phoenix, AZ 85016</p>
+              <a
+                className={styles.contacts__link}
+                href="https://www.google.com/maps/search/?api=1&query=2390+E+Camelback+Rd%2C+Phoenix%2C+AZ+85016"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                2390 E Camelback Rd, Phoenix, AZ 85016
+              </a>
             </div>
           </>
         )}

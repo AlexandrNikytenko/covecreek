@@ -49,6 +49,7 @@
       width: 750px;
       border-radius: 32px;
       margin-bottom: 120px;
+      transition: transform 0.5s linear;
     }
   }
 
@@ -108,7 +109,7 @@
 
   &__arrow_down {
     display: none;
-  
+
     @media (min-width: $breakMobile) {
       display: block;
       z-index: 2;
@@ -117,8 +118,6 @@
     }
   }
 }
-
-
 
 .leading {
   @include flex-column;

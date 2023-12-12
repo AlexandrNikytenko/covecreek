@@ -213,6 +213,12 @@
   @include p-1;
   color: $primary-white;
 
+  &__link {
+    @include p-1;
+    color: $primary-white;
+    text-decoration: none;
+  }
+
   &__devider {
     display: block;
     width: 1px;

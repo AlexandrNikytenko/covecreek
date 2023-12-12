@@ -12,6 +12,7 @@
   align-items: center;
   padding: 80px 0 80px;
   width: 100%;
+  z-index: 2;
 
   @media (min-width: $breakMobile) {
     padding: 80px 0 160px;
@@ -33,6 +34,8 @@
 
 .blue_button {
   @include button-blue;
+  @include p-1;
+  color: $primary-white;
   width: 203px;
   height: 60px;
   border-radius: 50px;
@@ -54,6 +57,22 @@
   }
 }
 
+.image_row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @media (min-width: $breakMobile) {
+    width: calc(100% / 3 - 19px);
+    flex-wrap: nowrap;
+  }
+}
+
+.image_box {
+  width: 100%;
+  position: relative;
+}
+
 .image {
   @include flex-column;
   justify-content: flex-end;
@@ -66,14 +85,15 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 24px;
-
-  @media (min-width: $breakMobile) {
-    width: calc(100% / 3 - 19px);
-  }
+  transition: transform 0.3s linear;
 
   &__title {
     @include h-4;
     color: $primary-white;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    transition: transform 0.3s linear;
 
     @media (min-width: $breakMobile) {
       @include h-2;
