@@ -7,19 +7,6 @@
   align-items: center;
 }
 
-.image_container {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-
-  @media (min-width: $breakMobile) {
-    background-position: center bottom 35px;
-    background-repeat: no-repeat;
-    background-image: url("../../../public/icons/Waves_3.svg");
-  }
-}
-
 .title {
   @include h-3;
   margin: 60px 20px 0;
@@ -34,38 +21,68 @@
   }
 }
 
-.top_image {
-  display: flex;
+.video_box {
+  @include flex-column;
+  position: relative;
+  width: 100%;
+  padding: 20px;
   align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: 2;
+  user-select: none;
   width: calc(100vw - 40px);
-  height: 376px;
-  margin: 60px 20px 0;
-  border-radius: 32px 32px 0px 0px;
-  box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.25) inset;
-  background-image: linear-gradient(
+  overflow: hidden;
+
+  @media (min-width: $breakMobile) {
+    padding: 100px 0px 0px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+
+    @media (min-width: $breakMobile) {
+      border-radius: 20px 20px 0 0;
+      height: auto;
+    }
+  }
+
+  &__video {
+    @include flex-column;
+    align-items: center;
+    z-index: 1;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.25) inset;
+    background-image: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.2) 0%,
       rgba(0, 0, 0, 0.2) 100%
-    ),
-    url("../../../public/images/Group_73.png");
-  background-position: 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: lightgray;
+    );
+    height: 500px;
+    overflow: hidden;
 
-  @media (min-width: $breakMobile) {
-    margin: 80px 20px 0;
-    width: 756px;
+    @media (min-width: $breakMobile) {
+      width: 750px;
+      height: auto;
+      border-radius: 32px 32px 0 0;
+    }
   }
 
   &__button {
     @include button-blue;
+    z-index: 2;
+    position: absolute;
+    top: 250px;
     width: 222px;
     height: 60px;
     border-radius: 50px;
+
+    @media (min-width: $breakMobile) {
+      top: 270px;
+    }
   }
 }
 

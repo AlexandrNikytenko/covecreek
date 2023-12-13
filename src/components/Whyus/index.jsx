@@ -12,6 +12,7 @@ import ContactComponent from "../ContactComponent";
 
 import styles from "./style.module.scss";
 import SliderWhy from "../SliderWhy";
+import VideoWhyUsComponent from "./VideoWhyUsComponent";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -67,23 +68,7 @@ function Whyus() {
       >
         We craft immersive experiences that captivate global audiences
       </motion.h1>
-      <section className={styles.image_container} ref={refHead}>
-        <motion.div
-          className={styles.top_image}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsHead}
-          transition={{ duration: 0.4 }}
-        >
-          <motion.button
-            className={styles.top_image__button}
-            initial={{ opacity: 0, y: 200 }}
-            animate={controlsHead}
-            transition={{ duration: 0.6 }}
-          >
-            Schedule a Demo
-          </motion.button>
-        </motion.div>
-      </section>
+      <VideoWhyUsComponent />
       <ArticleComponent data={whyCove} />
       <RobustComponent />
       <UnmatchedComponent link={true} />
