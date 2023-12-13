@@ -31,7 +31,7 @@ const items = [
   </div>,
 ];
 
-function Slider() {
+function SliderWhy() {
   const carousel = useRef(null);
 
   return (
@@ -65,4 +65,4 @@ function Slider() {
   );
 }
 
-export default Slider;
+export default SliderWhy;

@@ -11,7 +11,7 @@ import CaseComponent from "../CaseComponent";
 import ContactComponent from "../ContactComponent";
 
 import styles from "./style.module.scss";
-import Slider from "../Slider";
+import SliderWhy from "../SliderWhy";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -98,7 +98,7 @@ function Whyus() {
             animate={controlsTeam}
             transition={{ duration: 0.3 }}
           >
-            <Slider />
+            <SliderWhy />
           </motion.div>
           <div className={styles.team__desc}>
             <motion.p
