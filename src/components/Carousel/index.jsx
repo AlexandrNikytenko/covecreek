@@ -7,8 +7,8 @@ function Carousel() {
   const settings = {
     infinite: true,
     autoplay: true,
-    speed: 10000,
-    autoplaySpeed: 1,
+    speed: 20000,
+    autoplaySpeed: 0,
     cssEase: 'linear',
     // pauseOnHover: true,
     // swipeToSlide: true,
