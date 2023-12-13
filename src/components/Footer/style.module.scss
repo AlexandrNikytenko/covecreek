@@ -5,6 +5,7 @@
 .container {
   @include flex-column;
   padding: 60px 20px 0;
+  overflow: hidden;
 
   @media (min-width: $breakMobile) {
     padding: 100px 196px 0px;

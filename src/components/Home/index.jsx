@@ -86,14 +86,14 @@ function Home() {
       <VideoHomeComponent scrollToSection={scrollToSection} />
 
       <section ref={refLeading} className={styles.leading} id="mySection">
-        <motion.p
+        <motion.h1
           className={styles.leading__tours}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsLeading}
           transition={{ duration: 0.3 }}
         >
           premium 360° tours
-        </motion.p>
+        </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 400 }}
           animate={controlsLeading}

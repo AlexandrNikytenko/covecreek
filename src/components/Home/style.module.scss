@@ -27,7 +27,7 @@
   @include flex-column;
   position: relative;
   width: 100%;
-  padding: 100px 20px;
+  padding: 20px;
   align-items: center;
   justify-content: center;
   user-select: none;
@@ -121,11 +121,10 @@
 
 .leading {
   @include flex-column;
-  margin-bottom: 98px;
+  margin-bottom: 100px;
 
   @media (min-width: $breakMobile) {
     flex-direction: row;
-    // margin-top: 160px;
     margin-bottom: 156px;
   }
 
@@ -149,10 +148,12 @@
     font-size: 32px;
     line-height: 40px;
     color: $primary-white;
+    text-align: center;
 
     @media (min-width: $breakMobile) {
       margin: 0 194px 0 126px;
       @include h-2;
+      text-align: left;
       letter-spacing: -0.5px;
     }
 
@@ -189,6 +190,8 @@
   width: 100%;
   padding: 102px 20px 0;
   background-color: $primary-white;
+  border-bottom: 1px solid $primary-white;
+  border-top: 1px solid $primary-white;
 
   @media (min-width: $breakMobile) {
     flex-direction: row;
@@ -290,10 +293,10 @@
 }
 
 .preference {
-  display: none;
+  display: flex;
+  padding: 80px 20px 0px;
 
   @media (min-width: $breakMobile) {
-    display: flex;
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
@@ -303,13 +306,18 @@
   }
 
   &__list {
-    display: flex;
-    box-sizing: border-box;
+    @include flex-column;
     justify-content: space-between;
     width: 100%;
     border-radius: 20px;
     background-color: $middle-grey;
     padding: 48px;
+    gap: 16px;
+
+
+    @media (min-width: $breakMobile) {
+      flex-direction: row;
+    }
 
     &_items {
       @include flex-column;

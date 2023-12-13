@@ -15,9 +15,9 @@ function Contact() {
 
       <section className={styles.form}>
         <p className={styles.tip}>Get in touch</p>
-        <p className={styles.form__title}>
+        <h1 className={styles.form__title}>
           Get started on your 360° virtual tour today
-        </p>
+        </h1>
         {!isMessageSent ? (
           <InputForm buttonText={"Send Message"} fetchData={fetchData} />
         ) : (
@@ -26,11 +26,11 @@ function Contact() {
       </section>
 
       <p className={styles.tip}>Our commitment to you</p>
-      <p className={styles.title}>
+      <h2 className={styles.title}>
         We are committed to delivering the very best virtual tours. While we are
         proud of what we have accomplished, we are constantly striving to raise
         the bar.
-      </p>
+      </h2>
     </div>
   );
 }

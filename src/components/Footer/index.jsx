@@ -17,7 +17,7 @@ function Footer() {
 
   useEffect(() => {
     if (inView) {
-      controls.start({ opacity: 1, y: 0, x: 0 });
+      controls.start({ opacity: 1, y: 0 });
     }
   }, [inView, controls]);
   return (
@@ -88,14 +88,14 @@ function Footer() {
       <div className={styles.bottom}></div>
       <div className={`${styles.policy} ${styles.policy__text}`}>
         <motion.p
-          initial={{ opacity: 0, x: -200 }}
+          initial={{ opacity: 0, y: 200 }}
           animate={controls}
           transition={{ duration: 0.5 }}
         >
           Copyright © 2023 Cove Creek Productions
         </motion.p>
         <motion.p
-          initial={{ opacity: 0, x: 200 }}
+          initial={{ opacity: 0, y: 200 }}
           animate={controls}
           transition={{ duration: 0.5 }}
         >

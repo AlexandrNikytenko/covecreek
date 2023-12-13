@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
-import styles from "./style.module.scss";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
 import HomeCarousel from "../Carousel";
 import ArticleComponent from "../ArticleComponent";
 import RobustComponent from "../RobustComponent";
 import UnmatchedComponent from "../UnmatchedComponent";
 import CaseComponent from "../CaseComponent";
 import ContactComponent from "../ContactComponent";
+
+import styles from "./style.module.scss";
+import Slider from "../Slider";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -21,15 +27,62 @@ const case_text =
   "Explore 30 historical tours, from the shores of Normandy to the Pacific Theater Operations.  This ambitious project covered 11 countries and over 150 shooting days.F";
 
 function Whyus() {
+  const controls = useAnimation();
+  const controlsHead = useAnimation();
+  const controlsTeam = useAnimation();
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+  const [refHead, inViewHead] = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+  const [refTeam, inViewTeam] = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+    if (inViewHead) {
+      controlsHead.start({ opacity: 1, y: 0 });
+    }
+    if (inViewTeam) {
+      controlsTeam.start({ opacity: 1, x: 0 });
+    }
+  }, [inView, inViewHead, inViewTeam, controls, controlsHead, controlsTeam]);
+
   return (
     <div className={styles.container}>
-      <p className={styles.title}>
+      <motion.h1
+        className={styles.title}
+        ref={ref}
+        initial={{ opacity: 0, y: 200 }}
+        animate={controls}
+        transition={{ duration: 0.3 }}
+      >
         We craft immersive experiences that captivate global audiences
-      </p>
-      <section className={styles.image_container}>
-        <div className={styles.top_image}>
-          <button className={styles.top_image__button}>Schedule a Demo</button>
-        </div>
+      </motion.h1>
+      <section className={styles.image_container} ref={refHead}>
+        <motion.div
+          className={styles.top_image}
+          initial={{ opacity: 0, y: 200 }}
+          animate={controlsHead}
+          transition={{ duration: 0.4 }}
+        >
+          <motion.button
+            className={styles.top_image__button}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsHead}
+            transition={{ duration: 0.6 }}
+          >
+            Schedule a Demo
+          </motion.button>
+        </motion.div>
       </section>
       <ArticleComponent data={whyCove} />
       <RobustComponent />
@@ -37,47 +90,59 @@ function Whyus() {
       <section className={styles.carousel}>
         <HomeCarousel />
       </section>
-
-
-      <ArticleComponent data={ourComitten} background={'white'}/>
-      <div style={{ background: "white", width: '100%' }}>
-        <section className={styles.team}>
-          <div className={styles.team__slider}>
-            <div className={styles.team__slider_frame}>
-              <div className={styles.team__slider_frame__buttons}>
-                <button className={styles.team__slider_frame__button}>
-                  <img src="/icons/Chevron_Left.svg" alt="Left" />
-                </button>
-                <button className={styles.team__slider_frame__button}>
-                  <img src="/icons/Chevron_Right.svg" alt="Right" />
-                </button>
-              </div>
-            </div>
-            <p className={styles.team__slider_desc}>
-              North African American Cemetery
-            </p>
-          </div>
+      <ArticleComponent data={ourComitten} background={"white"} />
+      <div style={{ background: "white", width: "100%" }}>
+        <section className={styles.team} ref={refTeam}>
+          <motion.div
+            initial={{ opacity: 0, x: 200 }}
+            animate={controlsTeam}
+            transition={{ duration: 0.3 }}
+          >
+            <Slider />
+          </motion.div>
           <div className={styles.team__desc}>
-            <p className={styles.team__desc_title}>Our team</p>
-            <p className={styles.team__desc_description}>
+            <motion.p
+              className={styles.team__desc_title}
+              initial={{ opacity: 0, x: 200 }}
+              animate={controlsTeam}
+              transition={{ duration: 0.4 }}
+            >
+              Our team
+            </motion.p>
+            <motion.p
+              className={styles.team__desc_description}
+              initial={{ opacity: 0, x: 200 }}
+              animate={controlsTeam}
+              transition={{ duration: 0.5 }}
+            >
               A team dedicated to bringing 360° photography to life
-            </p>
-            <p className={styles.team__desc_text}>
+            </motion.p>
+            <motion.p
+              className={styles.team__desc_text}
+              initial={{ opacity: 0, x: 200 }}
+              animate={controlsTeam}
+              transition={{ duration: 0.6 }}
+            >
               Cove Creek's team is comprised of talented 360° photographers,
               software developers, and support staff. Our lean team size
               provides the efficiency to give personalized attention and deliver
               amazing results.
-            </p>
-
-            <Link to="/careers" className={styles.team__desc_bottom}>
-              View careers
-              <img src="/icons/Arrow_right_blue.svg" alt="Link" />
-            </Link>
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, x: 200 }}
+              animate={controlsTeam}
+              transition={{ duration: 0.7 }}
+            >
+              <Link to="/careers" className={styles.team__desc_bottom}>
+                View careers
+                <img src="/icons/Arrow_right_blue.svg" alt="Link" />
+              </Link>
+            </motion.div>
           </div>
         </section>
       </div>
 
-      <CaseComponent  text={case_text}/>
+      <CaseComponent text={case_text} />
       <ContactComponent />
     </div>
   );

@@ -5,8 +5,9 @@
 .case {
   @include flex-column;
   z-index: 1;
+  overflow: hidden;
   width: 100%;
-  padding: 60px 20px;
+  padding: 0px 20px 60px;
   background-color: $primary-white;
 
   @media (min-width: $breakMobile) {
@@ -29,9 +30,14 @@
     }
 
     &_description {
-      @include h-2;
+      @include h-3;
+      text-align: center;
       margin-top: 30px;
-      letter-spacing: -0.8px;
+
+      @media (min-width: $breakMobile) {
+        text-align: left;
+        @include h-2;
+      }
     }
 
     &_text {

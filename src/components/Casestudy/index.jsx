@@ -1,7 +1,26 @@
 import { Link } from "react-router-dom";
 import ContactComponent from "../ContactComponent";
 import styles from "./style.module.scss";
+import { useEffect, useState } from "react";
 
+function CountingComponent({ targetNumber, durationInSeconds }) {
+  const [number, setNumber] = useState(0);
+  const steps = targetNumber / (durationInSeconds * 1000);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (number < targetNumber) {
+        setNumber((prev) => prev + steps);
+      } else {
+        clearInterval(intervalId);
+      }
+    }, 1);
+
+    return () => clearInterval(intervalId);
+  }, [number, targetNumber, steps]);
+
+  return <div>{Math.round(number)}</div>;
+}
 function Casestudy() {
   return (
     <div className={styles.container}>
@@ -9,14 +28,14 @@ function Casestudy() {
         <div className={styles.head__desc}>
           <p className={styles.head__desc_name}>Case Study</p>
 
-          <p className={styles.head__desc_title}>
+          <h1 className={styles.head__desc_title}>
             American Battle Monuments Commission
-          </p>
+          </h1>
         </div>
       </section>
 
       <section className={styles.honoring}>
-        <p className={styles.article_title}>Honoring our Heros</p>
+        <h2 className={styles.article_title}>Honoring our Heros</h2>
         <p className={styles.article_text}>
           In 2022, Cove Creek had the distinct privilege of showcasing all
           overseas American cemeteries (26) for the American Battle Monuments
@@ -37,7 +56,7 @@ function Casestudy() {
             <div
               className={`${styles.frame__top} ${styles.frame__top_image_one}`}
             ></div>
-            <p className={styles.frame__title}>Normandy American Cemetery</p>
+            <h3 className={styles.frame__title}>Normandy American Cemetery</h3>
             <p className={styles.frame__text}>
               Located on the site of D-Day landings, over 1 million people per
               year visit this historically important site. 9,387 war dead are
@@ -49,7 +68,7 @@ function Casestudy() {
             <div
               className={`${styles.frame__top} ${styles.frame__top_image_two}`}
             ></div>
-            <p className={styles.frame__title}>Manila American Cemetery</p>
+            <h3 className={styles.frame__title}>Manila American Cemetery</h3>
             <p className={styles.frame__text}>
               The largest overseas American cemetery, located within urban
               Manila (BGC), lays to rest over 16,000 who died in the Pacific,
@@ -62,9 +81,9 @@ function Casestudy() {
             <div
               className={`${styles.frame__top} ${styles.frame__top_image_three}`}
             ></div>
-            <p className={styles.frame__title}>
+            <h3 className={styles.frame__title}>
               Meuse-Argonne American Cemetery
-            </p>
+            </h3>
             <p className={styles.frame__text}>
               The largest World War 1 cemetery, and the largest American
               cemetery in Europe. Most lost their lives in the Meuse-Argonne
@@ -75,7 +94,9 @@ function Casestudy() {
             <div
               className={`${styles.frame__top} ${styles.frame__top_image_four}`}
             ></div>
-            <p className={styles.frame__title}>Sicily-Rome American Cemetery</p>
+            <h3 className={styles.frame__title}>
+              Sicily-Rome American Cemetery
+            </h3>
             <p className={styles.frame__text}>
               One of two Italian American Cemeteries, located on the Italian
               coast, south of Rome.
@@ -85,18 +106,24 @@ function Casestudy() {
       </section>
 
       <section className={styles.scope}>
-        <p className={styles.article_title}>An ambitious project scope</p>
+        <h2 className={styles.article_title}>An ambitious project scope</h2>
         <div className={styles.scope__results}>
           <div className={styles.scope__results_card}>
-            <div className={styles.scope__results_card__top}>150</div>
+            <div className={styles.scope__results_card__top}>
+              <CountingComponent targetNumber={150} durationInSeconds={3} />
+            </div>
             <div className={styles.scope__results_card__bottom}>days</div>
           </div>
           <div className={styles.scope__results_card}>
-            <div className={styles.scope__results_card__top}>11</div>
+            <div className={styles.scope__results_card__top}>
+              <CountingComponent targetNumber={11} durationInSeconds={3} />
+            </div>
             <div className={styles.scope__results_card__bottom}>countries</div>
           </div>
           <div className={styles.scope__results_card}>
-            <div className={styles.scope__results_card__top}>30</div>
+            <div className={styles.scope__results_card__top}>
+              <CountingComponent targetNumber={30} durationInSeconds={3} />
+            </div>
             <div className={styles.scope__results_card__bottom}>
               virtual tours
             </div>

@@ -29,14 +29,14 @@ function ContactComponent() {
         >
           Get started
         </motion.p>
-        <motion.p
+        <motion.h1
           className={styles.title}
           initial={{ opacity: 0, y: 400 }}
           animate={controls}
           transition={{ duration: 0.6 }}
         >
           Get started on your 360° virtual tour today
-        </motion.p>
+        </motion.h1>
       </div>
       <motion.div
         style={{ width: "100%", zIndex: "1" }}

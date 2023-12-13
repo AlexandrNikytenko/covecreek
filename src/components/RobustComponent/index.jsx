@@ -1,10 +1,29 @@
 import { Link } from "react-router-dom";
 import styles from "./style.module.scss";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 function RobustComponent() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, x: 0 });
+    }
+  }, [inView, controls]);
   return (
-    <section className={styles.content}>
-      <div className={styles.content__box}>
+    <section className={styles.content} ref={ref}>
+      <motion.div
+        className={styles.content__box}
+        initial={{ opacity: 0, x: 200 }}
+        animate={controls}
+        transition={{ duration: 0.3 }}
+      >
         <div className={styles.content__box_image}>
           <div className={styles.content__box_image__buttons}>
             <button className={styles.content__box_image__buttons_button}>
@@ -47,15 +66,33 @@ function RobustComponent() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
+
       <div className={styles.content__desc}>
-        <p className={styles.content__desc_title}>robust content management</p>
-        <p className={styles.content__desc_description}>
+        <motion.p
+          className={styles.content__desc_title}
+          initial={{ opacity: 0, x: 200 }}
+          animate={controls}
+          transition={{ duration: 0.4 }}
+        >
+          robust content management
+        </motion.p>
+        <motion.p
+          className={styles.content__desc_description}
+          initial={{ opacity: 0, x: 200 }}
+          animate={controls}
+          transition={{ duration: 0.5 }}
+        >
           Our proprietary 360° software and cloud-based CMS empowers clients to
           control their virtual tour
-        </p>
+        </motion.p>
         <div className={styles.content__desc_list}>
-          <div className={styles.content__desc_list__column}>
+          <motion.div
+            className={styles.content__desc_list__column}
+            initial={{ opacity: 0, x: 200 }}
+            animate={controls}
+            transition={{ duration: 0.6 }}
+          >
             <p className={styles.content__desc_list__item}>
               <img src="/icons/Checked_blue.svg" alt="Checked" />
               Digital Asset Management
@@ -80,8 +117,13 @@ function RobustComponent() {
               <img src="/icons/Checked_blue.svg" alt="Checked" />
               QR Code Generator
             </p>
-          </div>
-          <div className={styles.content__desc_list__column}>
+          </motion.div>
+          <motion.div
+            className={styles.content__desc_list__column}
+            initial={{ opacity: 0, x: 200 }}
+            animate={controls}
+            transition={{ duration: 0.7 }}
+          >
             <p className={styles.content__desc_list__item}>
               <img src="/icons/Checked_blue.svg" alt="Checked" />
               Slate Implementation
@@ -106,12 +148,17 @@ function RobustComponent() {
               <img src="/icons/Checked_blue.svg" alt="Checked" />
               Route Customization
             </p>
-          </div>
+          </motion.div>
         </div>
+        <motion.div initial={{ opacity: 0, x: 200 }}
+      animate={controls}
+      transition={{ duration: 0.8 }}>
+
         <Link to="/" className={styles.content__desc_bottom}>
           Schedule a demo
           <img src="/icons/Arrow_right_blue.svg" alt="Link" />
         </Link>
+        </motion.div>
       </div>
     </section>
   );

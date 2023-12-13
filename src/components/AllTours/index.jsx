@@ -9,7 +9,7 @@ function AllTours() {
   return (
     <div className={styles.container}>
       <section className={styles.top_section}>
-        <p className={styles.title}>American Battle Monuments Commission</p>
+        <h1 className={styles.title}>American Battle Monuments Commission</h1>
         <Link to="/case_study" className={styles.blue_button}>
           View Case Study
         </Link>
@@ -18,9 +18,6 @@ function AllTours() {
       <section className={styles.image_container}>
         {myArray.map((card, index) => (
           <Row key={index} index={index + 1} />
-          // <div className={styles.image}>
-          //   <p className={styles.image__title}>Project Title</p>
-          // </div>
         ))}
       </section>
 

@@ -34,14 +34,6 @@
     @include h-1;
     margin: 80px 312px;
   }
-
-  &__tip {
-    @include a-2;
-    position: absolute;
-    top: 0;
-    right: 190px;
-    text-transform: uppercase;
-  }
 }
 
 .content {

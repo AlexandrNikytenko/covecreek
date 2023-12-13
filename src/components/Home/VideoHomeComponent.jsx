@@ -1,8 +1,7 @@
 import styles from "./style.module.scss";
 
-import { motion, useMotionValue, useTransform, useAnimation } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
 
 function VideoHomeComponent({ scrollToSection }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -42,31 +41,14 @@ function VideoHomeComponent({ scrollToSection }) {
     y.set(event.clientY - rect.top);
   }
 
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
-
-  
-  useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 });
-    }
-  }, [inView, controls]);
-
-
   return (
-    <div  ref={ref} style={{ width: "100%" }} onMouseEnter={() => setIsFirstHover(true)}>
+    <div style={{ width: "100%" }} onMouseEnter={() => setIsFirstHover(true)}>
       <motion.section
         className={styles.video_box}
         onMouseMove={handleMouse}
         style={{
           perspective: 800,
         }}
-        initial={{ opacity: 0, y: 300 }}
-          animate={controls}
-          transition={{ duration: 0.6 }}
       >
         <motion.div
           className={styles.video_box__container}

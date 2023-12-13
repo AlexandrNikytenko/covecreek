@@ -29,7 +29,13 @@
     gap: 40px;
 
     &_text {
-      @include h-2;
+      @include h-3;
+      text-align: center;
+
+      @media (min-width: $breakMobile) {
+        @include h-2;
+        text-align: left;
+      }
     }
 
     &_link {
@@ -37,6 +43,11 @@
       width: 204px;
       height: 60px;
       border-radius: 50px;
+      align-self: center;
+
+      @media (min-width: $breakMobile) {
+        align-self: flex-start;
+      }
     }
   }
 }

@@ -5,10 +5,9 @@ function Careers() {
   return (
     <div className={styles.container}>
       <div className={styles.wave_top}></div>
-      <div className={styles.title}>
-        <p className={styles.title__tip}>Careers</p>
+      <h1 className={styles.title}>
         We’re seeking talented individuals who are passionate about their work
-      </div>
+      </h1>
       <section className={styles.content}>
         <div className={styles.form}>
           <p className={styles.form__title}>Join our team</p>

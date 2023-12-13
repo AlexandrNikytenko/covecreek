@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
-import styles from "./style.module.scss";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import ContactComponent from "../ContactComponent";
+import styles from "./style.module.scss";
+import CardPortfolio from "./CardPortfolio";
 
 const data = [
   [
@@ -84,56 +88,130 @@ const data = [
 ];
 
 function Portfolio() {
+  const controlsTitle = useAnimation();
+  const controlsFrames = useAnimation();
+
+  const [refTitle, inViewTitle] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const [refFrames, inViewFrames] = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  useEffect(() => {
+    if (inViewTitle) {
+      controlsTitle.start({ opacity: 1, y: 0 });
+    }
+    if (inViewFrames) {
+      controlsFrames.start({ opacity: 1, y: 0 });
+    }
+  }, [inViewTitle, inViewFrames, controlsTitle, controlsFrames]);
+
   return (
     <div className={styles.container}>
-      <p className={styles.title}>
+      <motion.p
+        className={styles.title}
+        ref={refTitle}
+        initial={{ opacity: 0, y: 200 }}
+        animate={controlsTitle}
+        transition={{ duration: 0.4 }}
+      >
         We combine&nbsp;<span>beautiful imagery</span>&nbsp;and&nbsp;
         <span>innovative design</span>&nbsp;to create a premium virtual tour
         experience
-      </p>
+      </motion.p>
       <section className={styles.grid_container}>
-      <div className={styles.wave_top}></div>
+        <div className={styles.wave_top}></div>
         {data.map((row, index) => (
           <div className={styles.row} key={index}>
-            {row.map((item) => (
-              <div
-                key={item.id}
-                className={`${styles.card} ${styles[item.size]}`}
-                style={{ backgroundImage: `url(${item.imageUrl})` }}
-              >
-                <p className={styles.card__title}>{item.title}</p>
-                <p className={styles.card__desc}>{item.text}</p>
-              </div>
+            {row.map((item, index) => (
+              <CardPortfolio item={item} index={index} key={index} />
             ))}
           </div>
         ))}
       </section>
 
-      <section className={styles.frames}>
-        <div className={styles.frame}>
-          <div
+      <section className={styles.frames} ref={refFrames}>
+        <motion.div
+          className={styles.frame}
+          initial={{ opacity: 0, y: 200 }}
+          animate={controlsFrames}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFrames}
+            transition={{ duration: 0.4 }}
             className={`${styles.frame__top} ${styles.frame__top_image_one}`}
-          ></div>
-          <p className={styles.frame__title}>advanced cms</p>
-          <p className={styles.frame__text}>
+          ></motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFrames}
+            transition={{ duration: 0.5 }}
+            className={styles.frame__title}
+          >
+            advanced cms
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFrames}
+            transition={{ duration: 0.6 }}
+            className={styles.frame__text}
+          >
             Make it yours in minutes with our advanced CMS system
-          </p>
-          <Link to="/" className={styles.frame__link}>
-            Discover Our CMS
-          </Link>
-        </div>
-        <div className={styles.frame}>
-          <div
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFrames}
+            transition={{ duration: 0.7 }}
+          >
+            <Link to="/" className={styles.frame__link}>
+              Discover Our CMS
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className={styles.frame}
+          initial={{ opacity: 0, y: 200 }}
+          animate={controlsFrames}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFrames}
+            transition={{ duration: 0.6 }}
             className={`${styles.frame__top} ${styles.frame__top_image_two}`}
-          ></div>
-          <p className={styles.frame__title}>advanced cms</p>
-          <p className={styles.frame__text}>
+          ></motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFrames}
+            transition={{ duration: 0.7 }}
+            className={styles.frame__title}
+          >
+            advanced cms
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFrames}
+            transition={{ duration: 0.8 }}
+            className={styles.frame__text}
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </p>
-          <Link to="/case_study" className={styles.frame__link}>
-            View Case Study
-          </Link>
-        </div>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFrames}
+            transition={{ duration: 0.9 }}
+          >
+            <Link to="/case_study" className={styles.frame__link}>
+              View Case Study
+            </Link>
+          </motion.div>
+        </motion.div>
       </section>
 
       <ContactComponent />

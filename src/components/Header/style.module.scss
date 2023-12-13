@@ -29,7 +29,7 @@
   justify-content: space-between;
   z-index: 1;
   height: 77px;
-  border-bottom: 1px solid $light-grey;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
   @media (min-width: $breakMobile) {
     min-height: 100px;
@@ -88,7 +88,7 @@
 }
 
 .button_get {
-  width: 128px;
+  width: 96px;
   height: 44px;
   border-radius: 40px;
   margin-right: 10px;
@@ -132,7 +132,7 @@
 
 .menu {
   @include flex-column;
-  position: absolute;
+  position: fixed;
   z-index: 3;
   top: 0;
   background-color: $primary-black;
@@ -168,7 +168,7 @@
   flex-direction: column;
   gap: 24px;
   align-items: center;
-  margin-top: 56px;
+  margin-top: 80px;
 }
 
 .link {

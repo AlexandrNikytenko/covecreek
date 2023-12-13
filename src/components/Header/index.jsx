@@ -70,7 +70,6 @@ function Header() {
                 </button>
               </div>
             </div>
-            <p className={styles.full_portfolio}>Full portfolio</p>
             <div className={styles.links} onClick={() => setIsMenuOpen(false)}>
               <Link
                 to="/portfolio"
