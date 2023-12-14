@@ -9,10 +9,10 @@ import RobustComponent from "../RobustComponent";
 import UnmatchedComponent from "../UnmatchedComponent";
 import CaseComponent from "../CaseComponent";
 import ContactComponent from "../ContactComponent";
-
-import styles from "./style.module.scss";
 import SliderWhy from "../SliderWhy";
 import VideoWhyUsComponent from "./VideoWhyUsComponent";
+
+import styles from "./style.module.scss";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -29,17 +29,13 @@ const case_text =
 
 function Whyus() {
   const controls = useAnimation();
-  const controlsHead = useAnimation();
   const controlsTeam = useAnimation();
 
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.4,
   });
-  const [refHead, inViewHead] = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
+
   const [refTeam, inViewTeam] = useInView({
     triggerOnce: true,
     threshold: 0.4,
@@ -49,13 +45,10 @@ function Whyus() {
     if (inView) {
       controls.start({ opacity: 1, y: 0 });
     }
-    if (inViewHead) {
-      controlsHead.start({ opacity: 1, y: 0 });
-    }
     if (inViewTeam) {
       controlsTeam.start({ opacity: 1, x: 0 });
     }
-  }, [inView, inViewHead, inViewTeam, controls, controlsHead, controlsTeam]);
+  }, [inView, inViewTeam, controls, controlsTeam]);
 
   return (
     <div className={styles.container}>

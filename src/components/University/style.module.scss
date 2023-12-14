@@ -11,9 +11,9 @@
   @include flex-column;
   align-items: center;
   position: relative;
-  padding: 80px 0 80px;
+  padding: 60px 0 80px;
   width: 100%;
-  
+
   @media (min-width: $breakMobile) {
     background-position: center top 330px;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@
 }
 
 .title {
-  @include h-1;
+  @include h-3;
   margin: 0 20px 40px;
   text-align: center;
   color: $primary-white;
@@ -38,24 +38,38 @@
 
 .carousel_frame {
   width: 100%;
-  margin: 160px 0 80px
+  margin: 60px 0 80px;
+
+  @media (min-width: $breakMobile) {
+    margin: 160px 0 80px;
+  }
 }
 
 .blue_button {
   @include button-blue;
-  width: 207px;
-  height: 60px;
-  border-radius: 50px;
+  width: 167px;
+  height: 50px;
+  border-radius: 40px;
+
+  @media (min-width: $breakMobile) {
+    width: 207px;
+    height: 60px;
+    border-radius: 50px;
+  }
 }
 
 .transp_button {
   @include button-transparent;
-  width: 204px;
-  height: 60px;
-  border-radius: 50px;
+  width: 164px;
+  height: 50px;
+  border-radius: 40px;
+
+  @media (min-width: $breakMobile) {
+    width: 204px;
+    height: 60px;
+    border-radius: 50px;
+  }
 }
-
-
 
 .image_container {
   @include flex-column;
@@ -70,7 +84,6 @@
   }
 }
 
-
 .image_premium {
   @include flex-column;
   align-items: center;
@@ -83,7 +96,6 @@
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
-
 
   @media (min-width: $breakMobile) {
     aspect-ratio: 3 / 4.125;
@@ -100,7 +112,6 @@
       @include h-1;
     }
   }
-
 }
 
 .carousel {

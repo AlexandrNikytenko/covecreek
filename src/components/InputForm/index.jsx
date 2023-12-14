@@ -60,7 +60,7 @@ function InputForm({ type, buttonText, fetchData }) {
         transition={{ duration: 0.5 }}
       />
       {type === "join" && (
-        <div className={styles.input_area}
+        <motion.div className={styles.input_area}
         initial={{ opacity: 0, y: 200 }}
         animate={controls}
         transition={{ duration: 0.6 }}
@@ -72,7 +72,7 @@ function InputForm({ type, buttonText, fetchData }) {
             className={styles.input}
           />
           <button className={styles.input_area__button}>Browse Files</button>
-        </div>
+        </motion.div>
       )}
       <motion.textarea
         name="message"

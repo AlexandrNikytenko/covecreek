@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
-import styles from "./style.module.scss";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
 import HomeCarousel from "../Carousel";
 import ArticleComponent from "../ArticleComponent";
 import RobustComponent from "../RobustComponent";
 import UnmatchedComponent from "../UnmatchedComponent";
 import CaseComponent from "../CaseComponent";
 import ContactComponent from "../ContactComponent";
+
+import styles from "./style.module.scss";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -21,13 +26,46 @@ const case_text =
   "Write something about how you managed to cover 58 locations and 17 countries in such a short period of time.";
 
 function University() {
+  const controlsTop = useAnimation();
+  const controls = useAnimation();
+
+  const [refTop, inViewTop] = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+
+  useEffect(() => {
+    if (inViewTop) {
+      controlsTop.start({ opacity: 1, y: 0 });
+    }
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [inView, inViewTop, controls, controlsTop]);
+
   return (
     <div className={styles.container}>
-      <section className={styles.top_section}>
-        <p className={styles.title}>
+      <section className={styles.top_section} ref={refTop}>
+        <motion.h1
+          className={styles.title}
+          initial={{ opacity: 0, y: 200 }}
+          animate={controlsTop}
+          transition={{ duration: 0.3 }}
+        >
           360° virtual tour experiences trusted by leading universities
-        </p>
-        <button className={styles.blue_button}>Schedule a Demo</button>
+        </motion.h1>
+        <motion.button
+          className={styles.blue_button}
+          initial={{ opacity: 0, y: 200 }}
+          animate={controlsTop}
+          transition={{ duration: 0.5 }}
+        >
+          Schedule a Demo
+        </motion.button>
         <div className={styles.carousel_frame}>
           <HomeCarousel />
         </div>
@@ -36,13 +74,18 @@ function University() {
       <ArticleComponent data={whyCove} />
       <RobustComponent />
       <UnmatchedComponent link={false} />
-      <section className={styles.image_container}>
-        <div className={styles.image_premium}>
+      <section className={styles.image_container} ref={ref}>
+        <motion.div
+          className={styles.image_premium}
+          initial={{ opacity: 0 }}
+          animate={controls}
+          transition={{ duration: 1 }}
+        >
           <p className={styles.image_premium__title}>
             Premium quality, intuitive control
           </p>
           <button className={styles.blue_button}>Schedule a Demo</button>
-        </div>
+        </motion.div>
       </section>
       <section style={{ background: "white", width: "100%" }}>
         <ArticleComponent
