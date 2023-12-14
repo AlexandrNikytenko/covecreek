@@ -50,8 +50,8 @@ function Card({ index, zIndex, onMouseEnter, onMouseLeave }) {
     }
   }, [redRef, x, y]);
 
-  const rotateX = useTransform(y, [0, rect.current?.height], [-25, 25]);
-  const rotateY = useTransform(x, [0, rect.current?.width], [-25, 25]);
+  const rotateX = useTransform(y, [0, rect.current?.height], [-35, 35]);
+  const rotateY = useTransform(x, [0, rect.current?.width], [-35, 35]);
 
   function handleMouse(event) {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -75,7 +75,7 @@ function Card({ index, zIndex, onMouseEnter, onMouseLeave }) {
       key={index}
       ref={cardRef}
       className={styles.image_box}
-      style={{ perspective: "2000px", zIndex }}
+      style={{ perspective: "500px", zIndex }}
     >
       <motion.div
         style={{ rotateX, rotateY }}
@@ -84,12 +84,7 @@ function Card({ index, zIndex, onMouseEnter, onMouseLeave }) {
         animate={cardControls}
         ref={redRef}
       >
-        <motion.p
-          style={{ z: 10 }}
-          className={styles.image__title}
-        >
-          Project Title
-        </motion.p>
+        <p className={styles.image__title}>Project Title</p>
       </motion.div>
     </motion.div>
   );

@@ -75,10 +75,11 @@
 
 .image {
   @include flex-column;
-  justify-content: flex-end;
+  position: relative;
+  align-items: center;
   z-index: 2;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-radius: 20px;
   background-image: url("../../../public/images/Portfolio_5.png");
   background-position: 50%;
@@ -91,8 +92,7 @@
     @include h-4;
     color: $primary-white;
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    margin-top: 40px;
     transition: transform 0.3s linear;
 
     @media (min-width: $breakMobile) {

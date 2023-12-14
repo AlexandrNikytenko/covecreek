@@ -4,7 +4,7 @@ import Row from "./Row";
 import styles from "./style.module.scss";
 
 function AllTours() {
-  const myArray = Array.from({ length: 30 }, (_, index) => index + 1);
+  const myArray = Array.from({ length: 21 }, (_, index) => index + 1);
 
   return (
     <div className={styles.container}>
