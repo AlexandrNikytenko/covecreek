@@ -28,13 +28,7 @@ const case_text =
   "Explore 30 historical tours, from the shores of Normandy to the Pacific Theater Operations.  This ambitious project covered 11 countries and over 150 shooting days.F";
 
 function Whyus() {
-  const controls = useAnimation();
   const controlsTeam = useAnimation();
-
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
 
   const [refTeam, inViewTeam] = useInView({
     triggerOnce: true,
@@ -42,25 +36,16 @@ function Whyus() {
   });
 
   useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 });
-    }
     if (inViewTeam) {
       controlsTeam.start({ opacity: 1, x: 0 });
     }
-  }, [inView, inViewTeam, controls, controlsTeam]);
+  }, [inViewTeam, controlsTeam]);
 
   return (
     <div className={styles.container}>
-      <motion.h1
-        className={styles.title}
-        ref={ref}
-        initial={{ opacity: 0, y: 200 }}
-        animate={controls}
-        transition={{ duration: 0.3 }}
-      >
+      <h1 className={styles.title}>
         We craft immersive experiences that captivate global audiences
-      </motion.h1>
+      </h1>
       <VideoWhyUsComponent />
       <ArticleComponent data={whyCove} />
       <RobustComponent />

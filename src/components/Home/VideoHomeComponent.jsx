@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 function VideoHomeComponent({ scrollToSection }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [isAnimationEnabled, setIsAnimationEnabled] = useState(false);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -16,6 +17,7 @@ function VideoHomeComponent({ scrollToSection }) {
       setWindowWidth(window.innerWidth);
       setWindowHeight(window.innerHeight);
     };
+    setIsAnimationEnabled(window.innerWidth >= 768);
 
     window.addEventListener("resize", handleResize);
 
@@ -52,7 +54,7 @@ function VideoHomeComponent({ scrollToSection }) {
       >
         <motion.div
           className={styles.video_box__container}
-          style={{ rotateX, rotateY }}
+          style={isAnimationEnabled ? {rotateX, rotateY } : { }}
         >
           <video autoPlay loop muted className={styles.video_box__video}>
             <source src="https://player.vimeo.com/progressive_redirect/playback/894337365/rendition/540p/file.mp4?loc=external&log_user=0&signature=ecbf82ccad517945a5ffbaf26c2dc44f07f1efcb544370d4c532e513a00867b4" type="video/mp4" />

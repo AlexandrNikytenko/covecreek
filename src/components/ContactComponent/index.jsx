@@ -44,7 +44,7 @@ function ContactComponent() {
         animate={controls}
         transition={{ duration: 0.9 }}
       >
-        <InputForm type={"start"} buttonText={"Schedule a Demo"} />
+        <InputForm type={"start"} buttonText={"Schedule a Demo"} fetchData={()=>{}}/>
       </motion.div>
     </section>
   );

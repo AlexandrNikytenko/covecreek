@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 function Casestudy() {
-  const controlsHead = useAnimation();
   const controlsHonoring = useAnimation();
   const controlsFramesFirst = useAnimation();
   const controlsFramesSecond = useAnimation();
@@ -15,10 +14,6 @@ function Casestudy() {
   const controlsDuration = useAnimation();
   const controlsCompletion = useAnimation();
 
-  const [refHead, inViewHead] = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
   const [refHonoring, inViewHonoring] = useInView({
     triggerOnce: true,
     threshold: 0.4,
@@ -45,9 +40,6 @@ function Casestudy() {
   });
 
   useEffect(() => {
-    if (inViewHead) {
-      controlsHead.start({ opacity: 1, y: 0 });
-    }
     if (inViewHonoring) {
       controlsHonoring.start({ opacity: 1, y: 0 });
     }
@@ -67,14 +59,12 @@ function Casestudy() {
       controlsCompletion.start({ opacity: 1, y: 0 });
     }
   }, [
-    inViewHead,
     inViewHonoring,
     inViewFramesFirst,
     inViewFramesSecond,
     inViewScope,
     inViewDuration,
     inViewCompletion,
-    controlsHead,
     controlsHonoring,
     controlsFramesFirst,
     controlsFramesSecond,
@@ -85,33 +75,15 @@ function Casestudy() {
 
   return (
     <div className={styles.container}>
-      <motion.section
-        className={styles.head}
-        ref={refHead}
-        initial={{ opacity: 0, y: 100 }}
-        animate={controlsHead}
-        transition={{ duration: 0.3 }}
-      >
-        <motion.div className={styles.head__desc}>
-          <motion.p
-            className={styles.head__desc_name}
-            initial={{ opacity: 0, y: 200 }}
-            animate={controlsHead}
-            transition={{ duration: 0.5 }}
-          >
-            Case Study
-          </motion.p>
+      <section className={styles.head}>
+        <div className={styles.head__desc}>
+          <p className={styles.head__desc_name}>Case Study</p>
 
-          <motion.h1
-            className={styles.head__desc_title}
-            initial={{ opacity: 0, y: 200 }}
-            animate={controlsHead}
-            transition={{ duration: 0.7 }}
-          >
+          <h1 className={styles.head__desc_title}>
             American Battle Monuments Commission
-          </motion.h1>
-        </motion.div>
-      </motion.section>
+          </h1>
+        </div>
+      </section>
 
       <section className={styles.honoring} ref={refHonoring}>
         <motion.h2

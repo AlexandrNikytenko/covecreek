@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
@@ -26,46 +25,26 @@ const case_text =
   "Write something about how you managed to cover 58 locations and 17 countries in such a short period of time.";
 
 function University() {
-  const controlsTop = useAnimation();
   const controls = useAnimation();
 
-  const [refTop, inViewTop] = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.4,
   });
 
   useEffect(() => {
-    if (inViewTop) {
-      controlsTop.start({ opacity: 1, y: 0 });
-    }
     if (inView) {
       controls.start({ opacity: 1, y: 0 });
     }
-  }, [inView, inViewTop, controls, controlsTop]);
+  }, [inView, controls]);
 
   return (
     <div className={styles.container}>
-      <section className={styles.top_section} ref={refTop}>
-        <motion.h1
-          className={styles.title}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsTop}
-          transition={{ duration: 0.3 }}
-        >
+      <section className={styles.top_section}>
+        <h1 className={styles.title}>
           360° virtual tour experiences trusted by leading universities
-        </motion.h1>
-        <motion.button
-          className={styles.blue_button}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsTop}
-          transition={{ duration: 0.5 }}
-        >
-          Schedule a Demo
-        </motion.button>
+        </h1>
+        <button className={styles.blue_button}>Schedule a Demo</button>
         <div className={styles.carousel_frame}>
           <HomeCarousel />
         </div>

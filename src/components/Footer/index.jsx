@@ -1,7 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
 
 import styles from "./style.module.scss";
 
@@ -9,31 +6,14 @@ function Footer() {
   const location = useLocation();
   const isPrivacy = location.pathname === "/privacy";
 
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 });
-    }
-  }, [inView, controls]);
   return (
     <div
-      ref={ref}
       className={styles.container}
       style={isPrivacy ? { backgroundColor: "#09131D", paddingTop: "0" } : null}
     >
       {!isPrivacy && <div className={styles.bottom}></div>}
       <div className={styles.contacts}>
-        <motion.div
-          className={styles.contact}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controls}
-          transition={{ duration: 0.3 }}
-        >
+        <div className={styles.contact}>
           <p className={styles.title}>Get in touch</p>
           <a className={styles.link} href="tel:+12137708211">
             213-770-8211
@@ -52,13 +32,8 @@ function Footer() {
           >
             2390 E Camelback Rd, Phoenix, AZ 85016
           </a>
-        </motion.div>
-        <motion.div
-          className={styles.contact}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controls}
-          transition={{ duration: 0.5 }}
-        >
+        </div>
+        <div className={styles.contact}>
           <p className={styles.title}>Our Work</p>
           <Link to="/portfolio" className={styles.link}>
             Portfolio
@@ -69,13 +44,8 @@ function Footer() {
           <Link to="/whyus" className={styles.link}>
             Why Us
           </Link>
-        </motion.div>
-        <motion.div
-          className={styles.contact}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controls}
-          transition={{ duration: 0.7 }}
-        >
+        </div>
+        <div className={styles.contact}>
           <p className={styles.title}>More</p>
           <Link to="/careers" className={styles.link}>
             Careers
@@ -83,22 +53,12 @@ function Footer() {
           <Link to="/contact" className={styles.link}>
             Contact
           </Link>
-        </motion.div>
+        </div>
       </div>
       <div className={styles.bottom}></div>
       <div className={`${styles.policy} ${styles.policy__text}`}>
-        <motion.p
-          initial={{ opacity: 0, y: 200 }}
-          animate={controls}
-          transition={{ duration: 0.5 }}
-        >
-          Copyright © 2023 Cove Creek Productions
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 200 }}
-          animate={controls}
-          transition={{ duration: 0.5 }}
-        >
+        <p>Copyright © 2023 Cove Creek Productions</p>
+        <p>
           <Link to="/privacy" className={styles.policy__text}>
             Privacy Policy
           </Link>
@@ -106,7 +66,7 @@ function Footer() {
           <Link to="/" className={styles.policy__text}>
             Terms of Use
           </Link>
-        </motion.p>
+        </p>
       </div>
     </div>
   );
