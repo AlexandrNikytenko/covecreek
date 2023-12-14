@@ -44,7 +44,10 @@ function VideoHomeComponent({ scrollToSection }) {
   }
 
   return (
-    <div style={{ width: "100%" }} onMouseEnter={() => setIsFirstHover(true)}>
+    <div
+      style={{ width: "100%", display: "flex", justifyContent: "center" }}
+      onMouseEnter={() => setIsFirstHover(true)}
+    >
       <motion.section
         className={styles.video_box}
         onMouseMove={handleMouse}
@@ -54,10 +57,19 @@ function VideoHomeComponent({ scrollToSection }) {
       >
         <motion.div
           className={styles.video_box__container}
-          style={isAnimationEnabled ? {rotateX, rotateY } : { }}
+          style={isAnimationEnabled ? { rotateX, rotateY } : {}}
         >
-          <video playsInline autoPlay loop muted className={styles.video_box__video}>
-            <source src="https://player.vimeo.com/progressive_redirect/playback/894337365/rendition/540p/file.mp4?loc=external&log_user=0&signature=ecbf82ccad517945a5ffbaf26c2dc44f07f1efcb544370d4c532e513a00867b4" type="video/mp4" />
+          <video
+            playsInline
+            autoPlay
+            loop
+            muted
+            className={styles.video_box__video}
+          >
+            <source
+              src="https://player.vimeo.com/progressive_redirect/playback/894337365/rendition/540p/file.mp4?loc=external&log_user=0&signature=ecbf82ccad517945a5ffbaf26c2dc44f07f1efcb544370d4c532e513a00867b4"
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
           </video>
         </motion.div>
