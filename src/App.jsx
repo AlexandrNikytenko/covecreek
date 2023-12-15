@@ -12,7 +12,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import University from "./components/University";
 import Privacy from "./components/Privacy";
 import AllTours from "./components/AllTours";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 function App() {
   const location = useLocation();
 
@@ -39,6 +39,7 @@ function App() {
         <Route path="/all_tours" element={<AllTours />} />
       </Routes>
       <Footer />
+      <SpeedInsights />
     </div>
   );
 }
