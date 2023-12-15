@@ -1,3 +1,7 @@
+// File upload limit is 4.5MB otherwise we get a 413 error
+// Read for a workaround:
+// https://vercel.com/guides/how-to-bypass-vercel-body-size-limit-serverless-functions
+
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { IncomingForm, Fields, Files } from "formidable";
 import { z } from "zod";
