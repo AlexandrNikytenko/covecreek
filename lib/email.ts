@@ -86,6 +86,8 @@ export async function sendEmail(options: SendEmailOptions): Promise<void> {
     files,
   } = options;
 
+  const fixedLogoPath = path.join(process.cwd(), logoPath!);
+
   // Create attachments from files
   const fileAttachments: Attachment[] = Object.values(files || {})
     .flat()
@@ -106,8 +108,8 @@ export async function sendEmail(options: SendEmailOptions): Promise<void> {
     subject: subject,
     attachments: [
       {
-        filename: path.basename(logoPath!),
-        path: path.resolve(logoPath!),
+        filename: path.basename(fixedLogoPath!),
+        path: path.resolve(fixedLogoPath!),
         cid: "logoimg",
       },
       ...fileAttachments,
