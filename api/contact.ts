@@ -1,8 +1,9 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import { sendEmail } from "../lib/email.js";
 import { z } from "zod";
+
+import { sendEmail } from "../lib/email.js";
 import { inquirySchema } from "../emails/inquiry/zod.js";
-import { requireEnv } from "lib/utils.js";
+import { requireEnv } from "../lib/utils.js";
 
 // require these .env since we aren't passing them as arguments
 requireEnv([
