@@ -12,7 +12,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import University from "./components/University";
 import Privacy from "./components/Privacy";
 import AllTours from "./components/AllTours";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 function App() {
   const location = useLocation();
 
