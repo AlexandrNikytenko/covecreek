@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import axios from "axios";
 
+import { BounceLoader } from "react-spinners";
 import InputForm from "../InputForm";
 
 import styles from "./style.module.scss";
@@ -17,6 +20,32 @@ function Careers() {
     triggerOnce: true,
     threshold: 0.4,
   });
+
+  const [isMessageSent, setIsMessageSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+
+  const fetchData = async (data) => {
+    setIsSending(true);
+    try {
+      const formData = data;
+      console.log(formData);
+      const formJson = Object.fromEntries(formData.entries());
+      console.log(formJson);
+
+      // post multipart/form-data
+      const resp = await axios.post("/api/careers", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      // const resp = await axios.post("/api/careers", data);
+      console.log(resp);
+      setIsMessageSent(true);
+    } catch (error) {
+      setIsMessageSent(false);
+    }
+    setIsSending(false);
+  };
 
   useEffect(() => {
     if (inView) {
@@ -42,7 +71,24 @@ function Careers() {
       <section className={styles.content}>
         <div className={styles.form}>
           <p className={styles.form__title}>Join our team</p>
-          <InputForm type={"join"} buttonText={"Submit"} />
+
+          {isSending ? (
+            <div className={styles.form__sending}>
+              <BounceLoader className={styles.loader} />
+            </div>
+          ) : !isMessageSent ? (
+            <InputForm
+              type={"join"}
+              buttonText={"Submit"}
+              fetchData={fetchData}
+            />
+          ) : (
+            <div>
+              <p className={styles.form__sent}>
+                Thank you for contacting us. We will get back to you shortly.
+              </p>
+            </div>
+          )}
         </div>
         <div className={styles.desc} ref={refBottom}>
           <motion.p

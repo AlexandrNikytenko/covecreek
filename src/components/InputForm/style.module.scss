@@ -16,7 +16,7 @@
 .input {
   box-sizing: border-box;
   @include p-1;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   width: 100%;
   border-radius: 8px;
   padding: 17px 20px;
@@ -28,9 +28,42 @@
 
   &__button {
     @include button-transparent;
-    position: absolute;
-    top: 14px;
-    right: 14px;
+    width: 137px;
+    height: 36px;
+    border-radius: 36px;
+    color: $primary-blue;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-blue;
+      color: $primary-white;
+    }
+  }
+}
+
+.input_file {
+  display: grid;
+  grid-template-columns: 1fr auto; // Allocate remaining space to text and auto to button
+  align-items: center; // Align items vertically in the center
+  gap: 10px;
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid $primary-white;
+  background-color: $primary-white;
+  padding: 0 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &__text {
+    @include p-1;
+    overflow: hidden; // In case the file name is too long
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__button {
+    @include button-transparent;
     width: 137px;
     height: 36px;
     border-radius: 36px;

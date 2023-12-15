@@ -5,5 +5,10 @@
       "destination": "https://tours.covecreekproductions.com/:slug",
       "permanent": true
     }
-  ]
+  ],
+  "functions": {
+    "api/*": {
+      "memory": 512
+    }
+  }
 }

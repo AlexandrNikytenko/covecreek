@@ -2,19 +2,28 @@ import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import axios from "axios";
 
+import { BounceLoader } from "react-spinners";
 import InputForm from "../InputForm";
 
 import styles from "./style.module.scss";
 
 function Contact() {
   const [isMessageSent, setIsMessageSent] = useState(false);
-
+  const [isSending, setIsSending] = useState(false);
   const controls = useAnimation();
   const controlsBottom = useAnimation();
 
-  const fetchData = (data) => {
-    setIsMessageSent(data);
+  const fetchData = async (data) => {
+    setIsSending(true);
+    try {
+      const resp = await axios.post("/api/contact", data);
+      setIsMessageSent(true);
+    } catch (error) {
+      setIsMessageSent(false);
+    }
+    setIsSending(false);
   };
 
   const [ref, inView] = useInView({
@@ -56,10 +65,18 @@ function Contact() {
         >
           Get started on your 360° virtual tour today
         </motion.h1>
-        {!isMessageSent ? (
+        {isSending ? (
+          <div className={styles.form__sending}>
+            <BounceLoader className={styles.loader} />
+          </div>
+        ) : !isMessageSent ? (
           <InputForm buttonText={"Send Message"} fetchData={fetchData} />
         ) : (
-          <div className={styles.form__sent}>Message sent!</div>
+          <div>
+            <p className={styles.form__sent}>
+              Thank you for contacting us. We will get back to you shortly.
+            </p>
+          </div>
         )}
       </section>
 

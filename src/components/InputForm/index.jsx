@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -22,13 +22,25 @@ function InputForm({ type, buttonText, fetchData }) {
 
     const form = e.target;
     const formData = new FormData(form);
-    const formJson = Object.fromEntries(formData.entries());
-    setResult(formJson);
-    fetchData(true)
+    // const formJson = Object.fromEntries(formData.entries());
+    setResult(formData);
+    fetchData(formData);
     //Data logic
     setResult("");
     form.reset();
   }
+
+  const fileInputRef = useRef(null); // Create a ref for the file input
+  const [fileName, setFileName] = useState(""); // State for storing the filename
+  const handleFileInputClick = (e) => {
+    fileInputRef.current.click();
+  };
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFileName(file.name); // Update the filename state
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit} className={styles.form} ref={ref}>
@@ -36,6 +48,7 @@ function InputForm({ type, buttonText, fetchData }) {
         name="name"
         type="text"
         placeholder="Name"
+        required
         className={styles.input}
         initial={{ opacity: 0, y: 200 }}
         animate={controls}
@@ -45,6 +58,7 @@ function InputForm({ type, buttonText, fetchData }) {
         name="email"
         type="email"
         placeholder="Email"
+        required
         className={styles.input}
         initial={{ opacity: 0, y: 200 }}
         animate={controls}
@@ -54,31 +68,48 @@ function InputForm({ type, buttonText, fetchData }) {
         name="phone"
         type="text"
         placeholder="Phone"
+        required
         className={styles.input}
         initial={{ opacity: 0, y: 200 }}
         animate={controls}
         transition={{ duration: 0.5 }}
       />
       {type === "join" && (
-        <motion.div className={styles.input_area}
-        initial={{ opacity: 0, y: 200 }}
-        animate={controls}
-        transition={{ duration: 0.6 }}
+        <motion.div
+          className={styles.input_area}
+          initial={{ opacity: 0, y: 200 }}
+          animate={controls}
+          transition={{ duration: 0.6 }}
         >
-          <input
-            name="phone"
-            type="text"
-            placeholder="Resume"
-            className={styles.input}
-          />
-          <button className={styles.input_area__button}>Browse Files</button>
+          <div className={styles.input_file} onClick={handleFileInputClick}>
+            <input
+              name="resume"
+              type="file"
+              placeholder="Resume"
+              required
+              style={{ display: "none" }}
+              ref={fileInputRef}
+              onChange={handleFileChange}
+            />
+            <p className={styles.input_file__text}>
+              {fileName || "Upload Resume"}
+            </p>
+            <button type="button" className={styles.input_file__button}>
+              Browse Files
+            </button>
+          </div>
         </motion.div>
       )}
       <motion.textarea
         name="message"
+        required
         rows="4"
         className={styles.input}
-        placeholder="Tell us about your project..."
+        placeholder={
+          type === "join"
+            ? "Tell us about yourself..."
+            : "Tell us about your project..."
+        }
         initial={{ opacity: 0, y: 200 }}
         animate={controls}
         transition={{ duration: 0.7 }}

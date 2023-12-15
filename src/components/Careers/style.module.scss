@@ -49,6 +49,10 @@
   }
 }
 
+.loader span {
+  background-color: $primary-blue !important; // needed to override inline styles
+}
+
 .form {
   @include flex-column;
   align-items: center;
@@ -71,6 +75,24 @@
     @include h-2;
     color: $primary-white;
     margin-bottom: 20px;
+  }
+
+  &__sending {
+    padding: 80px 0 160px;
+
+    @media (min-width: $breakMobile) {
+      padding-top: 203px;
+    }
+  }
+
+  &__sent {
+    @include p-1;
+    color: $primary-white;
+    padding: 80px 0 160px;
+
+    @media (min-width: $breakMobile) {
+      padding-top: 203px;
+    }
   }
 }
 
