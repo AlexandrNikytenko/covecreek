@@ -2,10 +2,18 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 import { sendEmail } from "../lib/email.js";
 import { z } from "zod";
 import { inquirySchema } from "../emails/inquiry/zod.js";
-import { requireEnv } from "../lib/utils.js";
+import { requireEnv } from "lib/utils.js";
 
-requireEnv(["REDIRECT_URL"]);
-const REDIRECT_URL = process.env.REDIRECT_URL!;
+// require these .env since we aren't passing them as arguments
+requireEnv([
+  "LOGO_PATH",
+  "EMAIL_HOST",
+  "EMAIL_PORT",
+  "EMAIL_USERNAME",
+  "EMAIL_PASSWORD",
+  "EMAIL_FROM",
+  "EMAIL_RECIPIENTS",
+]);
 
 /**
  * Handle POST requests to the /api/contact endpoint

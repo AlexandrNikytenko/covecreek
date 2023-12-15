@@ -27,19 +27,12 @@ function Careers() {
   const fetchData = async (data) => {
     setIsSending(true);
     try {
-      const formData = data;
-      console.log(formData);
-      const formJson = Object.fromEntries(formData.entries());
-      console.log(formJson);
-
-      // post multipart/form-data
+      // POST multipart/form-data for file upload
       const resp = await axios.post("/api/careers", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      // const resp = await axios.post("/api/careers", data);
-      console.log(resp);
       setIsMessageSent(true);
     } catch (error) {
       setIsMessageSent(false);

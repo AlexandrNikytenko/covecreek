@@ -3,7 +3,18 @@ import { sendEmail } from "../lib/email.js";
 import { z } from "zod";
 import { careersSchema } from "../emails/careers/zod.js";
 import { IncomingForm, Fields, Files } from "formidable";
-import { promisify } from "util";
+import { requireEnv } from "lib/utils.js";
+
+// require these .env since we aren't passing them as arguments
+requireEnv([
+  "LOGO_PATH",
+  "EMAIL_HOST",
+  "EMAIL_PORT",
+  "EMAIL_USERNAME",
+  "EMAIL_PASSWORD",
+  "EMAIL_FROM",
+  "EMAIL_RECIPIENTS",
+]);
 
 /**
  * Handle POST requests to the /api/contact endpoint
@@ -21,7 +32,7 @@ export default async function handler(
   try {
     // // Handle POST request
     if (req.method === "POST") {
-      await handleFetchPOST(req, res);
+      await handleMultiPartPOST(req, res);
     } else {
       // Handle other HTTP methods or throw an error
       res.status(405).send({ error: "Method not allowed" });
@@ -35,21 +46,14 @@ export default async function handler(
 }
 
 /**
- * Parse the form data
- * @param req The request object
- * @returns A promise that resolves with the form data
- */
-// const parseForm = promisify(new IncomingForm().parse);
-
-/**
- * Handle POST requests with JSON data
+ * Handle POST requests with Multipart Form data including files
  * @param req The request object
  * @param res The response object
  * @returns A promise that resolves when the request is complete
  * @throws 400 error if the JSON data is invalid
  * @throws 500 error if there is an error processing the request
  */
-async function handleFetchPOST(req: VercelRequest, res: VercelResponse) {
+async function handleMultiPartPOST(req: VercelRequest, res: VercelResponse) {
   try {
     const form = new IncomingForm();
 
@@ -94,7 +98,7 @@ interface CareersInput {
   name: string;
   email: string;
   phone?: string;
-  // message: string;
+  message: string;
 }
 
 interface CareerTemplateData extends CareersInput {

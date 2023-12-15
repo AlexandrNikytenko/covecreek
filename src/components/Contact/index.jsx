@@ -18,7 +18,8 @@ function Contact() {
   const fetchData = async (data) => {
     setIsSending(true);
     try {
-      const resp = await axios.post("/api/contact", data);
+      const jsonData = Object.fromEntries(data.entries());
+      const resp = await axios.post("/api/contact", jsonData);
       setIsMessageSent(true);
     } catch (error) {
       setIsMessageSent(false);
