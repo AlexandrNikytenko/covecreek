@@ -1,4 +1,4 @@
-# CoveCreek.com Website
+# CoveCreekProductions.com Website
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and built to run on [Vercel](https://vercel.app/)
 
@@ -34,7 +34,7 @@ EMAIL_FROM="noreply@example.com"
 EMAIL_RECIPIENTS="email_one@example.com,email_two@example.com"
 ```
 
-## Start the project via Vercel
+## Start the project via Vercel CLI
 
 ```
 vercel dev
