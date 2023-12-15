@@ -34,6 +34,7 @@ function InputForm({ type, buttonText, fetchData }) {
     <form onSubmit={handleSubmit} className={styles.form} ref={ref}>
       <motion.input
         name="name"
+        autoComplete="name"
         type="text"
         placeholder="Name"
         className={styles.input}
@@ -43,6 +44,7 @@ function InputForm({ type, buttonText, fetchData }) {
       />
       <motion.input
         name="email"
+        autoComplete="email"
         type="email"
         placeholder="Email"
         className={styles.input}
@@ -52,6 +54,7 @@ function InputForm({ type, buttonText, fetchData }) {
       />
       <motion.input
         name="phone"
+        autoComplete="tel"
         type="text"
         placeholder="Phone"
         className={styles.input}
@@ -66,7 +69,8 @@ function InputForm({ type, buttonText, fetchData }) {
         transition={{ duration: 0.6 }}
         >
           <input
-            name="phone"
+            name="resume"
+            autoComplete="off"
             type="text"
             placeholder="Resume"
             className={styles.input}

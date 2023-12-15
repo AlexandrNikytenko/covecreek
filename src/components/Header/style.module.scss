@@ -7,6 +7,12 @@
   position: relative;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .shadow {
   position: absolute;
   top: -50vw;
@@ -24,12 +30,32 @@
 
 .head {
   display: flex;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  height: 77px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: top ease 1s;
+
+  @media (min-width: $breakMobile) {
+    min-height: 100px;
+    border-bottom: none;
+  }
+}
+
+.head_menu {
+  display: flex;
   box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 2;
   height: 77px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: top ease 1s;
 
   @media (min-width: $breakMobile) {
     min-height: 100px;
@@ -45,7 +71,7 @@
   top: 6px;
   background-size: cover;
 
-  transition: background-image 0.5s ease;
+  transition: background-image 3s ease;
 
   @media (min-width: $breakMobile) {
     height: 46px;
@@ -139,11 +165,6 @@
   height: 100vh;
   width: 100%;
   transition: top 0.5s ease;
-
-  @media (min-width: $breakMobile) {
-    top: 0;
-    height: 100vh;
-  }
 }
 
 .menuOpen {

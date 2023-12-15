@@ -1,12 +1,34 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./style.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   const location = useLocation();
   const isPrivacy = location.pathname === "/privacy";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+
+      if (currentScrollPos > prevScrollPos) {
+        setIsHeaderVisible(false);
+      } else {
+        setIsHeaderVisible(true);
+      }
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
 
   return (
     <div
@@ -14,7 +36,14 @@ function Header() {
     >
       {!isPrivacy && <div className={styles.shadow}></div>}
       {!isMenuOpen && (
-        <div className={styles.head}>
+        <div
+          className={styles.head}
+          style={{
+            top: isHeaderVisible ? "0px" : "-100px",
+            backgroundColor:
+              prevScrollPos === 0 ? "transparent" : "rgb(9, 19, 29)",
+          }}
+        >
           <Link
             to="/"
             className={`${styles.linked} ${
@@ -47,7 +76,7 @@ function Header() {
         <div className={styles.shadow}></div>
         {isMenuOpen && (
           <>
-            <div className={styles.head}>
+            <div className={styles.head_menu}>
               <Link
                 to="/"
                 onClick={() => setIsMenuOpen(false)}

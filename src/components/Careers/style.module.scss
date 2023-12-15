@@ -77,10 +77,21 @@
 .desc {
   @include flex-column;
   z-index: 1;
-  margin-top: 40px;
+  margin-top: 30px;
 
   @media (min-width: $breakMobile) {
-    margin-top: 220px;
+    margin-top: 189px;
+  }
+
+  &__head {
+    @include a-2;
+    color: $primary-blue;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  
+    @media (min-width: $breakMobile) {
+      margin-bottom: 24px;
+    }
   }
 
   &__title {

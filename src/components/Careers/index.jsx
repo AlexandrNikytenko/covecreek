@@ -46,6 +46,14 @@ function Careers() {
         </div>
         <div className={styles.desc} ref={refBottom}>
           <motion.p
+            className={styles.desc__head}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsBottom}
+            transition={{ duration: 0.3 }}
+          >
+            careers
+          </motion.p>
+          <motion.p
             className={styles.desc__title}
             initial={{ opacity: 0, y: 200 }}
             animate={controlsBottom}

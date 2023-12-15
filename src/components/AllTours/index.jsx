@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-import ContactComponent from "../ContactComponent";
 import Row from "./Row";
+
+import { cards } from "../../constants/alltours";
+
+import ContactComponent from "../ContactComponent";
+
 import styles from "./style.module.scss";
 
 function AllTours() {
-  const myArray = Array.from({ length: 21 }, (_, index) => index + 1);
-
   return (
     <div className={styles.container}>
       <section className={styles.top_section}>
@@ -16,8 +18,8 @@ function AllTours() {
       </section>
 
       <section className={styles.image_container}>
-        {myArray.map((card, index) => (
-          <Row key={index} index={index + 1} />
+        {cards.map((card, index) => (
+          <Row key={card.id} index={card.id} card={card}/>
         ))}
       </section>
 
