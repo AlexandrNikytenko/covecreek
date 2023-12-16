@@ -43,8 +43,8 @@
 
 .input_file {
   display: grid;
-  grid-template-columns: 1fr auto; // Allocate remaining space to text and auto to button
-  align-items: center; // Align items vertically in the center
+  grid-template-columns: 1fr auto;
+  align-items: center;
   gap: 10px;
   width: 100%;
   height: 56px;
@@ -57,7 +57,7 @@
 
   &__text {
     @include p-1;
-    overflow: hidden; // In case the file name is too long
+    overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
@@ -87,5 +87,77 @@
 
   @media (min-width: $breakMobile) {
     margin-top: 5px;
+  }
+}
+
+.loader span {
+  background-color: $primary-blue !important; // needed to override inline styles
+}
+
+.loader_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.error {
+  background-color: #8b0000;
+  border: 1px solid #b22222;
+  color: $primary-white;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0.1px;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.sent {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 20px;
+
+  &__text {
+    align-self: self-end;
+    @include p-1;
+    color: $primary-white;
+    padding: 20px;
+  }
+
+  &__button {
+    align-self: self-start;
+    @include button-transparent;
+    @include p-1;
+    width: 220px;
+    height: 60px;
+    border-radius: 50px;
+
+    color: $primary-white;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-blue;
+    }
   }
 }

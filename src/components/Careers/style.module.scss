@@ -76,24 +76,6 @@
     color: $primary-white;
     margin-bottom: 20px;
   }
-
-  &__sending {
-    padding: 80px 0 160px;
-
-    @media (min-width: $breakMobile) {
-      padding-top: 203px;
-    }
-  }
-
-  &__sent {
-    @include p-1;
-    color: $primary-white;
-    padding: 80px 0 160px;
-
-    @media (min-width: $breakMobile) {
-      padding-top: 203px;
-    }
-  }
 }
 
 .desc {
@@ -110,7 +92,7 @@
     color: $primary-blue;
     text-transform: uppercase;
     margin-bottom: 10px;
-  
+
     @media (min-width: $breakMobile) {
       margin-bottom: 24px;
     }

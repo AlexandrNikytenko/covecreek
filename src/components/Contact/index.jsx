@@ -5,25 +5,21 @@ import { useInView } from "react-intersection-observer";
 import axios from "axios";
 
 import { BounceLoader } from "react-spinners";
-import { InputForm, FormStates } from "../InputForm";
+import {
+  InputForm,
+  TextInput,
+  FileInput,
+  SubmitButton,
+  TextareaInput,
+  SentMessage,
+  EndpointTypes,
+} from "../InputForm";
 
 import styles from "./style.module.scss";
 
 function Contact() {
   const controls = useAnimation();
   const controlsBottom = useAnimation();
-
-  const [formState, setFormState] = useState(FormStates.IDLE);
-  const fetchData = async (data) => {
-    setFormState(FormStates.SENDING);
-    try {
-      await axios.post("/api/send", data);
-      setFormState(FormStates.SENT);
-    } catch (error) {
-      console.error(error);
-      setFormState(FormStates.IDLE);
-    }
-  };
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -64,25 +60,37 @@ function Contact() {
         >
           Get started on your 360° virtual tour today
         </motion.h1>
-        {
-          {
-            [FormStates.SENDING]: (
-              <div className={styles.form__sending}>
-                <BounceLoader className={styles.loader} />
-              </div>
-            ),
-            [FormStates.SENT]: (
-              <div>
-                <p className={styles.form__sent}>
-                  Thank you for contacting us. We will get back to you shortly.
-                </p>
-              </div>
-            ),
-            [FormStates.IDLE]: (
-              <InputForm buttonText={"Send Message"} fetchData={fetchData} />
-            ),
-          }[formState]
-        }
+        <InputForm endpoint="/api/contact" endpointType={EndpointTypes.JSON}>
+          <TextInput
+            name="name"
+            autoComplete="name"
+            type="text"
+            placeholder="Name"
+            required
+          />
+          <TextInput
+            name="email"
+            autoComplete="email"
+            type="email"
+            placeholder="Email"
+            required
+          />
+          <TextInput
+            name="phone"
+            autoComplete="tel"
+            type="text"
+            placeholder="Phone"
+            required
+          />
+          <TextareaInput
+            name="message"
+            placeholder="Tell us about your project"
+            required
+            rows={4}
+          />
+          <SentMessage message="Thank you for contacting us. We will get back to you shortly." />
+          <SubmitButton buttonText={"Send Message"} />
+        </InputForm>
       </section>
 
       <div className={styles.bottom} ref={refBottom}>

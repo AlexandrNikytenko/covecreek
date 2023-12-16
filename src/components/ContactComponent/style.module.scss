@@ -64,54 +64,15 @@
   }
 }
 
-.loader span {
-  background-color: $primary-white !important; // needed to override inline styles
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .form {
   width: 100%;
   margin: 0 auto;
   z-index: 1;
-
-  &__sent {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
-    grid-gap: 10px;
-    justify-items: center;
-    align-items: center;
-    height: 100%;
-    background-color: #ffffff20;
-    border-radius: 20px;
-  }
-
-  &__sending {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-
-  &__sent__text {
-    align-self: self-end;
-    @include p-1;
-    color: $primary-white;
-    padding: 20px;
-  }
-
-  &__sent__button {
-    align-self: self-start;
-    @include button-transparent;
-    @include p-1;
-    width: 220px;
-    height: 60px;
-    border-radius: 50px;
-
-    color: $primary-white;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: $primary-blue;
-    }
-  }
 }

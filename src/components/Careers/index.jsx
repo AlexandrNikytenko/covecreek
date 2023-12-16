@@ -4,8 +4,17 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import axios from "axios";
 
-import { BounceLoader } from "react-spinners";
-import { InputForm, FormStates } from "../InputForm";
+// import { BounceLoader } from "react-spinners";
+// import { InputForm, FormStates } from "../InputForm";
+import {
+  InputForm,
+  TextInput,
+  FileInput,
+  SubmitButton,
+  SentMessage,
+  EndpointTypes,
+  TextareaInput,
+} from "../InputForm";
 
 import styles from "./style.module.scss";
 
@@ -20,23 +29,6 @@ function Careers() {
     triggerOnce: true,
     threshold: 0.4,
   });
-
-  const [formState, setFormState] = useState(FormStates.IDLE);
-
-  const fetchData = async (data) => {
-    setFormState(FormStates.SENDING);
-    try {
-      // POST multipart/form-data for file upload
-      const resp = await axios.post("/api/careers", data, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      setFormState(FormStates.SENT);
-    } catch (error) {
-      setFormState(FormStates.IDLE);
-    }
-  };
 
   useEffect(() => {
     if (inView) {
@@ -62,31 +54,46 @@ function Careers() {
       <section className={styles.content}>
         <div className={styles.form}>
           <p className={styles.form__title}>Join our team</p>
-
-          {
-            {
-              [FormStates.SENDING]: (
-                <div className={styles.form__sending}>
-                  <BounceLoader className={styles.loader} />
-                </div>
-              ),
-              [FormStates.SENT]: (
-                <div>
-                  <p className={styles.form__sent}>
-                    Thank you for contacting us. We will get back to you
-                    shortly.
-                  </p>
-                </div>
-              ),
-              [FormStates.IDLE]: (
-                <InputForm
-                  buttonText={"Submit"}
-                  fetchData={fetchData}
-                  type="join"
-                />
-              ),
-            }[formState]
-          }
+          <InputForm endpoint="/api/careers" endpointType={EndpointTypes.FORM}>
+            <TextInput
+              name="name"
+              autoComplete="name"
+              type="text"
+              placeholder="Name"
+              required
+            />
+            <TextInput
+              name="email"
+              autoComplete="email"
+              type="email"
+              placeholder="Email"
+              required
+            />
+            <TextInput
+              name="phone"
+              autoComplete="tel"
+              type="text"
+              placeholder="Phone"
+              required
+            />
+            <FileInput
+              name="resume"
+              placeholder={"Resume"}
+              accept={".pdf"}
+              maxFileSize={4 * 1024 * 1024} // 4 MB
+            />
+            <TextareaInput
+              name="message"
+              placeholder="Tell us about yourself"
+              required
+              rows={5}
+            />
+            <SentMessage message="Thank you for contacting us. We will get back to you shortly." />
+            <SubmitButton
+              buttonText={"Apply"}
+              style={{ backgroundColor: "#3076BE" }}
+            />
+          </InputForm>
         </div>
         <div className={styles.desc} ref={refBottom}>
           <motion.p

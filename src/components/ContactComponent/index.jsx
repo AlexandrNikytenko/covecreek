@@ -1,10 +1,19 @@
 import styles from "./style.module.scss";
-import { InputForm, FormStates } from "../InputForm";
+
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import axios from "axios";
-import BounceLoader from "react-spinners/BounceLoader";
+import {
+  InputForm,
+  TextInput,
+  TextareaInput,
+  SubmitButton,
+  SentMessage,
+  Loader,
+  EndpointTypes,
+  FormStates,
+} from "../InputForm";
 
 function ContactComponent() {
   const controls = useAnimation();
@@ -58,35 +67,38 @@ function ContactComponent() {
         animate={controls}
         transition={{ duration: 0.9 }}
       >
-        {
-          {
-            [FormStates.SENDING]: (
-              <div className={styles.form__sending}>
-                <BounceLoader className={styles.loader} />
-              </div>
-            ),
-            [FormStates.SENT]: (
-              <div className={styles.form__sent}>
-                <p className={styles.form__sent__text}>
-                  Thank you for contacting us. We will get back to you shortly.
-                </p>
-                <button
-                  className={styles.form__sent__button}
-                  onClick={() => setFormState(FormStates.IDLE)}
-                >
-                  Send another message
-                </button>
-              </div>
-            ),
-            [FormStates.IDLE]: (
-              <InputForm
-                type={"start"}
-                buttonText={"Schedule a Demo"}
-                fetchData={fetchData}
-              />
-            ),
-          }[formState]
-        }
+        <InputForm endpoint="/api/contact" endpointType={EndpointTypes.JSON}>
+          <TextInput
+            name="name"
+            autoComplete="name"
+            type="text"
+            placeholder="Name"
+            required
+          />
+          <TextInput
+            name="email"
+            autoComplete="email"
+            type="email"
+            placeholder="Email"
+            required
+          />
+          <TextInput
+            name="phone"
+            autoComplete="tel"
+            type="text"
+            placeholder="Phone"
+            required
+          />
+          <TextareaInput
+            name="message"
+            placeholder="Tell us about your project"
+            required
+            rows={4}
+          />
+          <SubmitButton buttonText={"Schedule a Demo"} />
+          <SentMessage message="Thank you for contacting us. We will get back to you shortly." />
+          <Loader className={styles.loader} />
+        </InputForm>
       </motion.div>
     </section>
   );
