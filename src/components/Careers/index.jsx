@@ -124,7 +124,7 @@ function Careers() {
               animate={controlsBottom}
               transition={{ duration: 0.6 }}
             >
-              Developer (Ruby on Rails)
+              Developer (Node.js / React.js / Next.js)
             </motion.p>
             <motion.p
               className={styles.desc__list_item}
