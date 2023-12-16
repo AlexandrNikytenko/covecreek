@@ -75,10 +75,10 @@ function VideoHomeComponent({ scrollToSection }) {
         </motion.div>
 
         <div className={styles.video_box__text}>
-          <p className={styles.video_box__text_title}>360° Virtual Tours</p>
-          <p className={styles.video_box__text_desc}>
+          <h1 className={styles.video_box__text_title}>360° Virtual Tours</h1>
+          <h2 className={styles.video_box__text_desc}>
             Premium Quality, Intuitive Control
-          </p>
+          </h2>
         </div>
         <img
           src="/icons/Arrow_down_blue.svg"

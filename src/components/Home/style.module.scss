@@ -30,7 +30,7 @@
   margin-top: 20px;
   align-items: center;
   justify-content: center;
-  user-select: none;
+  // user-select: none;
   width: calc(100vw - 40px);
   border-radius: 20px;
   overflow: hidden;
@@ -316,20 +316,25 @@
     padding: 48px;
     gap: 16px;
 
-    @media (min-width: $breakMobile) {
-      flex-direction: row;
-    }
-
     &_items {
-      @include flex-column;
-      gap: 16px;
-    }
+      ul {
+        list-style: none;
+        padding: 0;
+        display: contents;
+      }
 
-    &_item {
-      @include h-5;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      li {
+        @include h-5;
+        background: url("../../../public/icons/Checked_blue.svg") no-repeat left
+          center;
+        padding-left: 30px;
+      }
+
+      @media (min-width: $breakMobile) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
     }
   }
 }
