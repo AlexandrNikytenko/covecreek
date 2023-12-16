@@ -79,7 +79,11 @@ function Careers() {
                 </div>
               ),
               [FormStates.IDLE]: (
-                <InputForm buttonText={"Send Message"} fetchData={fetchData} />
+                <InputForm
+                  buttonText={"Submit"}
+                  fetchData={fetchData}
+                  type="join"
+                />
               ),
             }[formState]
           }
