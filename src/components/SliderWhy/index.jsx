@@ -37,11 +37,13 @@ function SliderWhy() {
   return (
     <div className={styles.container}>
       <AliceCarousel
+        autoPlay
+        autoPlayStrategy="none"
+        autoPlayInterval={3000}
+        animationDuration={1000}
         key="carousel"
         infinite="true"
         mouseTracking
-        animationType="fadeout"
-        animationDuration={800}
         disableDotsControls
         disableButtonsControls
         items={items}

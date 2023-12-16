@@ -4,7 +4,7 @@ import { useAnimation } from "framer-motion";
 import Card from "./Card";
 import styles from "./style.module.scss";
 
-function Row({ index }) {
+function Row({ card }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const rowControls = useAnimation();
@@ -37,10 +37,10 @@ function Row({ index }) {
     <div className={styles.image_row} ref={ref}>
       {Array.from({ length: 1 }, (_, cardIndex) => (
         <Card
+          card={card}
           key={cardIndex}
-          index={index + cardIndex}
-          zIndex={hoveredIndex === index + cardIndex ? 1 : 0}
-          onMouseEnter={() => handleHover(index + cardIndex)}
+          zIndex={hoveredIndex === card.id + cardIndex ? 1 : 0}
+          onMouseEnter={() => handleHover(card.id + cardIndex)}
           onMouseLeave={() => handleHover(null)}
         />
       ))}

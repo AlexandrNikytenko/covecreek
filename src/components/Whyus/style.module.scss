@@ -17,7 +17,6 @@
   @media (min-width: $breakMobile) {
     @include t-2;
     margin: 80px 194px 0;
-    letter-spacing: -1.8px;
   }
 }
 
@@ -121,7 +120,6 @@
 
     &_title {
       @include a-2;
-      letter-spacing: 1.3px;
       text-transform: uppercase;
     }
 

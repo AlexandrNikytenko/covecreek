@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import ContactComponent from "../ContactComponent";
 import styles from "./style.module.scss";
@@ -110,6 +110,12 @@ function Portfolio() {
     }
   }, [inViewTitle, inViewFrames, controlsTitle, controlsFrames]);
 
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleHover = (index) => {
+    setHoveredIndex(index);
+  };
+
   return (
     <div className={styles.container}>
       <motion.p
@@ -128,7 +134,14 @@ function Portfolio() {
         {data.map((row, index) => (
           <div className={styles.row} key={index}>
             {row.map((item, index) => (
-              <CardPortfolio item={item} index={index} key={index} />
+              <CardPortfolio
+                zIndex={hoveredIndex === index ? 1 : 0}
+                onMouseEnter={() => handleHover(index)}
+                onMouseLeave={() => handleHover(null)}
+                item={item}
+                index={index}
+                key={index}
+              />
             ))}
           </div>
         ))}

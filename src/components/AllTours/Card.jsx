@@ -5,10 +5,13 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 
-function Card({ index, zIndex, onMouseEnter, onMouseLeave }) {
+function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
+  const [isAnimationEnabled, setIsAnimationEnabled] = useState(false);
+
   const [cardRef, cardInView] = useInView({
     triggerOnce: true,
     threshold: 0,
@@ -23,9 +26,13 @@ function Card({ index, zIndex, onMouseEnter, onMouseLeave }) {
   }
 
   useEffect(() => {
+    setIsAnimationEnabled(window.innerWidth >= 768);
+  }, []);
+
+  useEffect(() => {
     if (cardInView) {
       const duration =
-        window.innerWidth > 768 ? getRemainder(index) * 0.3 : 0.3;
+        window.innerWidth > 768 ? getRemainder(card.id) * 0.3 : 0.3;
       cardControls.start({
         opacity: 1,
         y: 0,
@@ -72,19 +79,25 @@ function Card({ index, zIndex, onMouseEnter, onMouseLeave }) {
         handleMouseLeave();
         onMouseLeave(event);
       }}
-      key={index}
+      key={card.id}
       ref={cardRef}
       className={styles.image_box}
       style={{ perspective: "500px", zIndex }}
     >
       <motion.div
-        style={{ rotateX, rotateY }}
+        style={{
+          ...(isAnimationEnabled
+            ? { rotateX, rotateY, backgroundImage: `url(${card.imageURL})` }
+            : { backgroundImage: `url(${card.imageURL})` }),
+        }}
         className={styles.image}
         initial={{ opacity: 0, y: 200 }}
         animate={cardControls}
         ref={redRef}
       >
-        <p className={styles.image__title}>Project Title</p>
+        <Link className={styles.link} to={card.link} target="_blank">
+          <p className={styles.image__title}>{card.name}</p>
+        </Link>
       </motion.div>
     </motion.div>
   );

@@ -96,7 +96,15 @@
     transition: transform 0.3s linear;
 
     @media (min-width: $breakMobile) {
-      @include h-2;
+      @include h-3;
     }
   }
+}
+
+.link {
+  @include flex-column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
