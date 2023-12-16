@@ -2,40 +2,37 @@
 @import "../../styles/variables.scss";
 @import "../../styles/colors.scss";
 
-@mixin slider-card {
-  @include flex-column;
-  justify-content: flex-end;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 20px;
-  border-radius: 20px;
-  width: calc(100% - 40px);
+.image_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   aspect-ratio: 3 / 4;
+  border-radius: 20px;
   user-select: none;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 
   @media (min-width: $breakMobile) {
     height: 420px;
     width: 95%;
-    margin-left: 0px;
   }
-}
-
-.slide_1 {
-  @include slider-card;
-  background-image: url("../../../public/images/Home_Carousel_1.png");
-}
-.slide_2 {
-  @include slider-card;
-  background-image: url("../../../public/images/Home_Carousel_2.png");
-}
-.slide_3 {
-  @include slider-card;
-  background-image: url("../../../public/images/Home_Carousel_3.png");
-}
-.slide_4 {
-  @include slider-card;
-  background-image: url("../../../public/images/Home_Carousel_4.png");
 }
 
 .title {
