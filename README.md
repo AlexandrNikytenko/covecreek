@@ -25,7 +25,7 @@ bun i -g vercel
 See .env.example or below:
 
 ```
-LOGO_PATH="images/logo.png"
+LOGO_PATH="emails/logo.png"
 EMAIL_HOST="YOUR_SMTP_HOST"
 EMAIL_PORT="587"
 EMAIL_USERNAME="YOUR_SMTP_USERNAME"

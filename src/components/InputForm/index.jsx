@@ -3,7 +3,13 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-function InputForm({ type, buttonText, fetchData }) {
+export const FormStates = {
+  IDLE: "idle",
+  SENDING: "sending",
+  SENT: "sent",
+};
+
+export function InputForm({ type, buttonText, fetchData }) {
   const [result, setResult] = useState("");
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -22,7 +28,6 @@ function InputForm({ type, buttonText, fetchData }) {
 
     const form = e.target;
     const formData = new FormData(form);
-    // const formJson = Object.fromEntries(formData.entries());
     setResult(formData);
     fetchData(formData);
     //Data logic
@@ -38,7 +43,25 @@ function InputForm({ type, buttonText, fetchData }) {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setFileName(file.name); // Update the filename state
+      // Define allowed file types
+      const allowedTypes = [
+        "application/pdf", // .pdf
+      ];
+
+      // Check if the file type is allowed
+      if (!allowedTypes.includes(file.type)) {
+        alert("Please upload a PDF document.");
+        return;
+      }
+
+      // Check if the file size is less than or equal to 4 MB
+      // Limit is related to Vercel's serverless functions payload limit
+      if (file.size > 4000000) {
+        alert("File size should not exceed 4 MB.");
+        return;
+      }
+
+      setFileName(file.name);
     }
   };
 
@@ -93,6 +116,7 @@ function InputForm({ type, buttonText, fetchData }) {
               style={{ display: "none" }}
               ref={fileInputRef}
               onChange={handleFileChange}
+              multiple={false}
             />
             <p className={styles.input_file__text}>
               {fileName || "Upload Resume"}

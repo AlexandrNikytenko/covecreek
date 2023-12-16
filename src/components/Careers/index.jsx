@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import axios from "axios";
 
 import { BounceLoader } from "react-spinners";
-import InputForm from "../InputForm";
+import { InputForm, FormStates } from "../InputForm";
 
 import styles from "./style.module.scss";
 
@@ -21,11 +21,10 @@ function Careers() {
     threshold: 0.4,
   });
 
-  const [isMessageSent, setIsMessageSent] = useState(false);
-  const [isSending, setIsSending] = useState(false);
+  const [formState, setFormState] = useState(FormStates.IDLE);
 
   const fetchData = async (data) => {
-    setIsSending(true);
+    setFormState(FormStates.SENDING);
     try {
       // POST multipart/form-data for file upload
       const resp = await axios.post("/api/careers", data, {
@@ -33,11 +32,10 @@ function Careers() {
           "Content-Type": "multipart/form-data",
         },
       });
-      setIsMessageSent(true);
+      setFormState(FormStates.SENT);
     } catch (error) {
-      setIsMessageSent(false);
+      setFormState(FormStates.IDLE);
     }
-    setIsSending(false);
   };
 
   useEffect(() => {
@@ -65,23 +63,26 @@ function Careers() {
         <div className={styles.form}>
           <p className={styles.form__title}>Join our team</p>
 
-          {isSending ? (
-            <div className={styles.form__sending}>
-              <BounceLoader className={styles.loader} />
-            </div>
-          ) : !isMessageSent ? (
-            <InputForm
-              type={"join"}
-              buttonText={"Submit"}
-              fetchData={fetchData}
-            />
-          ) : (
-            <div>
-              <p className={styles.form__sent}>
-                Thank you for contacting us. We will get back to you shortly.
-              </p>
-            </div>
-          )}
+          {
+            {
+              [FormStates.SENDING]: (
+                <div className={styles.form__sending}>
+                  <BounceLoader className={styles.loader} />
+                </div>
+              ),
+              [FormStates.SENT]: (
+                <div>
+                  <p className={styles.form__sent}>
+                    Thank you for contacting us. We will get back to you
+                    shortly.
+                  </p>
+                </div>
+              ),
+              [FormStates.IDLE]: (
+                <InputForm buttonText={"Send Message"} fetchData={fetchData} />
+              ),
+            }[formState]
+          }
         </div>
         <div className={styles.desc} ref={refBottom}>
           <motion.p

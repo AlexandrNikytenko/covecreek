@@ -5,26 +5,24 @@ import { useInView } from "react-intersection-observer";
 import axios from "axios";
 
 import { BounceLoader } from "react-spinners";
-import InputForm from "../InputForm";
+import { InputForm, FormStates } from "../InputForm";
 
 import styles from "./style.module.scss";
 
 function Contact() {
-  const [isMessageSent, setIsMessageSent] = useState(false);
-  const [isSending, setIsSending] = useState(false);
   const controls = useAnimation();
   const controlsBottom = useAnimation();
 
+  const [formState, setFormState] = useState(FormStates.IDLE);
   const fetchData = async (data) => {
-    setIsSending(true);
+    setFormState(FormStates.SENDING);
     try {
-      const jsonData = Object.fromEntries(data.entries());
-      const resp = await axios.post("/api/contact", jsonData);
-      setIsMessageSent(true);
+      await axios.post("/api/send", data);
+      setFormState(FormStates.SENT);
     } catch (error) {
-      setIsMessageSent(false);
+      console.error(error);
+      setFormState(FormStates.IDLE);
     }
-    setIsSending(false);
   };
 
   const [ref, inView] = useInView({
@@ -66,19 +64,25 @@ function Contact() {
         >
           Get started on your 360° virtual tour today
         </motion.h1>
-        {isSending ? (
-          <div className={styles.form__sending}>
-            <BounceLoader className={styles.loader} />
-          </div>
-        ) : !isMessageSent ? (
-          <InputForm buttonText={"Send Message"} fetchData={fetchData} />
-        ) : (
-          <div>
-            <p className={styles.form__sent}>
-              Thank you for contacting us. We will get back to you shortly.
-            </p>
-          </div>
-        )}
+        {
+          {
+            [FormStates.SENDING]: (
+              <div className={styles.form__sending}>
+                <BounceLoader className={styles.loader} />
+              </div>
+            ),
+            [FormStates.SENT]: (
+              <div>
+                <p className={styles.form__sent}>
+                  Thank you for contacting us. We will get back to you shortly.
+                </p>
+              </div>
+            ),
+            [FormStates.IDLE]: (
+              <InputForm buttonText={"Send Message"} fetchData={fetchData} />
+            ),
+          }[formState]
+        }
       </section>
 
       <div className={styles.bottom} ref={refBottom}>
