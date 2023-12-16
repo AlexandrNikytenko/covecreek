@@ -72,7 +72,7 @@ function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
   }
 
   return (
-    <motion.div
+    <motion.figure
       onMouseMove={handleMouse}
       onMouseEnter={onMouseEnter}
       onMouseLeave={(event) => {
@@ -85,21 +85,22 @@ function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
       style={{ perspective: "500px", zIndex }}
     >
       <motion.div
+        className={styles.image_box__container}
         style={{
-          ...(isAnimationEnabled
-            ? { rotateX, rotateY, backgroundImage: `url(${card.imageURL})` }
-            : { backgroundImage: `url(${card.imageURL})` }),
+          ...(isAnimationEnabled ? { rotateX, rotateY } : {}),
         }}
-        className={styles.image}
         initial={{ opacity: 0, y: 200 }}
         animate={cardControls}
         ref={redRef}
       >
-        <Link className={styles.link} to={card.link} target="_blank">
-          <p className={styles.image__title}>{card.name}</p>
-        </Link>
+        <img src={card.imageURL} alt={card.name} className={styles.image} />
+        <figcaption>
+          <Link className={styles.link} to={card.link} target="_blank">
+            <p className={styles.image__title}>{card.name}</p>
+          </Link>
+        </figcaption>
       </motion.div>
-    </motion.div>
+    </motion.figure>
   );
 }
 
