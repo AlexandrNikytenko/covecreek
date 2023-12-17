@@ -66,25 +66,46 @@
 
 .card {
   @include flex-column;
-  justify-content: flex-end;
   position: relative;
   width: 100%;
   height: 420px;
   z-index: 2;
   padding: 24px;
   border-radius: 16px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.25) inset;
   transition: transform 0.3s linear;
+  overflow: hidden;
+  margin: 0;
+  cursor: pointer;
 
   @media (min-width: $breakMobile) {
     height: 100%;
   }
 
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  figcaption {
+    @include flex-column;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+
   &__title {
     @include h-3;
+    @include text-shadow;
     margin-bottom: 15px;
     line-height: 44px;
     color: $primary-white;
@@ -96,7 +117,14 @@
 
   &__desc {
     @include p-2;
+    @include text-shadow;
     color: $primary-white;
+  }
+
+  &__link {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -151,11 +179,11 @@
     background-repeat: no-repeat;
 
     &_image_one {
-      background-image: url("../../../public/images/Portfolio_1.png");
+      background-image: url("../../../public/images/portfolio/Portfolio_1.jpg");
     }
 
     &_image_two {
-      background-image: url("../../../public/images/Portfolio_4.png");
+      background-image: url("../../../public/images/portfolio/Portfolio_4.jpg");
     }
 
     @media (min-width: $breakMobile) {

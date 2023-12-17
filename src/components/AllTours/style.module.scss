@@ -95,9 +95,8 @@
 
   &__title {
     @include h-4;
+    @include text-shadow;
     color: $primary-white;
-    text-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px;
-
     position: absolute;
     margin-top: 40px;
 

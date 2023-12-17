@@ -104,3 +104,7 @@
   letter-spacing: 1.3px;
   color: $primary-blue;
 }
+
+@mixin text-shadow {
+  text-shadow: #000000b0 0 2px 5px;
+}
