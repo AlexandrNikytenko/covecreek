@@ -11,78 +11,88 @@ const data = [
     {
       index: 1,
       size: "single",
-      imageUrl: "../../../images/portfolio/Portfolio_1.jpg",
+      imageUrl: "/images/portfolio/Portfolio_1.jpg",
       title: "University of Toledo",
       text: "Highlights the Toledo campus through stunning visuals, clean design and a custom map",
+      url: "https://tours.covecreekproductions.com/toledo/",
     },
     {
       index: 2,
       size: "single",
-      imageUrl: "../../../images/portfolio/Portfolio_2.jpg",
+      imageUrl: "/images/portfolio/Portfolio_2.jpg",
       title: "Seattle University",
       text: "Showcases Seattle U's urban campus and the iconic surround Seattle area",
+      url: "https://tours.covecreekproductions.com/seattle-university-cc/",
     },
     {
       index: 3,
       size: "single",
-      imageUrl: "../../../images/portfolio/Portfolio_3.jpg",
+      imageUrl: "/images/portfolio/Portfolio_3.jpg",
       title: "Indiana University",
       text: "Cove Creek captured all 9 campuses across Indiana for IU School of Medicine ",
+      url: "https://tours.covecreekproductions.com/indiana-university/", // needs updating
     },
   ],
   [
     {
       index: 1,
       size: "double",
-      imageUrl: "../../../images/portfolio/Portfolio_4.jpg",
+      imageUrl: "/images/portfolio/Portfolio_4.jpg",
       title: "Normandy",
       text: "In 2022, Cove Creek created tours for all 26 overseas American cemeteries",
+      url: "https://tours.covecreekproductions.com/normandy/",
     },
     {
       index: 2,
       size: "single",
-      imageUrl: "../../../images/portfolio/Portfolio_5.jpg",
+      imageUrl: "/images/portfolio/Portfolio_5.jpg",
       title: "Arizona State",
       text: "Explore the ASU football program and key areas around campus",
+      url: "https://tours.covecreekproductions.com/asu/", // needs updating
     },
   ],
   [
     {
       index: 1,
       size: "single",
-      imageUrl: "../../../images/portfolio/Portfolio_6.jpg",
+      imageUrl: "/images/portfolio/Portfolio_6.jpg",
       title: "Kents Hill School",
       text: "Highlights a two-century-old educational institution,  combining tradition with contemporary elements.",
+      url: "https://tours.covecreekproductions.com/kents-hill-school/",
     },
     {
       index: 2,
       size: "single",
-      imageUrl: "../../../images/portfolio/Portfolio_7.jpg",
+      imageUrl: "/images/portfolio/Portfolio_7.jpg",
       title: "West Texas A&M",
       text: "Experience this vibrant campus situated in Canyon, TX",
+      url: "https://tours.covecreekproductions.com/wtamu-cc/",
     },
     {
       index: 3,
       size: "single",
-      imageUrl: "../../../images/portfolio/Portfolio_8.jpg",
+      imageUrl: "/images/portfolio/Portfolio_8.jpg",
       title: "EF Pasasdena",
       text: "Tour the premier collection of international boarding schools in the US",
+      url: "https://tours.covecreekproductions.com/ef-pasadena/", // needs updating
     },
   ],
   [
     {
       index: 1,
       size: "single",
-      imageUrl: "../../../images/portfolio/Portfolio_9.jpg",
+      imageUrl: "/images/portfolio/Portfolio_9.jpg",
       title: "Seattle Pacific",
       text: "Discover this picturesque campus situated in Seattle's Queen Anne district",
+      url: "https://tours.covecreekproductions.com/spu/",
     },
     {
       index: 2,
       size: "double",
-      imageUrl: "../../../images/portfolio/Portfolio_10.jpg",
+      imageUrl: "/images/portfolio/Portfolio_10.jpg",
       title: "World Tour",
       text: "Explore highlights of Cove Creek’s projects that have taken us around the globe",
+      url: "https://tours.covecreekproductions.com/world-tour/",
     },
   ],
 ];
@@ -141,6 +151,7 @@ function Portfolio() {
                 item={item}
                 index={index}
                 key={index}
+                url={item.url}
               />
             ))}
           </div>
@@ -154,6 +165,7 @@ function Portfolio() {
           animate={controlsFrames}
           transition={{ duration: 0.3 }}
         >
+          {/* convert this element to image tag */}
           <motion.div
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
@@ -166,7 +178,7 @@ function Portfolio() {
             transition={{ duration: 0.5 }}
             className={styles.frame__title}
           >
-            advanced cms
+            Advanced CMS
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
@@ -193,6 +205,7 @@ function Portfolio() {
           animate={controlsFrames}
           transition={{ duration: 0.5 }}
         >
+          {/* convert this element to image tag */}
           <motion.div
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
