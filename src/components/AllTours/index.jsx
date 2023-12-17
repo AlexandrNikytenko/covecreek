@@ -12,14 +12,11 @@ function AllTours() {
     <div className={styles.container}>
       <section className={styles.top_section}>
         <h1 className={styles.title}>American Battle Monuments Commission</h1>
-        <Link to="/case_study" className={styles.blue_button}>
-          View Case Study
-        </Link>
       </section>
 
       <section className={styles.image_container}>
         {cards.map((card, index) => (
-          <Row key={card.id} index={card.id} card={card}/>
+          <Row key={card.id} index={card.id} card={card} />
         ))}
       </section>
 

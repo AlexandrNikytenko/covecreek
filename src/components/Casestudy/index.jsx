@@ -86,14 +86,24 @@ function Casestudy() {
       </section>
 
       <section className={styles.honoring} ref={refHonoring}>
-        <motion.h2
-          className={styles.article_title}
+        <motion.h3
+          className={styles.small_heading}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsHonoring}
           transition={{ duration: 0.3 }}
         >
+          {" "}
           Honoring our Heros
-        </motion.h2>
+        </motion.h3>
+        <motion.p
+          initial={{ opacity: 0, y: 200 }}
+          animate={controlsHonoring}
+          transition={{ duration: 0.3 }}
+          className={styles.text_title}
+        >
+          Documenting America's History{" "}
+        </motion.p>
+
         <motion.p
           className={styles.article_text}
           initial={{ opacity: 0, y: 200 }}
@@ -353,13 +363,11 @@ function Casestudy() {
         >
           All virtual tours can be viewed on
           <Link to="/" className={styles.article_text__link}>
-            {" "}
             ABMC’s website
           </Link>
           . In addition to the digital tours, select images have been used in
           print applications, including the recent joint publication from the
           <Link to="/" className={styles.article_text__link}>
-            {" "}
             Smithsonian and ABMC
           </Link>
           .
@@ -367,12 +375,15 @@ function Casestudy() {
       </section>
 
       <section className={styles.completion} ref={refCompletion}>
-        <motion.div
-          className={styles.completion__image}
+        <motion.img
+          width={475}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsCompletion}
           transition={{ duration: 0.3 }}
-        ></motion.div>
+          src="images/Imbc_book.png"
+          alt="Book"
+          className={styles.completion__image}
+        />
         <motion.div
           className={styles.completion__phrase}
           initial={{ opacity: 0, y: 200 }}

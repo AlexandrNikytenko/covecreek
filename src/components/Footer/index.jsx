@@ -62,10 +62,6 @@ function Footer() {
           <Link to="/privacy" className={styles.policy__text}>
             Privacy Policy
           </Link>
-          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          <Link to="/" className={styles.policy__text}>
-            Terms of Use
-          </Link>
         </p>
       </div>
     </div>

@@ -68,15 +68,15 @@ function RobustComponent() {
         </div>
       </motion.div>
 
-      <div className={styles.content__desc}>
-        <motion.p
+      <div className={styles.content__desc} id="robust-cms">
+        <motion.h3
           className={styles.content__desc_title}
           initial={{ opacity: 0, x: 200 }}
           animate={controls}
           transition={{ duration: 0.4 }}
         >
-          robust content management
-        </motion.p>
+          Robust Content Management
+        </motion.h3>
         <motion.p
           className={styles.content__desc_description}
           initial={{ opacity: 0, x: 200 }}
@@ -150,14 +150,15 @@ function RobustComponent() {
             </p>
           </motion.div>
         </div>
-        <motion.div initial={{ opacity: 0, x: 200 }}
-      animate={controls}
-      transition={{ duration: 0.8 }}>
-
-        <Link to="/" className={styles.content__desc_bottom}>
-          Schedule a demo
-          <img src="/icons/Arrow_right_blue.svg" alt="Link" />
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, x: 200 }}
+          animate={controls}
+          transition={{ duration: 0.8 }}
+        >
+          <Link to="/contact" className={styles.content__desc_bottom}>
+            Schedule a demo
+            <img src="/icons/Arrow_right_blue.svg" alt="Link" />
+          </Link>
         </motion.div>
       </div>
     </section>

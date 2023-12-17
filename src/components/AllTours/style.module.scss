@@ -10,13 +10,8 @@
 .top_section {
   @include flex-column;
   align-items: center;
-  padding: 80px 0 80px;
   width: 100%;
   z-index: 2;
-
-  @media (min-width: $breakMobile) {
-    padding: 80px 0 160px;
-  }
 }
 
 .title {
@@ -47,12 +42,10 @@
   flex-wrap: wrap;
   z-index: 2;
   width: 100%;
-  padding: 80px 20px;
   gap: 20px;
-  background-color: $primary-white;
 
   @media (min-width: $breakMobile) {
-    padding: 160px 194px;
+    padding: 0 194px;
     gap: 28px;
   }
 }
@@ -72,6 +65,7 @@
   width: 100%;
   position: relative;
   margin: 0;
+  cursor: pointer;
 
   figcaption {
     transition: transform 0.3s linear;
@@ -102,6 +96,8 @@
   &__title {
     @include h-4;
     color: $primary-white;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px;
+
     position: absolute;
     margin-top: 40px;
 

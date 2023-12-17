@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+
 import styles from "./style.module.scss";
 import HomeCarousel from "../Carousel";
 import ContactComponent from "../ContactComponent";
@@ -73,10 +75,14 @@ function Home() {
     controlsPreference,
   ]);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId, offset = 20) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const sectionPos = section.offsetTop - offset;
+      window.scrollTo({
+        top: sectionPos,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -157,10 +163,13 @@ function Home() {
           <p className={styles.presentation__desc_title}>
             Make it yours in minutes with our advanced CMS
           </p>
-          <Link to="/whyus" className={styles.presentation__desc_bottom}>
+          <HashLink
+            to="/whyus#robust-cms"
+            className={styles.presentation__desc_bottom}
+          >
             Learn more
             <img src="/icons/Arrow_right_blue.svg" alt="Checked" />
-          </Link>
+          </HashLink>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: -1000 }}
@@ -180,125 +189,6 @@ function Home() {
           </div>
         </motion.div>
       </section>
-
-      {/* <section className={styles.preference} ref={refPreference}>
-        <div className={styles.preference__list}>
-          <motion.div
-            className={styles.preference__list_items}
-            initial={{ opacity: 0, y: 100 }}
-            animate={controlsPreference}
-            transition={{ duration: 0.3 }}
-          >
-            <p className={styles.preference__list_item}>
-              <img src="/icons/Checked_blue.svg" alt="Checked" />
-              Client-Controlled CMS
-            </p>
-            <p className={styles.preference__list_item}>
-              <img src="/icons/Checked_blue.svg" alt="Checked" />
-              Custom Routes
-            </p>
-            <p className={styles.preference__list_item}>
-              <img src="/icons/Checked_blue.svg" alt="Checked" />
-              Slate Implementation
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={controlsPreference}
-            transition={{ duration: 0.5 }}
-            className={styles.preference__list_items}
-          >
-            <p className={styles.preference__list_item}>
-              <img src="/icons/Checked_blue.svg" alt="Checked" />
-              Custom CTAs
-            </p>
-            <p className={styles.preference__list_item}>
-              <img src="/icons/Checked_blue.svg" alt="Checked" />
-              Branding Controls
-            </p>
-            <p className={styles.preference__list_item}>
-              <img src="/icons/Checked_blue.svg" alt="Checked" />
-              ADA Compliant (WCAG 2.2)
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={controlsPreference}
-            transition={{ duration: 0.7 }}
-            className={styles.preference__list_items}
-          >
-            <p className={styles.preference__list_item}>
-              <img src="/icons/Checked_blue.svg" alt="Checked" />
-              Analytics Reporting
-            </p>
-            <p className={styles.preference__list_item}>
-              <img src="/icons/Checked_blue.svg" alt="Checked" />
-              Digital Asset Management
-            </p>
-            <p className={styles.preference__list_item}>
-              <img src="/icons/Checked_blue.svg" alt="Checked" />
-              Self-Guided Routing
-            </p>
-          </motion.div>
-        </div>
-      </section> */}
-
-      {/* V2 */}
-      {/* <section className={styles.preference} ref={refPreference}>
-        <div className={styles.preference__list}>
-          <motion.div
-            className={styles.preference__list_items}
-            initial={{ opacity: 0, y: 100 }}
-            animate={controlsPreference}
-            transition={{ duration: 0.3 }}
-          >
-            <ul>
-              <li className={styles.preference__list_item}>
-                Client-Controlled CMS
-              </li>
-              <li className={styles.preference__list_item}>Custom Routes</li>
-              <li className={styles.preference__list_item}>
-                Slate Implementation
-              </li>
-            </ul>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={controlsPreference}
-            transition={{ duration: 0.5 }}
-            className={styles.preference__list_items}
-          >
-            <ul>
-              <li className={styles.preference__list_item}>Custom CTAs</li>
-              <li className={styles.preference__list_item}>
-                Branding Controls
-              </li>
-              <li className={styles.preference__list_item}>
-                ADA Compliant (WCAG 2.2)
-              </li>
-            </ul>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={controlsPreference}
-            transition={{ duration: 0.7 }}
-            className={styles.preference__list_items}
-          >
-            <ul>
-              <li className={styles.preference__list_item}>
-                Analytics Reporting
-              </li>
-              <li className={styles.preference__list_item}>
-                Digital Asset Management
-              </li>
-              <li className={styles.preference__list_item}>
-                Self-Guided Routing
-              </li>
-            </ul>
-          </motion.div>
-        </div>
-      </section> */}
-      {/* v3 */}
       <section className={styles.preference} ref={refPreference}>
         <div className={styles.preference__list}>
           <motion.div
