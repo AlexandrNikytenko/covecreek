@@ -34,7 +34,7 @@ function App() {
         <Route path="/case_study" element={<Casestudy />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/university" element={<University />} />
+        <Route path="/school-virtual-tours" element={<University />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/all_tours" element={<AllTours />} />
       </Routes>
