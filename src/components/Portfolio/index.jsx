@@ -205,7 +205,7 @@ function Portfolio() {
             transition={{ duration: 0.7 }}
             className={styles.frame__title}
           >
-            advanced cms
+            Case Study
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
@@ -213,7 +213,7 @@ function Portfolio() {
             transition={{ duration: 0.8 }}
             className={styles.frame__text}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            American Battle Monuments Comission
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 200 }}
