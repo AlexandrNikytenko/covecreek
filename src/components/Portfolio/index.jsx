@@ -165,21 +165,22 @@ function Portfolio() {
           animate={controlsFrames}
           transition={{ duration: 0.3 }}
         >
-          {/* convert this element to image tag */}
-          <motion.div
+          <motion.img
+            src="/images/portfolio/Portfolio_1.jpg"
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.4 }}
-            className={`${styles.frame__top} ${styles.frame__top_image_one}`}
-          ></motion.div>
-          <motion.p
+            className={styles.frame__top}
+          />
+
+          <motion.h3
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.5 }}
             className={styles.frame__title}
           >
             Advanced CMS
-          </motion.p>
+          </motion.h3>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
@@ -205,21 +206,22 @@ function Portfolio() {
           animate={controlsFrames}
           transition={{ duration: 0.5 }}
         >
-          {/* convert this element to image tag */}
-          <motion.div
+          <motion.img
+            src="/images/portfolio/Portfolio_4.jpg"
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.6 }}
-            className={`${styles.frame__top} ${styles.frame__top_image_two}`}
-          ></motion.div>
-          <motion.p
+            className={styles.frame__top}
+          />
+
+          <motion.h3
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.7 }}
             className={styles.frame__title}
           >
             Case Study
-          </motion.p>
+          </motion.h3>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}

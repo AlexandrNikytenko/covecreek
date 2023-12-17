@@ -6,6 +6,7 @@
   @include flex-column;
   position: relative;
   align-items: center;
+  overflow: hidden;
 }
 
 .wave_top {
@@ -174,17 +175,6 @@
   &__top {
     width: 100%;
     aspect-ratio: 14 / 9;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    &_image_one {
-      background-image: url("../../../public/images/portfolio/Portfolio_1.jpg");
-    }
-
-    &_image_two {
-      background-image: url("../../../public/images/portfolio/Portfolio_4.jpg");
-    }
 
     @media (min-width: $breakMobile) {
     }
