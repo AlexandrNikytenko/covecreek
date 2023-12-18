@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 import styles from "./style.module.scss";
-import HomeCarousel from "../Carousel";
+import { HomeCarousel } from "../Carousel";
 import ContactComponent from "../ContactComponent";
 
 import { motion, useAnimation } from "framer-motion";

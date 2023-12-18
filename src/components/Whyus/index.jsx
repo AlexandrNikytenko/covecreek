@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import HomeCarousel from "../Carousel";
+import { WhyUsCarousel } from "../Carousel";
 import ArticleComponent from "../ArticleComponent";
 import RobustComponent from "../RobustComponent";
 import UnmatchedComponent from "../UnmatchedComponent";
@@ -51,7 +51,7 @@ function Whyus() {
       <RobustComponent />
       <UnmatchedComponent link={true} />
       <section className={styles.carousel}>
-        <HomeCarousel />
+        <WhyUsCarousel />
       </section>
       <ArticleComponent data={ourComitten} background={"white"} />
       <div style={{ background: "white", width: "100%" }}>

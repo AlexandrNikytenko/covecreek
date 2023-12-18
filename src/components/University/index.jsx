@@ -2,7 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import HomeCarousel from "../Carousel";
+import { UniversityCarousel } from "../Carousel";
 import ArticleComponent from "../ArticleComponent";
 import RobustComponent from "../RobustComponent";
 import UnmatchedComponent from "../UnmatchedComponent";
@@ -46,7 +46,7 @@ function University() {
         </h1>
         <button className={styles.blue_button}>Schedule a Demo</button>
         <div className={styles.carousel_frame}>
-          <HomeCarousel />
+          <UniversityCarousel />
         </div>
         <button className={styles.transp_button}>See Our Portfolio</button>
       </section>
