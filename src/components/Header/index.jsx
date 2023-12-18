@@ -12,19 +12,19 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-
+      const currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+  
       if (currentScrollPos > prevScrollPos) {
         setIsHeaderVisible(false);
       } else {
         setIsHeaderVisible(true);
       }
-
+  
       setPrevScrollPos(currentScrollPos);
     };
-
+  
     window.addEventListener("scroll", handleScroll);
-
+  
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
