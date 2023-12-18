@@ -6,9 +6,11 @@
   @include flex-column;
   padding: 60px 20px 0;
   overflow: hidden;
+  text-align: center;
 
   @media (min-width: $breakMobile) {
     padding: 100px 196px 0px;
+    text-align: left;
   }
 }
 
@@ -51,7 +53,7 @@
 }
 
 .bottom {
-  background-color: rgba(255, 255, 255, 0.15);;
+  background-color: rgba(255, 255, 255, 0.15);
   height: 1px;
   width: calc(100vw - 40px);
   opacity: 0.5;
@@ -78,7 +80,7 @@
     font-weight: 400;
     line-height: 25px;
     text-decoration: none;
-  
+
     @media (min-width: $breakMobile) {
       font-size: 14px;
     }

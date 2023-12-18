@@ -131,22 +131,26 @@
 
   &__tours {
     margin: 40px 20px 0;
-    font-size: 11px;
-    line-height: 13px;
+    @include a-2;
+    text-transform: uppercase;
     color: $primary-blue;
+    margin-bottom: 20px;
+    letter-spacing: 0.8px;
+
     text-align: center;
     text-wrap: nowrap;
-    text-transform: uppercase;
 
     @media (min-width: $breakMobile) {
-      @include a-2;
+      margin-bottom: 30px;
+      letter-spacing: 1.2px;
+
       text-align: left;
       margin: 6px 0 0 294px;
     }
   }
 
   &__desc {
-    margin: 20px 30px 0px 20px;
+    margin: 0 20px;
     font-size: 32px;
     line-height: 40px;
     color: $primary-white;
@@ -212,8 +216,13 @@
     @include flex-column;
     margin-bottom: 40px;
 
+    text-align: center;
+    align-items: center;
+
     @media (min-width: $breakMobile) {
       padding: 95px 120px 0 195px;
+      align-items: unset;
+      text-align: unset;
     }
 
     &_top {
@@ -241,7 +250,7 @@
     }
 
     &_bottom {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       @include p-1;
       text-decoration: none;

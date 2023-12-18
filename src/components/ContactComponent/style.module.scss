@@ -32,9 +32,11 @@
 .get {
   @include flex-column;
   z-index: 2;
+  text-align: center;
 
   @media (min-width: $breakMobile) {
     padding-top: 38px;
+    text-align: left;
   }
 }
 

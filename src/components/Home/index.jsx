@@ -89,16 +89,19 @@ function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.wave_top}></div>
-      <VideoHomeComponent scrollToSection={scrollToSection} />
+      <VideoHomeComponent
+        scrollToSection={scrollToSection}
+        src="https://player.vimeo.com/progressive_redirect/playback/894337365/rendition/540p/file.mp4?loc=external&log_user=0&signature=ecbf82ccad517945a5ffbaf26c2dc44f07f1efcb544370d4c532e513a00867b4"
+      />
 
-      <section ref={refLeading} className={styles.leading} id="mySection">
+      <section ref={refLeading} className={styles.leading} id="homepage-hero">
         <motion.h3
           className={styles.leading__tours}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsLeading}
           transition={{ duration: 0.3 }}
         >
-          premium 360° tours
+          Premium 360° Tours
         </motion.h3>
         <motion.p
           initial={{ opacity: 0, y: 400 }}
