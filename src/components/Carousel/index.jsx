@@ -2,11 +2,12 @@ import { Splide, SplideTrack, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css/core";
 import styles from "./style.module.scss";
-import { Children } from "react";
+import { Link } from "react-router-dom";
 
-export function Slide({ src, altText, title, description, width }) {
+export function Slide({ src, altText, title, url }) {
   return (
     <SplideSlide>
+      {/* <Link to={url}> */}
       <div className={styles.slide}>
         <figure className={styles.image_container}>
           <img src={src} alt={altText} />
@@ -15,6 +16,7 @@ export function Slide({ src, altText, title, description, width }) {
           </figcaption>
         </figure>
       </div>
+      {/* </Link> */}
     </SplideSlide>
   );
 }
@@ -53,6 +55,7 @@ export function HomeCarousel() {
         src="images/slides/toledo.jpg"
         altText="Aerial view of the University of Toledo"
         title="The University of Toledo"
+        url="https://tours.covecreekproductions.com/toledo/"
       />
 
       <Slide
@@ -60,6 +63,7 @@ export function HomeCarousel() {
         src="images/slides/seattle.jpg"
         altText="Seattle University"
         title="Seattle University"
+        url="https://tours.covecreekproductions.com/seattle-university-cc/"
       />
 
       <Slide
@@ -67,6 +71,7 @@ export function HomeCarousel() {
         src="images/slides/indiana.jpg"
         altText="Indiana University"
         title="Indiana University"
+        url="https://tours.covecreekproductions.com/indiana-university/"
       />
 
       <Slide
@@ -74,6 +79,7 @@ export function HomeCarousel() {
         src="images/slides/asu.jpg"
         altText="Arizona State University"
         title="Arizona State University"
+        url="https://tours.covecreekproductions.com/asu/"
       />
 
       <Slide
@@ -81,6 +87,7 @@ export function HomeCarousel() {
         src="images/slides/normandy.jpg"
         altText="Normandy American Cemetery"
         title="Normandy American Cemetery"
+        url="https://tours.covecreekproductions.com/normandy/"
       />
 
       <Slide
@@ -88,6 +95,7 @@ export function HomeCarousel() {
         src="images/slides/worldtour.jpg"
         altText="World Tour"
         title="World Tour"
+        url="https://tours.covecreekproductions.com/world-tour/"
       />
 
       <Slide
@@ -95,6 +103,7 @@ export function HomeCarousel() {
         src="images/slides/principia.jpg"
         altText="Principia College"
         title="Principia College"
+        url="https://tours.covecreekproductions.com/principia/"
       />
     </Carousel>
   );
@@ -102,6 +111,7 @@ export function HomeCarousel() {
 
 export const WhyUsCarousel = HomeCarousel;
 
+// This will be different from the home carousel
 export function UniversityCarousel() {
   return (
     <Carousel>
@@ -110,6 +120,7 @@ export function UniversityCarousel() {
         src="images/slides/toledo.jpg"
         altText="Aerial view of the University of Toledo"
         title="The University of Toledo"
+        url="https://tours.covecreekproductions.com/toledo/"
       />
 
       <Slide
@@ -117,6 +128,7 @@ export function UniversityCarousel() {
         src="images/slides/seattle.jpg"
         altText="Seattle University"
         title="Seattle University"
+        url="https://tours.covecreekproductions.com/seattle-university-cc/"
       />
 
       <Slide
@@ -124,6 +136,7 @@ export function UniversityCarousel() {
         src="images/slides/indiana.jpg"
         altText="Indiana University"
         title="Indiana University"
+        url="https://tours.covecreekproductions.com/indiana-university/"
       />
 
       <Slide
@@ -131,6 +144,7 @@ export function UniversityCarousel() {
         src="images/slides/asu.jpg"
         altText="Arizona State University"
         title="Arizona State University"
+        url="https://tours.covecreekproductions.com/asu/"
       />
 
       <Slide
@@ -138,6 +152,7 @@ export function UniversityCarousel() {
         src="images/slides/normandy.jpg"
         altText="Normandy American Cemetery"
         title="Normandy American Cemetery"
+        url="https://tours.covecreekproductions.com/normandy/"
       />
 
       <Slide
@@ -145,6 +160,7 @@ export function UniversityCarousel() {
         src="images/slides/worldtour.jpg"
         altText="World Tour"
         title="World Tour"
+        url="https://tours.covecreekproductions.com/world-tour/"
       />
 
       <Slide
@@ -152,6 +168,7 @@ export function UniversityCarousel() {
         src="images/slides/principia.jpg"
         altText="Principia College"
         title="Principia College"
+        url="https://tours.covecreekproductions.com/principia/"
       />
     </Carousel>
   );
