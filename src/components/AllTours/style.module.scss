@@ -51,7 +51,11 @@
   grid-gap: 20px;
   box-sizing: border-box;
   padding: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
+
+  @media (min-width: $breakMobile) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 .image_row {
   display: flex;
