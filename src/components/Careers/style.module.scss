@@ -102,17 +102,32 @@
     @include h-3;
     color: $primary-white;
     margin-bottom: 12px;
+    text-align: center;
+
+    @media (min-width: $breakMobile) {
+      text-align: left;
+    }
   }
 
   &__text {
     @include p-1;
     color: $primary-white;
     margin-bottom: 40px;
+    text-align: center;
+
+    @media (min-width: $breakMobile) {
+      text-align: left;
+    }
   }
 
   &__list {
     @include flex-column;
     gap: 12px;
+    margin: auto;
+
+    @media (min-width: $breakMobile) {
+      margin: 0;
+    }
 
     &_item {
       @include p-1;

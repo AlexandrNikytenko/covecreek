@@ -43,7 +43,7 @@
 
 @media (min-width: $breakMobile) {
   .title {
-    font-size: 62px;
+    @include h-1;
     line-height: 1em;
     font-weight: 700;
     letter-spacing: -0.6px;

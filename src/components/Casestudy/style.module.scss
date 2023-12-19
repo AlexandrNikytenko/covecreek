@@ -40,6 +40,7 @@
     @include flex-column;
     position: relative;
     padding-left: 20px;
+    margin: 90px 0 30px;
 
     @media (min-width: $breakMobile) {
       right: 340px;
@@ -47,23 +48,15 @@
     }
 
     &_name {
-      @include a-2;
-      color: $primary-blue;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      margin: 90px 0 30px;
-
-      @media (min-width: $breakMobile) {
-        right: 340px;
-      }
     }
 
     &_title {
-      text-align: left;
+      text-align: center;
       @include h-2;
       color: $primary-white;
 
       @media (min-width: $breakMobile) {
+        text-align: left;
         @include t-2;
         width: 854px;
       }
@@ -102,9 +95,11 @@
   padding: 60px 20px 80px;
   border-bottom: 1px solid $primary-white;
   border-top: 1px solid $primary-white;
+  text-align: center;
 
   @media (min-width: $breakMobile) {
     padding: 120px 404px 80px;
+    text-align: left;
   }
 }
 
@@ -139,6 +134,11 @@
 
   @media (min-width: $breakMobile) {
     width: 50%;
+  }
+
+  a {
+    text-decoration: none;
+    color: $primary-black;
   }
 
   &__top {
@@ -187,9 +187,11 @@
   padding: 60px 20px 40px;
   border-bottom: 1px solid $primary-white;
   border-top: 1px solid $primary-white;
+  text-align: center;
 
   @media (min-width: $breakMobile) {
     padding: 120px 404px 0px;
+    text-align: left;
   }
 
   &__title {

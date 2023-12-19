@@ -1,0 +1,6 @@
+@import "variables.scss";
+.desktop_only {
+  @media (max-width: $breakMobile) {
+    display: none !important;
+  }
+}

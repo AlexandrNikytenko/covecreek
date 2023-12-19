@@ -17,6 +17,7 @@ import {
 } from "../InputForm";
 
 import styles from "./style.module.scss";
+import SmallHeading, { SmallHeadingMotion } from "../SmallHeading";
 
 function Careers() {
   const controls = useAnimation();
@@ -96,14 +97,13 @@ function Careers() {
           </InputForm>
         </div>
         <div className={styles.desc} ref={refBottom}>
-          <motion.p
-            className={styles.desc__head}
+          <SmallHeadingMotion
             initial={{ opacity: 0, y: 200 }}
             animate={controlsBottom}
             transition={{ duration: 0.3 }}
           >
-            careers
-          </motion.p>
+            Careers
+          </SmallHeadingMotion>
           <motion.p
             className={styles.desc__title}
             initial={{ opacity: 0, y: 200 }}

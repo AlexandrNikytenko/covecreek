@@ -7,16 +7,16 @@ import { Link } from "react-router-dom";
 export function Slide({ src, altText, title, url }) {
   return (
     <SplideSlide>
-      {/* <Link to={url}> */}
-      <div className={styles.slide}>
-        <figure className={styles.image_container}>
-          <img src={src} alt={altText} />
-          <figcaption>
-            <h2 className={styles.title}>{title}</h2>
-          </figcaption>
-        </figure>
-      </div>
-      {/* </Link> */}
+      <Link to={url} target="_blank">
+        <div className={styles.slide}>
+          <figure className={styles.image_container}>
+            <img src={src} alt={altText} />
+            <figcaption>
+              <h2 className={styles.title}>{title}</h2>
+            </figcaption>
+          </figure>
+        </div>
+      </Link>
     </SplideSlide>
   );
 }

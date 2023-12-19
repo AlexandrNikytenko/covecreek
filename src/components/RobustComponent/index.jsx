@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { SmallHeadingMotion } from "../SmallHeading";
 
 function RobustComponent() {
   const controls = useAnimation();
@@ -69,14 +70,13 @@ function RobustComponent() {
       </motion.div>
 
       <div className={styles.content__desc} id="robust-cms">
-        <motion.h3
-          className={styles.content__desc_title}
+        <SmallHeadingMotion
           initial={{ opacity: 0, x: 200 }}
           animate={controls}
           transition={{ duration: 0.4 }}
         >
           Robust Content Management
-        </motion.h3>
+        </SmallHeadingMotion>
         <motion.p
           className={styles.content__desc_description}
           initial={{ opacity: 0, x: 200 }}

@@ -16,6 +16,7 @@ import {
 } from "../InputForm";
 
 import styles from "./style.module.scss";
+import { SmallHeadingMotion } from "../SmallHeading";
 
 function Contact() {
   const controls = useAnimation();
@@ -44,14 +45,14 @@ function Contact() {
       <div className={styles.wave_top}></div>
 
       <section className={styles.form} ref={ref}>
-        <motion.p
-          className={styles.tip}
+        <SmallHeadingMotion
           initial={{ opacity: 0, y: 200 }}
           animate={controls}
           transition={{ duration: 0.3 }}
+          className={styles.tip}
         >
           Get in touch
-        </motion.p>
+        </SmallHeadingMotion>
         <motion.h1
           className={styles.form__title}
           initial={{ opacity: 0, y: 200 }}
@@ -84,7 +85,7 @@ function Contact() {
           />
           <TextareaInput
             name="message"
-            placeholder="Tell us about your project"
+            placeholder="Tell us about your project..."
             required
             rows={4}
           />
@@ -94,14 +95,14 @@ function Contact() {
       </section>
 
       <div className={styles.bottom} ref={refBottom}>
-        <motion.p
-          className={styles.tip}
+        <SmallHeadingMotion
           initial={{ opacity: 0, y: 200 }}
           animate={controlsBottom}
           transition={{ duration: 0.3 }}
+          className={styles.tip}
         >
           Our commitment to you
-        </motion.p>
+        </SmallHeadingMotion>
         <motion.h2
           className={styles.title}
           initial={{ opacity: 0, y: 200 }}

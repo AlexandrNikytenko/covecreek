@@ -9,6 +9,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import VideoHomeComponent from "./VideoHomeComponent";
+import SmallHeading from "../SmallHeading";
 
 function Home() {
   const controlsUnmached = useAnimation();
@@ -95,14 +96,9 @@ function Home() {
       />
 
       <section ref={refLeading} className={styles.leading} id="homepage-hero">
-        <motion.h3
-          className={styles.leading__tours}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsLeading}
-          transition={{ duration: 0.3 }}
-        >
+        <SmallHeading className={styles.leading__tours}>
           Premium 360° Tours
-        </motion.h3>
+        </SmallHeading>
         <motion.p
           initial={{ opacity: 0, y: 400 }}
           animate={controlsLeading}
@@ -135,7 +131,7 @@ function Home() {
           animate={controlsUnmached}
           transition={{ duration: 1 }}
         >
-          <h3 className={styles.presentation__desc_top}>Unmatched Quality</h3>
+          <SmallHeading>Unmatched Quality</SmallHeading>
           <p className={styles.presentation__desc_title}>
             Attention to detail like you’ve never seen before
           </p>
@@ -162,7 +158,7 @@ function Home() {
           animate={controlsAdvanced}
           transition={{ duration: 1 }}
         >
-          <h3 className={styles.presentation__desc_top}>Advanced CMS</h3>
+          <SmallHeading>Advanced CMS</SmallHeading>
           <p className={styles.presentation__desc_title}>
             Make it yours in minutes with our advanced CMS
           </p>

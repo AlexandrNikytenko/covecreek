@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import ContactComponent from "../ContactComponent";
 import styles from "./style.module.scss";
 import CardPortfolio from "./CardPortfolio";
+import { SmallHeadingMotion } from "../SmallHeading";
 
 const data = [
   [
@@ -172,15 +173,14 @@ function Portfolio() {
             transition={{ duration: 0.4 }}
             className={styles.frame__top}
           />
-
-          <motion.h3
+          <SmallHeadingMotion
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.5 }}
             className={styles.frame__title}
           >
             Advanced CMS
-          </motion.h3>
+          </SmallHeadingMotion>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
@@ -201,7 +201,7 @@ function Portfolio() {
         </motion.div>
 
         <motion.div
-          className={styles.frame}
+          className={`${styles.frame} ${styles.desktop_only}`}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsFrames}
           transition={{ duration: 0.5 }}
@@ -214,14 +214,14 @@ function Portfolio() {
             className={styles.frame__top}
           />
 
-          <motion.h3
+          <SmallHeadingMotion
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.7 }}
             className={styles.frame__title}
           >
             Case Study
-          </motion.h3>
+          </SmallHeadingMotion>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}

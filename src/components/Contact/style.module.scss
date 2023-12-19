@@ -32,7 +32,7 @@
   align-items: center;
   z-index: 1;
   padding: 20px;
-  margin: 80px 20px;
+  margin: 80px 20px 60px;
   gap: 20px;
   padding: 20px 10px;
   border-radius: 20px;
@@ -74,7 +74,7 @@
 .title {
   @include h-4;
   position: relative;
-  margin: 60px 20px 0px;
+  margin: 0px 20px 0px;
   text-align: center;
   color: $primary-white;
 
@@ -85,8 +85,7 @@
 }
 
 .tip {
-  @include a-2;
-  text-transform: uppercase;
+  margin: 0;
 }
 
 .bottom {

@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { SmallHeadingMotion } from "../SmallHeading";
 
 function ArticleComponent({ data, background, link }) {
   const controls = useAnimation();
@@ -18,14 +19,13 @@ function ArticleComponent({ data, background, link }) {
   }, [inView, controls]);
   return (
     <section className={styles.article} style={{ background }} ref={ref}>
-      <motion.p
-        className={styles.article__title}
+      <SmallHeadingMotion
         initial={{ opacity: 0, y: 200 }}
         animate={controls}
         transition={{ duration: 0.3 }}
       >
         {data.label}
-      </motion.p>
+      </SmallHeadingMotion>
       <motion.p
         className={styles.article__desc}
         initial={{ opacity: 0, y: 200 }}

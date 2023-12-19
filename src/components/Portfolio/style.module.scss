@@ -1,6 +1,7 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 @import "../../styles/colors.scss";
+@import "../../styles/utils.scss";
 
 .container {
   @include flex-column;
@@ -46,7 +47,7 @@
   position: relative;
   width: 100%;
   gap: 28px;
-  padding: 0 0 80px;
+  padding: 0 0 40px;
 
   @media (min-width: $breakMobile) {
     max-width: 1148px;
@@ -150,7 +151,7 @@
 .frames {
   @include flex-column;
   width: 100%;
-  padding: 80px 20px;
+  padding: 20px 20px;
   gap: 28px;
   background-color: $primary-white;
 
@@ -161,12 +162,14 @@
 }
 
 .frame {
-  @include flex-column;
   overflow: hidden;
-  align-items: center;
   width: 100%;
   border-radius: 20px;
   background-color: $middle-grey;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  justify-items: center;
+  align-items: center;
 
   @media (min-width: $breakMobile) {
     width: 50%;
@@ -181,18 +184,22 @@
   }
 
   &__title {
-    @include a-2;
-    color: $primary-blue;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
-    margin-top: 40px;
+    margin-block: 1rem;
   }
 
   &__text {
     @include h-2;
     letter-spacing: -0.8px;
-    margin: 30px 40px;
+    line-height: 1em;
+    margin: 0;
     text-align: center;
+    margin: 0.25rem 0.75rem 1rem;
+    align-self: self-start;
+
+    @media (min-width: $breakMobile) {
+      @include h-3;
+      // margin: 30px 40px;
+    }
   }
 
   &__link {
