@@ -143,12 +143,7 @@ function Header() {
                 info@covecreekproductions.com
               </a>
               <div className={styles.contacts__devider}></div>
-              <a
-                className={styles.contacts__link}
-                href="https://www.google.com/maps/search/?api=1&query=2390+E+Camelback+Rd%2C+Phoenix%2C+AZ+85016"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a className={styles.contacts__link}>
                 2390 E Camelback Rd, Phoenix, AZ 85016
               </a>
             </div>
