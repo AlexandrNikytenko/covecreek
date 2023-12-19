@@ -107,13 +107,13 @@ function Header() {
                 Portfolio
               </Link>
               <Link
-                to="/whyus"
+                to="/why-us"
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Why Us
               </Link>
               <Link
-                to="/case_study"
+                to="/case-study"
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Case Study

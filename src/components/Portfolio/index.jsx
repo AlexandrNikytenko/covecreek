@@ -5,7 +5,6 @@ import { useInView } from "react-intersection-observer";
 import ContactComponent from "../ContactComponent";
 import styles from "./style.module.scss";
 import CardPortfolio from "./CardPortfolio";
-import { SmallHeadingMotion } from "../SmallHeading";
 
 const data = [
   [
@@ -129,7 +128,7 @@ function Portfolio() {
 
   return (
     <div className={styles.container}>
-      <motion.p
+      <motion.h1
         className={styles.title}
         ref={refTitle}
         initial={{ opacity: 0, y: 200 }}
@@ -139,7 +138,7 @@ function Portfolio() {
         We combine&nbsp;<span>beautiful imagery</span>&nbsp;and&nbsp;
         <span>innovative design</span>&nbsp;to create a premium virtual tour
         experience
-      </motion.p>
+      </motion.h1>
       <section className={styles.grid_container}>
         <div className={styles.wave_top}></div>
         {data.map((row, index) => (
@@ -173,14 +172,14 @@ function Portfolio() {
             transition={{ duration: 0.4 }}
             className={styles.frame__top}
           />
-          <SmallHeadingMotion
+          <motion.h3
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.5 }}
             className={styles.frame__title}
           >
             Advanced CMS
-          </SmallHeadingMotion>
+          </motion.h3>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
@@ -201,7 +200,7 @@ function Portfolio() {
         </motion.div>
 
         <motion.div
-          className={`${styles.frame} ${styles.desktop_only}`}
+          className={`${styles.desktop_only} ${styles.frame}`}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsFrames}
           transition={{ duration: 0.5 }}
@@ -214,14 +213,14 @@ function Portfolio() {
             className={styles.frame__top}
           />
 
-          <SmallHeadingMotion
+          <motion.h3
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.7 }}
             className={styles.frame__title}
           >
             Case Study
-          </SmallHeadingMotion>
+          </motion.h3>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}

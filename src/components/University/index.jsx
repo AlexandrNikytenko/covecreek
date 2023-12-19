@@ -10,6 +10,7 @@ import CaseComponent from "../CaseComponent";
 import ContactComponent from "../ContactComponent";
 
 import styles from "./style.module.scss";
+import { Link } from "react-router-dom";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -44,7 +45,9 @@ function University() {
         <h1 className={styles.title}>
           360° virtual tour experiences trusted by leading universities
         </h1>
-        <button className={styles.blue_button}>Schedule a Demo</button>
+        <Link to={"/contact"} className={styles.blue_button}>
+          Schedule a Demo
+        </Link>
         <div className={styles.carousel_frame}>
           <UniversityCarousel />
         </div>
@@ -63,7 +66,10 @@ function University() {
           <p className={styles.image_premium__title}>
             Premium quality, intuitive control
           </p>
-          <button className={styles.blue_button}>Schedule a Demo</button>
+
+          <Link to={"/contact"} className={styles.blue_button}>
+            Schedule a Demo
+          </Link>
         </motion.div>
       </section>
       <section style={{ background: "white", width: "100%" }}>

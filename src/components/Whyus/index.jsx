@@ -25,7 +25,7 @@ const ourComitten = {
 };
 
 const case_text =
-  "Explore 30 historical tours, from the shores of Normandy to the Pacific Theater Operations.  This ambitious project covered 11 countries and over 150 shooting days.F";
+  "Explore 30 historical tours, from the shores of Normandy to the Pacific Theater Operations.  This ambitious project covered 11 countries and over 150 shooting days.";
 
 function Whyus() {
   const controlsTeam = useAnimation();
@@ -64,14 +64,14 @@ function Whyus() {
             <SliderWhy />
           </motion.div>
           <div className={styles.team__desc}>
-            <motion.p
+            <motion.h3
               className={styles.team__desc_title}
               initial={{ opacity: 0, x: 200 }}
               animate={controlsTeam}
               transition={{ duration: 0.4 }}
             >
               Our team
-            </motion.p>
+            </motion.h3>
             <motion.p
               className={styles.team__desc_description}
               initial={{ opacity: 0, x: 200 }}
@@ -95,17 +95,19 @@ function Whyus() {
               initial={{ opacity: 0, x: 200 }}
               animate={controlsTeam}
               transition={{ duration: 0.7 }}
+              className={styles.team__desc_bottom}
             >
-              <Link to="/careers" className={styles.team__desc_bottom}>
-                View careers
-                <img src="/icons/Arrow_right_blue.svg" alt="Link" />
-              </Link>
+              <Link to="/careers">View careers</Link>
             </motion.div>
           </div>
         </section>
       </div>
 
-      <CaseComponent text={case_text} />
+      <CaseComponent
+        text={
+          "Explore 30 historical tours, from the shores of Normandy to the Pacific Theater Operations.  This ambitious project covered 11 countries and over 150 shooting days."
+        }
+      />
       <ContactComponent />
     </div>
   );

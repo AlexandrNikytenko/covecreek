@@ -2,6 +2,7 @@ import styles from "./style.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 
 function CaseComponent({ text }) {
   const controls = useAnimation();
@@ -19,22 +20,22 @@ function CaseComponent({ text }) {
   return (
     <section className={styles.case} ref={ref}>
       <div className={styles.case__desc}>
-        <motion.p
+        <motion.h3
           className={styles.case__desc_title}
           initial={{ opacity: 0, x: -200 }}
           animate={controls}
           transition={{ duration: 0.4 }}
         >
           Case study
-        </motion.p>
-        <motion.h2
+        </motion.h3>
+        <motion.h4
           className={styles.case__desc_description}
           initial={{ opacity: 0, x: -200 }}
           animate={controls}
           transition={{ duration: 0.5 }}
         >
           The American Battle Monuments Commission
-        </motion.h2>
+        </motion.h4>
         <motion.p
           className={styles.case__desc_text}
           initial={{ opacity: 0, x: -200 }}
@@ -50,7 +51,13 @@ function CaseComponent({ text }) {
         animate={controls}
         transition={{ duration: 0.3 }}
       >
-        <button className={styles.case__image_button}>View Case Study</button>
+        <Link
+          to="/case-study"
+          as="button"
+          className={styles.case__image_button}
+        >
+          View Case Study
+        </Link>
       </motion.div>
     </section>
   );

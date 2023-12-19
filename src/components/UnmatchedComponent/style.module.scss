@@ -7,8 +7,7 @@
   background-color: $primary-white;
   justify-content: space-between;
   width: 100%;
-  padding: 60px 20px;
-  gap: 30px;
+  padding: 0 1rem 3rem;
   z-index: 1;
 
   @media (min-width: $breakMobile) {
@@ -20,8 +19,6 @@
   &__title {
     @include a-2;
     min-width: 266px;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
   }
 
   &__content {

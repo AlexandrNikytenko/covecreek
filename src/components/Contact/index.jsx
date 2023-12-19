@@ -1,14 +1,10 @@
-import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import axios from "axios";
 
-import { BounceLoader } from "react-spinners";
 import {
   InputForm,
   TextInput,
-  FileInput,
   SubmitButton,
   TextareaInput,
   SentMessage,
@@ -16,7 +12,6 @@ import {
 } from "../InputForm";
 
 import styles from "./style.module.scss";
-import { SmallHeadingMotion } from "../SmallHeading";
 
 function Contact() {
   const controls = useAnimation();
@@ -45,14 +40,14 @@ function Contact() {
       <div className={styles.wave_top}></div>
 
       <section className={styles.form} ref={ref}>
-        <SmallHeadingMotion
+        <motion.h3
+          className={styles.form__small_title}
           initial={{ opacity: 0, y: 200 }}
           animate={controls}
           transition={{ duration: 0.3 }}
-          className={styles.tip}
         >
           Get in touch
-        </SmallHeadingMotion>
+        </motion.h3>
         <motion.h1
           className={styles.form__title}
           initial={{ opacity: 0, y: 200 }}
@@ -95,15 +90,15 @@ function Contact() {
       </section>
 
       <div className={styles.bottom} ref={refBottom}>
-        <SmallHeadingMotion
+        <motion.h3
+          className={styles.tip}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsBottom}
           transition={{ duration: 0.3 }}
-          className={styles.tip}
         >
           Our commitment to you
-        </SmallHeadingMotion>
-        <motion.h2
+        </motion.h3>
+        <motion.h4
           className={styles.title}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsBottom}
@@ -112,7 +107,7 @@ function Contact() {
           We are committed to delivering the very best virtual tours. While we
           are proud of what we have accomplished, we are constantly striving to
           raise the bar.
-        </motion.h2>
+        </motion.h4>
       </div>
     </div>
   );

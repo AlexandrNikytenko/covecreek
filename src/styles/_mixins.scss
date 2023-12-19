@@ -67,6 +67,10 @@
   line-height: 35px;
   font-weight: 700;
   letter-spacing: -0.6px;
+  text-align: center;
+  @media (min-width: $breakMobile) {
+    text-align: left;
+  }
 }
 @mixin h-4 {
   font-size: 24px;
@@ -84,6 +88,11 @@
   line-height: 26px;
   font-weight: 500;
   color: $dark-grey;
+
+  text-align: center;
+  @media (min-width: $breakMobile) {
+    text-align: left;
+  }
 }
 @mixin p-2 {
   font-size: 16px;
@@ -103,8 +112,42 @@
   font-weight: 600;
   letter-spacing: 1.3px;
   color: $primary-blue;
+  text-transform: uppercase;
+  margin-block: 2rem;
+
+  text-align: center;
+  @media (min-width: $breakMobile) {
+    text-align: left;
+  }
 }
 
 @mixin text-shadow {
   text-shadow: #000000b0 0 2px 5px;
+}
+
+@mixin list-container {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    @media (min-width: $breakMobile) {
+      display: contents;
+    }
+  }
+
+  li {
+    @include h-5;
+    background: url("../../public/icons/Checked_blue.svg") no-repeat left center;
+    padding-left: 30px;
+    width: fit-content;
+  }
+}
+
+@mixin arrow-link {
+  @include p-1;
+  text-decoration: none;
+  color: $primary-blue;
+  padding-right: 30px;
+  background: url("../../public/icons/Arrow_right_blue.svg") no-repeat right
+    center;
 }

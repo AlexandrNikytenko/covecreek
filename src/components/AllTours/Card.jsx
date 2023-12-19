@@ -96,7 +96,7 @@ function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
         <img src={card.imageURL} alt={card.name} className={styles.image} />
         <figcaption>
           <Link className={styles.link} to={card.link} target="_blank">
-            <p className={styles.image__title}>{card.name}</p>
+            <h3 className={styles.image__title}>{card.name}</h3>
           </Link>
         </figcaption>
       </motion.div>

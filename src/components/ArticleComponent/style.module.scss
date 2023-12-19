@@ -8,7 +8,9 @@
   z-index: 1;
   width: 100%;
   background: $middle-grey;
-  padding: 60px 20px 40px;
+
+  padding: 0 1rem;
+  // padding: 60px 20px 40px;
 
   @media (min-width: $breakMobile) {
     padding: 160px 200px 160px;
@@ -16,13 +18,6 @@
 
   &__title {
     @include a-2;
-    text-transform: uppercase;
-    margin-bottom: 35px;
-    align-self: baseline;
-
-    @media (min-width: $breakMobile) {
-      align-self: center;
-    }
   }
 
   &__desc {
@@ -32,6 +27,7 @@
 
     @media (min-width: $breakMobile) {
       @include h-2;
+      text-align: center;
     }
   }
 

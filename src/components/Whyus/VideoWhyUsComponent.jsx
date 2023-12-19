@@ -1,4 +1,5 @@
 import styles from "./style.module.scss";
+import { Link } from "react-router-dom";
 
 function VideoWhyUsComponent() {
   return (
@@ -18,7 +19,10 @@ function VideoWhyUsComponent() {
           Your browser does not support the video tag.
         </video>
       </div>
-      <button className={styles.video_box__button}>Schedule a Demo</button>
+
+      <Link to="/contact" className={styles.video_box__button}>
+        Schedule a Demo
+      </Link>
     </section>
   );
 }

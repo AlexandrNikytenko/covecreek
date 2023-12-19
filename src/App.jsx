@@ -30,13 +30,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/whyus" element={<Whyus />} />
-        <Route path="/case_study" element={<Casestudy />} />
+        <Route path="/why-us" element={<Whyus />} />
+        <Route path="/case-study" element={<Casestudy />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/school-virtual-tours" element={<University />} />
         <Route path="/privacy" element={<Privacy />} />
-        <Route path="/all_tours" element={<AllTours />} />
+        <Route path="/all-tours" element={<AllTours />} />
       </Routes>
       <Footer />
       <SpeedInsights />

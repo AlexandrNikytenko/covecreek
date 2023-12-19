@@ -32,7 +32,9 @@
   align-items: center;
   z-index: 1;
   padding: 20px;
-  margin: 80px 20px 60px;
+  // margin: 80px 20px 60px;
+  margin-block: 1rem 2rem;
+  margin-inline: 2rem;
   gap: 20px;
   padding: 20px 10px;
   border-radius: 20px;
@@ -43,6 +45,11 @@
     height: 724px;
     padding: 48px 28px;
     margin: 100px 0 160px;
+  }
+
+  &__small_title {
+    @include a-2;
+    margin-block: 1rem 0.5rem;
   }
 
   &__title {
@@ -85,7 +92,7 @@
 }
 
 .tip {
-  margin: 0;
+  @include a-2;
 }
 
 .bottom {

@@ -8,6 +8,16 @@
   align-items: center;
 }
 
+@mixin container-800 {
+  width: 100%;
+
+  @media (min-width: $breakMobile) {
+    margin-inline: auto;
+    width: 80%;
+    max-width: 800px;
+  }
+}
+
 .head {
   @include flex-column;
   align-items: center;
@@ -48,6 +58,11 @@
     }
 
     &_name {
+      @include a-2;
+
+      @media (min-width: $breakMobile) {
+        right: 340px;
+      }
     }
 
     &_title {
@@ -92,13 +107,21 @@
   @include flex-column;
   background-color: $primary-white;
   width: 100%;
-  padding: 60px 20px 80px;
+
+  &__container {
+    @include container-800;
+  }
+
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  box-sizing: border-box;
+
   border-bottom: 1px solid $primary-white;
   border-top: 1px solid $primary-white;
   text-align: center;
 
   @media (min-width: $breakMobile) {
-    padding: 120px 404px 80px;
+    // padding: 120px 404px 80px;
     text-align: left;
   }
 }
@@ -107,7 +130,6 @@
   @include flex-column;
   width: 100%;
   background-color: $primary-white;
-  gap: 28px;
   border-bottom: 1px solid $primary-white;
   border-top: 1px solid $primary-white;
 }
@@ -115,12 +137,15 @@
 .frames {
   @include flex-column;
   width: 100%;
-  padding: 0px 20px;
+  max-width: 1000px;
+  margin-inline: auto;
+
+  padding-inline: 1rem;
+  padding-block: 1rem;
   gap: 28px;
 
   @media (min-width: $breakMobile) {
     flex-direction: row;
-    padding: 0px 294px;
   }
 }
 
@@ -190,8 +215,10 @@
   text-align: center;
 
   @media (min-width: $breakMobile) {
-    padding: 120px 404px 0px;
     text-align: left;
+  }
+  &__container {
+    @include container-800;
   }
 
   &__title {
@@ -233,6 +260,7 @@
 
       &__bottom {
         @include a-2;
+        margin: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -254,32 +282,35 @@
   @include flex-column;
   background-color: $primary-white;
   width: 100%;
-  padding: 60px 20px 40px;
+  // padding: 60px 20px 40px;
+  padding-inline: 1rem;
   border-bottom: 1px solid $primary-white;
   border-top: 1px solid $primary-white;
 
-  @media (min-width: $breakMobile) {
-    padding: 40px 404px;
-  }
-
   &__top {
+    max-width: 800px;
+    margin-inline: auto;
+    text-align: justify;
     @include flex-column;
-    gap: 26px;
 
     @media (min-width: $breakMobile) {
-      flex-direction: row;
+      display: block;
     }
 
-    &_image {
-      height: 482px;
+    &__image {
+      max-height: 380px;
+      object-fit: cover;
+      object-position: center;
       border-radius: 16px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: url("../../../public/images/Rectangle 142.png");
+      margin-inline: auto;
+      margin-block: 1rem;
 
       @media (min-width: $breakMobile) {
-        min-width: 364px;
+        height: fit-content;
+        max-height: 500px;
+        height: 20vh;
+        float: left;
+        margin-inline: 2rem;
       }
     }
   }
@@ -297,6 +328,10 @@
     padding: 0px 404px 120px;
   }
 
+  &__container {
+    @include container-800;
+  }
+
   &__image {
     border-radius: 16px;
     aspect-ratio: 3 / 2;
@@ -304,6 +339,7 @@
     object-fit: contain;
     margin-inline: auto;
     max-width: 100%;
+    display: block;
   }
 
   &__phrase {
@@ -337,6 +373,14 @@
   }
 }
 
+.article_small_title {
+  @include a-2;
+  text-align: center;
+  @media (min-width: $breakMobile) {
+    text-align: left;
+  }
+}
+
 .article_title {
   @include h-3;
   margin-bottom: 34px;
@@ -350,6 +394,7 @@
 
 .article_text {
   @include p-1;
+  margin-block-end: 1rem;
 
   &__link {
     color: $primary-black;
@@ -357,10 +402,12 @@
 }
 
 .link {
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
-  @include p-1;
-  text-decoration: none;
-  color: $primary-blue;
+  text-align: center;
+  @media (min-width: $breakMobile) {
+    text-align: left;
+  }
+
+  a {
+    @include arrow-link;
+  }
 }

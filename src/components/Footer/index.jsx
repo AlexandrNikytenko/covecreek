@@ -1,6 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import SmallHeading from "../SmallHeading";
-
 import styles from "./style.module.scss";
 
 function Footer() {
@@ -15,7 +13,7 @@ function Footer() {
       {!isPrivacy && <div className={styles.bottom}></div>}
       <div className={styles.contacts}>
         <div className={styles.contact}>
-          <SmallHeading>Get in touch</SmallHeading>
+          <h3 className={styles.title}>Get in touch</h3>
 
           <a className={styles.link} href="tel:+12137708211">
             213-770-8211
@@ -29,21 +27,20 @@ function Footer() {
           <a className={styles.link}>2390 E Camelback Rd, Phoenix, AZ 85016</a>
         </div>
         <div className={styles.contact}>
-          <SmallHeading>Our Work</SmallHeading>
+          <h3 className={styles.title}>Our Work</h3>
 
           <Link to="/portfolio" className={styles.link}>
             Portfolio
           </Link>
-          <Link to="/case_study" className={styles.link}>
+          <Link to="/case-study" className={styles.link}>
             Case Study
           </Link>
-          <Link to="/whyus" className={styles.link}>
+          <Link to="/why-us" className={styles.link}>
             Why Us
           </Link>
         </div>
         <div className={styles.contact}>
-          <SmallHeading>More</SmallHeading>
-
+          <h3 className={styles.title}>More</h3>
           <Link to="/careers" className={styles.link}>
             Careers
           </Link>

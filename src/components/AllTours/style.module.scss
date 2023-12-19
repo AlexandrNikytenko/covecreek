@@ -29,6 +29,7 @@
   @media (min-width: $breakMobile) {
     @include h-1;
     margin: 0 200px 40px;
+    text-align: center;
   }
 }
 
@@ -42,27 +43,22 @@
 }
 
 .image_container {
-  display: flex;
-  box-sizing: border-box;
-  flex-wrap: wrap;
+  display: grid;
+  position: relative;
   z-index: 2;
   width: 100%;
-  gap: 20px;
+  max-width: 1400px;
+  grid-gap: 20px;
+  box-sizing: border-box;
   padding: 20px;
-
-  @media (min-width: $breakMobile) {
-    padding: 0 194px;
-    gap: 28px;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-
 .image_row {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 
   @media (min-width: $breakMobile) {
-    width: calc(100% / 3 - 19px);
     flex-wrap: nowrap;
   }
 }
@@ -104,10 +100,12 @@
     @include text-shadow;
     color: $primary-white;
     position: absolute;
-    margin-top: 40px;
-
+    margin-top: 2rem;
+    text-align: center !important;
+    width: 100%;
     @media (min-width: $breakMobile) {
       @include h-3;
+      width: 100%;
     }
   }
 }

@@ -17,7 +17,8 @@
 
   &__desc {
     @include flex-column;
-    padding: 60px 20px;
+
+    padding-block: 0 1rem;
 
     @media (min-width: $breakMobile) {
       padding: 60px 44px 0 0px;
@@ -25,14 +26,11 @@
 
     &_title {
       @include a-2;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
     }
 
     &_description {
       @include h-3;
       text-align: center;
-      margin-top: 30px;
 
       @media (min-width: $breakMobile) {
         text-align: left;

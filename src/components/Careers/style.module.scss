@@ -33,6 +33,7 @@
   @media (min-width: $breakMobile) {
     @include h-1;
     margin: 80px 312px;
+    text-align: center;
   }
 }
 
@@ -122,30 +123,37 @@
 
   &__list {
     @include flex-column;
-    gap: 12px;
     margin: auto;
 
     @media (min-width: $breakMobile) {
       margin: 0;
     }
 
-    &_item {
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
       @include p-1;
       position: relative;
       color: $primary-white;
-      padding-left: 30px;
-    }
-    &_item::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 5px;
-      transform: translateY(-50%);
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: $primary-blue;
-      content: "";
+      padding-left: 2rem;
+      margin-block: 0.5rem;
+      text-align: left;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $primary-blue;
+        content: "";
+      }
     }
   }
 }

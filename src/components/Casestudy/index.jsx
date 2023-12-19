@@ -5,7 +5,6 @@ import styles from "./style.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { SmallHeading, SmallHeadingMotion } from "../SmallHeading";
 
 function Casestudy() {
   const controlsHonoring = useAnimation();
@@ -79,10 +78,7 @@ function Casestudy() {
     <div className={styles.container}>
       <section className={styles.head}>
         <div className={styles.head__desc}>
-          <SmallHeading as="h1" className={styles.head__desc_name}>
-            Case Study
-          </SmallHeading>
-
+          <h1 className={styles.head__desc_name}>Case Study</h1>
           <h2 className={styles.head__desc_title}>
             American Battle Monuments Commission
           </h2>
@@ -90,45 +86,47 @@ function Casestudy() {
       </section>
 
       <section className={styles.honoring} ref={refHonoring}>
-        <SmallHeadingMotion
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsHonoring}
-          transition={{ duration: 0.3 }}
-          as={"h3"}
-        >
-          Honoring our Heros
-        </SmallHeadingMotion>
-        <motion.h4
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsHonoring}
-          transition={{ duration: 0.3 }}
-          className={styles.text_title}
-        >
-          Documenting America's History{" "}
-        </motion.h4>
+        <div className={styles.honoring__container}>
+          <motion.h3
+            className={styles.article_small_title}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsHonoring}
+            transition={{ duration: 0.3 }}
+          >
+            Honoring our Heros
+          </motion.h3>
+          <motion.h4
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsHonoring}
+            transition={{ duration: 0.3 }}
+            className={styles.text_title}
+          >
+            Documenting America's History{" "}
+          </motion.h4>
 
-        <motion.p
-          className={styles.article_text}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsHonoring}
-          transition={{ duration: 0.4 }}
-        >
-          In 2022, Cove Creek had the distinct privilege of showcasing all
-          overseas American cemeteries (26) for the American Battle Monuments
-          Commissions. This project was commissioned as part of the 100 year
-          ABMC anniversary, serving as both historical preservation and
-          educational content.
-        </motion.p>
-        <br />
-        <motion.p
-          className={styles.article_text}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsHonoring}
-          transition={{ duration: 0.5 }}
-        >
-          Cove Creek took great care and responsibility to help portray these
-          sacred sites, and honor the fallen soldiers.
-        </motion.p>
+          <motion.p
+            className={styles.article_text}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsHonoring}
+            transition={{ duration: 0.4 }}
+          >
+            In 2022, Cove Creek had the distinct privilege of showcasing all
+            overseas American cemeteries (26) for the American Battle Monuments
+            Commissions. This project was commissioned as part of the 100 year
+            ABMC anniversary, serving as both historical preservation and
+            educational content.
+          </motion.p>
+          <br />
+          <motion.p
+            className={styles.article_text}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsHonoring}
+            transition={{ duration: 0.5 }}
+          >
+            Cove Creek took great care and responsibility to help portray these
+            sacred sites, and honor the fallen soldiers.
+          </motion.p>
+        </div>
       </section>
 
       <section className={styles.cemetry}>
@@ -271,183 +269,196 @@ function Casestudy() {
       </section>
 
       <section className={styles.scope} ref={refScope}>
-        <motion.h2
-          className={styles.article_title}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsScope}
-          transition={{ duration: 0.3 }}
-        >
-          An ambitious project scope
-        </motion.h2>
-        <div className={styles.scope__results}>
-          <motion.div
-            className={styles.scope__results_card}
+        <div className={styles.scope__container}>
+          <motion.h2
+            className={styles.article_title}
             initial={{ opacity: 0, y: 200 }}
             animate={controlsScope}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className={styles.scope__results_card__top}>
-              <CountingComponent targetNumber={150} durationInSeconds={3} />
-            </div>
-            <div className={styles.scope__results_card__bottom}>days</div>
-          </motion.div>
-          <motion.div
-            className={styles.scope__results_card}
+            An ambitious project scope
+          </motion.h2>
+          <div className={styles.scope__results}>
+            <motion.div
+              className={styles.scope__results_card}
+              initial={{ opacity: 0, y: 200 }}
+              animate={controlsScope}
+              transition={{ duration: 0.4 }}
+            >
+              <div className={styles.scope__results_card__top}>
+                <CountingComponent targetNumber={150} durationInSeconds={3} />
+              </div>
+              <div className={styles.scope__results_card__bottom}>days</div>
+            </motion.div>
+            <motion.div
+              className={styles.scope__results_card}
+              initial={{ opacity: 0, y: 200 }}
+              animate={controlsScope}
+              transition={{ duration: 0.5 }}
+            >
+              <div className={styles.scope__results_card__top}>
+                <CountingComponent targetNumber={11} durationInSeconds={3} />
+              </div>
+              <div className={styles.scope__results_card__bottom}>
+                countries
+              </div>
+            </motion.div>
+            <motion.div
+              className={styles.scope__results_card}
+              initial={{ opacity: 0, y: 200 }}
+              animate={controlsScope}
+              transition={{ duration: 0.6 }}
+            >
+              <div className={styles.scope__results_card__top}>
+                <CountingComponent targetNumber={30} durationInSeconds={3} />
+              </div>
+              <div className={styles.scope__results_card__bottom}>
+                virtual tours
+              </div>
+            </motion.div>
+          </div>
+          <motion.p
+            className={styles.article_text}
             initial={{ opacity: 0, y: 200 }}
             animate={controlsScope}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className={styles.scope__results_card__top}>
-              <CountingComponent targetNumber={11} durationInSeconds={3} />
-            </div>
-            <div className={styles.scope__results_card__bottom}>countries</div>
-          </motion.div>
+            In addition the 26 cemeteries, Cove Creek captured the four ABMC
+            memorials in the United States- Honolulu Memorial, East Coast
+            Memorial (San Francisco), West Coast Memorial (New York), and the
+            newly constructed World War 1 Memorial adjacent to the White House.
+          </motion.p>
           <motion.div
-            className={styles.scope__results_card}
             initial={{ opacity: 0, y: 200 }}
             animate={controlsScope}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.9 }}
+            className={styles.link}
           >
-            <div className={styles.scope__results_card__top}>
-              <CountingComponent targetNumber={30} durationInSeconds={3} />
-            </div>
-            <div className={styles.scope__results_card__bottom}>
-              virtual tours
-            </div>
+            <Link to="/all-tours">View all 30 tours</Link>
           </motion.div>
         </div>
-        <motion.p
-          className={styles.article_text}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsScope}
-          transition={{ duration: 0.8 }}
-        >
-          In addition the 26 cemeteries, Cove Creek captured the four ABMC
-          memorials in the United States- Honolulu Memorial, East Coast Memorial
-          (San Francisco), West Coast Memorial (New York), and the newly
-          constructed World War 1 Memorial adjacent to the White House.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsScope}
-          transition={{ duration: 0.9 }}
-        >
-          <Link to="/all_tours" className={styles.link}>
-            View all 30 tours
-            <img src="/icons/Arrow_right_blue.svg" alt="Link" />
-          </Link>
-        </motion.div>
       </section>
 
       <section className={styles.duration} ref={refDuration}>
         <div className={styles.duration__top}>
-          <motion.div
-            className={styles.duration__top_image}
+          <motion.img
+            className={styles.duration__top__image}
             initial={{ opacity: 0, y: 200 }}
             animate={controlsDuration}
             transition={{ duration: 0.3 }}
-          ></motion.div>
-          <motion.div
-            className={styles.duration__top}
-            initial={{ opacity: 0, y: 200 }}
-            animate={controlsDuration}
-            transition={{ duration: 0.5 }}
-          >
-            <div>
-              <p className={styles.article_text}>
-                The project took a year to complete, spanning over 150 shooting
-                days, and adhering an extensive post-production schedule. . Cove
-                Creek planned all global logistics and shooting schedules, with
-                the help of the great staff at ABMC.
-              </p>
-              <br />
-              <p className={styles.article_text}>
-                Cove Creek adeptly managed logistical challenges, accommodating
-                visitor hours, aligning with grounds crew schedules, and
-                navigating construction obstacles, all while upholding a
-                commitment to producing a high-quality product with minimal
-                disruption.
-              </p>
-              <br />
-              <p className={styles.article_text}>
-                Cove Creek continues its work with ABMC, providing a robust
-                content management system, which allows ABMC employees to keep
-                their 30 tours updated with new digital assets.
-              </p>
-              <br />
-            </div>
-          </motion.div>
+            src="/images/Rectangle 142.png"
+            alt=""
+          />
+
+          <div className={styles.duration__top__text}>
+            <motion.p
+              className={styles.article_text}
+              initial={{ opacity: 0, y: 200 }}
+              animate={controlsDuration}
+              transition={{ duration: 0.7 }}
+            >
+              The project took a year to complete, spanning over 150 shooting
+              days, and adhering an extensive post-production schedule. . Cove
+              Creek planned all global logistics and shooting schedules, with
+              the help of the great staff at ABMC.
+            </motion.p>
+
+            <motion.p
+              className={styles.article_text}
+              initial={{ opacity: 0, y: 200 }}
+              animate={controlsDuration}
+              transition={{ duration: 0.7 }}
+            >
+              Cove Creek adeptly managed logistical challenges, accommodating
+              visitor hours, aligning with grounds crew schedules, and
+              navigating construction obstacles, all while upholding a
+              commitment to producing a high-quality product with minimal
+              disruption.
+            </motion.p>
+
+            <motion.p
+              className={styles.article_text}
+              initial={{ opacity: 0, y: 200 }}
+              animate={controlsDuration}
+              transition={{ duration: 0.7 }}
+            >
+              Cove Creek continues its work with ABMC, providing a robust
+              content management system, which allows ABMC employees to keep
+              their 30 tours updated with new digital assets.
+            </motion.p>
+
+            <motion.p
+              className={styles.article_text}
+              initial={{ opacity: 0, y: 200 }}
+              animate={controlsDuration}
+              transition={{ duration: 0.7 }}
+            >
+              All virtual tours can be viewed on{" "}
+              <Link
+                to="https://www.abmc.gov/virtual-360s"
+                target="_blank"
+                className={styles.article_text__link}
+              >
+                ABMC’s website
+              </Link>
+              . In addition to the digital tours, select images have been used
+              in print applications, including the recent joint publication from
+              the{" "}
+              <Link
+                to="https://www.abmc.gov/news-events/news/abmc-and-smithsonian-american-art-museum-partner-release-unique-centennial-book"
+                target="_blank"
+                className={styles.article_text__link}
+              >
+                Smithsonian and ABMC
+              </Link>
+            </motion.p>
+          </div>
         </div>
-        <motion.p
-          className={styles.article_text}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsDuration}
-          transition={{ duration: 0.7 }}
-        >
-          All virtual tours can be viewed on{" "}
-          <Link
-            to="https://www.abmc.gov/virtual-360s"
-            target="_blank"
-            className={styles.article_text__link}
-          >
-            ABMC’s website
-          </Link>
-          . In addition to the digital tours, select images have been used in
-          print applications, including the recent joint publication from the{" "}
-          <Link
-            to="https://www.abmc.gov/news-events/news/abmc-and-smithsonian-american-art-museum-partner-release-unique-centennial-book"
-            target="_blank"
-            className={styles.article_text__link}
-          >
-            Smithsonian and ABMC
-          </Link>
-          .
-        </motion.p>
       </section>
 
       <section className={styles.completion} ref={refCompletion}>
-        <motion.img
-          width={475}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsCompletion}
-          transition={{ duration: 0.3 }}
-          src="images/Imbc_book.png"
-          alt="Book"
-          className={styles.completion__image}
-        />
-        <motion.div
-          className={styles.completion__phrase}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsCompletion}
-          transition={{ duration: 0.5 }}
-        >
-          <p className={styles.completion__phrase_text}>
-            Time will not dim the glory of their deeds.
-          </p>
-          <p className={styles.completion__phrase_author}>
-            General John Pershing
-          </p>
-        </motion.div>
-        <motion.p
-          className={styles.article_text}
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsCompletion}
-          transition={{ duration: 0.7 }}
-        >
-          We invite you to explore these historically significant sites, and
-          learn more about the great sacrifices made by the previous
-          generations.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 200 }}
-          animate={controlsCompletion}
-          transition={{ duration: 0.8 }}
-        >
-          <Link to="/all_tours" className={styles.link}>
-            View all 30 tours
-            <img src="/icons/Arrow_right_blue.svg" alt="Link" />
-          </Link>
-        </motion.div>
+        <div className={styles.completion__container}>
+          <motion.img
+            width={475}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsCompletion}
+            transition={{ duration: 0.3 }}
+            src="images/Imbc_book.png"
+            alt="Book"
+            className={styles.completion__image}
+          />
+          <motion.div
+            className={styles.completion__phrase}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsCompletion}
+            transition={{ duration: 0.5 }}
+          >
+            <p className={styles.completion__phrase_text}>
+              Time will not dim the glory of their deeds.
+            </p>
+            <p className={styles.completion__phrase_author}>
+              General John Pershing
+            </p>
+          </motion.div>
+          <motion.p
+            className={styles.article_text}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsCompletion}
+            transition={{ duration: 0.7 }}
+          >
+            We invite you to explore these historically significant sites, and
+            learn more about the great sacrifices made by the previous
+            generations.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsCompletion}
+            transition={{ duration: 0.8 }}
+            className={styles.link}
+          >
+            <Link to="/all-tours">View all 30 tours</Link>
+          </motion.div>
+        </div>
       </section>
 
       <ContactComponent />

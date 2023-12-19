@@ -2,10 +2,7 @@ import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import axios from "axios";
 
-// import { BounceLoader } from "react-spinners";
-// import { InputForm, FormStates } from "../InputForm";
 import {
   InputForm,
   TextInput,
@@ -17,7 +14,6 @@ import {
 } from "../InputForm";
 
 import styles from "./style.module.scss";
-import SmallHeading, { SmallHeadingMotion } from "../SmallHeading";
 
 function Careers() {
   const controls = useAnimation();
@@ -97,13 +93,14 @@ function Careers() {
           </InputForm>
         </div>
         <div className={styles.desc} ref={refBottom}>
-          <SmallHeadingMotion
+          <motion.h3
+            className={styles.desc__head}
             initial={{ opacity: 0, y: 200 }}
             animate={controlsBottom}
             transition={{ duration: 0.3 }}
           >
             Careers
-          </SmallHeadingMotion>
+          </motion.h3>
           <motion.p
             className={styles.desc__title}
             initial={{ opacity: 0, y: 200 }}
@@ -121,46 +118,24 @@ function Careers() {
             Submit your resume for consideration.
           </motion.p>
           <div className={styles.desc__list}>
-            <motion.p
-              className={styles.desc__list_item}
+            <motion.ul
               initial={{ opacity: 0, y: 200 }}
               animate={controlsBottom}
-              transition={{ duration: 0.5 }}
             >
-              Experienced 360° Photographer
-            </motion.p>
-            <motion.p
-              className={styles.desc__list_item}
-              initial={{ opacity: 0, y: 200 }}
-              animate={controlsBottom}
-              transition={{ duration: 0.6 }}
-            >
-              Developer (Node.js / React.js / Next.js)
-            </motion.p>
-            <motion.p
-              className={styles.desc__list_item}
-              initial={{ opacity: 0, y: 200 }}
-              animate={controlsBottom}
-              transition={{ duration: 0.7 }}
-            >
-              Project Manager
-            </motion.p>
-            <motion.p
-              className={styles.desc__list_item}
-              initial={{ opacity: 0, y: 200 }}
-              animate={controlsBottom}
-              transition={{ duration: 0.8 }}
-            >
-              Sales and Business Development
-            </motion.p>
-            <motion.p
-              className={styles.desc__list_item}
-              initial={{ opacity: 0, y: 200 }}
-              animate={controlsBottom}
-              transition={{ duration: 0.9 }}
-            >
-              360° Photography Internship
-            </motion.p>
+              <li transition={{ duration: 0.5 }}>
+                Experienced 360° Photographer
+              </li>
+              <li transition={{ duration: 0.6 }}>
+                Developer (Node.js / React.js / Next.js)
+              </li>
+              <li transition={{ duration: 0.7 }}>Project Manager</li>
+              <li transition={{ duration: 0.8 }}>
+                Sales and Business Development
+              </li>
+              <li transition={{ duration: 0.9 }}>
+                360° Photography Internship
+              </li>
+            </motion.ul>
           </div>
         </div>
       </section>
