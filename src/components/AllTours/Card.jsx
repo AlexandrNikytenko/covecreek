@@ -93,7 +93,7 @@ function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
         animate={cardControls}
         ref={redRef}
       >
-        <img src={card.imageURL} alt={card.name} className={styles.image} />
+        <img src={card.imageSrc} alt={card.name} className={styles.image} />
         <figcaption>
           <Link className={styles.link} to={card.link} target="_blank">
             <h3 className={styles.image__title}>{card.name}</h3>

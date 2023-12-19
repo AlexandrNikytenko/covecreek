@@ -14,6 +14,9 @@ import Privacy from "./components/Privacy";
 import AllTours from "./components/AllTours";
 import SummerCampTours from "./components/SummerCampTours";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+
+import { Page } from "./components/Page";
+import YouvisitTours from "./components/YouvisitTours";
 function App() {
   const location = useLocation();
 
@@ -29,18 +32,98 @@ function App() {
       <ScrollToTop />
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/why-us" element={<Whyus />} />
-        <Route path="/case-study" element={<Casestudy />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/school-virtual-tours" element={<University />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/all-tours" element={<AllTours />} />
+        <Route
+          path="/"
+          element={
+            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+              <Home />
+            </Page>
+          }
+        />
+        {/* /virtual-tours */}
+        <Route
+          path="/portfolio"
+          element={
+            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+              <Portfolio />
+            </Page>
+          }
+        />
+        <Route
+          path="/why-us"
+          element={
+            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+              <Whyus />
+            </Page>
+          }
+        />
+        <Route
+          path="/case-study"
+          element={
+            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+              <Casestudy />
+            </Page>
+          }
+        />
+        <Route
+          path="/careers"
+          element={
+            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+              <Careers />
+            </Page>
+          }
+        />
+        {/* /schedule-demo */}
+        <Route
+          path="/contact"
+          element={
+            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+              <Contact />
+            </Page>
+          }
+        />
+        <Route
+          path="/school-virtual-tours"
+          element={
+            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+              <University />
+            </Page>
+          }
+        />
+        <Route
+          path="/privacy"
+          element={
+            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+              <Privacy />
+            </Page>
+          }
+        />
+        <Route
+          path="/all-tours"
+          element={
+            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+              <AllTours />
+            </Page>
+          }
+        />
         <Route
           path="/summer-camp-virtual-tours"
-          element={<SummerCampTours />}
+          element={
+            <Page
+              title={"College Virtual Tours YouVisit Concept3D Alternative"}
+            >
+              <SummerCampTours />
+            </Page>
+          }
+        />
+
+        <Route
+          path="/youvisit-pricing"
+          element={
+            <Page title={"YouVisit Pricing | Cove Creek Productions"}>
+              <YouvisitTours />
+            </Page>
+          }
         />
       </Routes>
       <Footer />

@@ -13,13 +13,11 @@ function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-
-      if (currentScrollPos > prevScrollPos) {
-        setIsHeaderVisible(false);
-      } else {
-        setIsHeaderVisible(true);
-      }
-
+      requestAnimationFrame(() => {
+        setIsHeaderVisible(
+          prevScrollPos > currentScrollPos || currentScrollPos < 10
+        );
+      });
       setPrevScrollPos(currentScrollPos);
     };
 
