@@ -12,6 +12,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import University from "./components/University";
 import Privacy from "./components/Privacy";
 import AllTours from "./components/AllTours";
+import SummerCampTours from "./components/SummerCampTours";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 function App() {
   const location = useLocation();
@@ -37,6 +38,10 @@ function App() {
         <Route path="/school-virtual-tours" element={<University />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/all-tours" element={<AllTours />} />
+        <Route
+          path="/summer-camp-virtual-tours"
+          element={<SummerCampTours />}
+        />
       </Routes>
       <Footer />
       <SpeedInsights />
