@@ -24,7 +24,7 @@ function RobustComponent() {
         animate={controls}
         transition={{ duration: 0.3 }}
       >
-        <img src="/images/whyus/robust-cms.jpg" />
+        <img src="/images/why-us/robust-cms.jpg" />
       </motion.div>
       <div className={styles.content__desc} id="robust-cms">
         <motion.h3

@@ -5,27 +5,27 @@ import { useRef, useEffect } from "react";
 // Slide data, you can add more slides as needed
 const slides = [
   {
-    src: "/images/Slider1.png",
+    src: "/images/why-us/slider/Slider1.jpg",
     altText: "The White House",
     title: "The White House",
   },
   {
-    src: "/images/Slider2.png",
+    src: "/images/why-us/slider/Slider2.jpg",
     altText: "Indiana University",
     title: "Indiana University",
   },
   {
-    src: "/images/Slider3.png",
+    src: "/images/why-us/slider/Slider3.jpg",
     altText: "State Tech (MO)",
     title: "State Tech (MO)",
   },
   {
-    src: "/images/Slider4.png",
+    src: "/images/why-us/slider/Slider4.jpg",
     altText: "World War II Memorial",
     title: "World War II Memorial",
   },
   {
-    src: "/images/Slider5.png",
+    src: "/images/why-us/slider/Slider5.jpg",
     altText: "Post Production Office",
     title: "Post Production Office",
   },
