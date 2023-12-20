@@ -109,9 +109,7 @@ function App() {
         <Route
           path="/summer-camp-virtual-tours"
           element={
-            <Page
-              title={"College Virtual Tours YouVisit Concept3D Alternative"}
-            >
+            <Page title={"Summer Camp Virtual Tours"}>
               <SummerCampTours />
             </Page>
           }

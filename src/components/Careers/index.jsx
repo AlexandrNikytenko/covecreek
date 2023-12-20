@@ -20,11 +20,11 @@ function Careers() {
   const controlsBottom = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.4,
+    threshold: 0,
   });
   const [refBottom, inViewBottom] = useInView({
     triggerOnce: true,
-    threshold: 0.4,
+    threshold: 0,
   });
 
   useEffect(() => {

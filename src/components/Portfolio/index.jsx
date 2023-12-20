@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import ContactComponent from "../ContactComponent";
 import styles from "./style.module.scss";
 import CardPortfolio from "./CardPortfolio";
+import { HashLink } from "react-router-hash-link";
 
 const data = [
   [
@@ -30,7 +31,7 @@ const data = [
       imageUrl: "/images/portfolio/Portfolio_3.jpg",
       title: "Indiana University",
       text: "Cove Creek captured all 9 campuses across Indiana for IU School of Medicine ",
-      url: "https://tours.covecreekproductions.com/indiana-university/", // needs updating
+      url: "https://covecreekproductions.com/tours/indiana/", // needs updating
     },
   ],
   [
@@ -38,7 +39,7 @@ const data = [
       index: 1,
       size: "double",
       imageUrl: "/images/portfolio/Portfolio_4.jpg",
-      title: "Normandy",
+      title: "Normandy American Cemetery",
       text: "In 2022, Cove Creek created tours for all 26 overseas American cemeteries",
       url: "https://tours.covecreekproductions.com/normandy/",
     },
@@ -48,7 +49,7 @@ const data = [
       imageUrl: "/images/portfolio/Portfolio_5.jpg",
       title: "Arizona State",
       text: "Explore the ASU football program and key areas around campus",
-      url: "https://tours.covecreekproductions.com/asu/", // needs updating
+      url: "https://covecreekproductions.com/tours/asu_football/", // needs updating
     },
   ],
   [
@@ -74,7 +75,7 @@ const data = [
       imageUrl: "/images/portfolio/Portfolio_8.jpg",
       title: "EF Pasasdena",
       text: "Tour the premier collection of international boarding schools in the US",
-      url: "https://tours.covecreekproductions.com/ef-pasadena/", // needs updating
+      url: "https://covecreekproductions.com/tours/ef_academy_pasadena/", // needs updating
     },
   ],
   [
@@ -84,14 +85,14 @@ const data = [
       imageUrl: "/images/portfolio/Portfolio_9.jpg",
       title: "Seattle Pacific",
       text: "Discover this picturesque campus situated in Seattle's Queen Anne district",
-      url: "https://tours.covecreekproductions.com/spu/",
+      url: "https://covecreekproductions.com/tours/spu_cc/", // needs updating
     },
     {
       index: 2,
       size: "double",
       imageUrl: "/images/portfolio/Portfolio_10.jpg",
       title: "World Tour",
-      text: "Explore highlights of Cove Creek’s projects that have taken us around the globe",
+      text: "Explore highlights of Cove Creek’s project that have taken us around the globe",
       url: "https://tours.covecreekproductions.com/world-tour/",
     },
   ],
@@ -193,9 +194,9 @@ function Portfolio() {
             animate={controlsFrames}
             transition={{ duration: 0.7 }}
           >
-            <Link to="/" className={styles.frame__link}>
+            <HashLink to="/why-us#robust-cms" className={styles.frame__link}>
               Discover Our CMS
-            </Link>
+            </HashLink>
           </motion.div>
         </motion.div>
 
@@ -227,14 +228,14 @@ function Portfolio() {
             transition={{ duration: 0.8 }}
             className={styles.frame__text}
           >
-            American Battle Monuments Comission
+            American Battle Monuments Commission
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.9 }}
           >
-            <Link to="/case_study" className={styles.frame__link}>
+            <Link to="/case-study" className={styles.frame__link}>
               View Case Study
             </Link>
           </motion.div>

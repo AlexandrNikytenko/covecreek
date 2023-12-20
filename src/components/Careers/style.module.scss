@@ -26,7 +26,8 @@
 .title {
   @include h-3;
   position: relative;
-  margin: 60px 20px;
+  margin: 1rem 1rem 2rem;
+
   text-align: center;
   color: $primary-white;
 
@@ -46,7 +47,6 @@
     padding: 0;
     width: auto;
     flex-direction: row;
-    margin: 80px 194px 80px 292px;
   }
 }
 

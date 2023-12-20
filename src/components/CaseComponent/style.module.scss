@@ -3,7 +3,6 @@
 @import "../../styles/colors.scss";
 
 .case {
-  @include flex-column;
   z-index: 1;
   overflow: hidden;
   width: 100%;
@@ -12,7 +11,17 @@
 
   @media (min-width: $breakMobile) {
     flex-direction: row;
-    padding: 160px 194px;
+    padding: 160px 0;
+  }
+
+  &__container {
+    max-width: 1400px;
+    margin: auto;
+    @include flex-column;
+    @media (min-width: $breakMobile) {
+      flex-direction: row;
+    }
+    padding: 2rem;
   }
 
   &__desc {

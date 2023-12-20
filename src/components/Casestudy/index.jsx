@@ -101,7 +101,7 @@ function Casestudy() {
             transition={{ duration: 0.3 }}
             className={styles.text_title}
           >
-            Documenting America's History{" "}
+            Documenting World History{" "}
           </motion.h4>
 
           <motion.p
@@ -115,16 +115,6 @@ function Casestudy() {
             Commissions. This project was commissioned as part of the 100 year
             ABMC anniversary, serving as both historical preservation and
             educational content.
-          </motion.p>
-          <br />
-          <motion.p
-            className={styles.article_text}
-            initial={{ opacity: 0, y: 200 }}
-            animate={controlsHonoring}
-            transition={{ duration: 0.5 }}
-          >
-            Cove Creek took great care and responsibility to help portray these
-            sacred sites, and honor the fallen soldiers.
           </motion.p>
         </div>
       </section>
@@ -341,15 +331,6 @@ function Casestudy() {
 
       <section className={styles.duration} ref={refDuration}>
         <div className={styles.duration__top}>
-          <motion.img
-            className={styles.duration__top__image}
-            initial={{ opacity: 0, y: 200 }}
-            animate={controlsDuration}
-            transition={{ duration: 0.3 }}
-            src="/images/Rectangle 142.png"
-            alt=""
-          />
-
           <div className={styles.duration__top__text}>
             <motion.p
               className={styles.article_text}
@@ -405,7 +386,7 @@ function Casestudy() {
               in print applications, including the recent joint publication from
               the{" "}
               <Link
-                to="https://www.abmc.gov/news-events/news/abmc-and-smithsonian-american-art-museum-partner-release-unique-centennial-book"
+                to="https://americanart.si.edu/books/time-will-not-dim-american-battle-monuments-commission-century-service-1923-2023"
                 target="_blank"
                 className={styles.article_text__link}
               >

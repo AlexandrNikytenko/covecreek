@@ -190,24 +190,19 @@ function Home() {
             className={styles.presentation_right_image__image}
           >
             <img src="/images/Group_74.png" />
-
             <div className={styles.presentation_right_image__buttons}>
-              <div
-                className={styles.presentation_right_image__buttons__container}
+              <button
+                className={styles.presentation_right_image__buttons_button}
               >
-                <button
-                  className={styles.presentation_right_image__buttons_button}
-                >
-                  <img src="/icons/Add_white.svg" alt="Checked" />
-                  Add Hotspot
-                </button>
-                <button
-                  className={styles.presentation_right_image__buttons_button}
-                >
-                  <img src="/icons/Filter_center_focus.svg" alt="Checked" />
-                  Set View
-                </button>
-              </div>
+                <img src="/icons/Add_white.svg" alt="Checked" />
+                Add Hotspot
+              </button>
+              <button
+                className={styles.presentation_right_image__buttons_button}
+              >
+                <img src="/icons/Filter_center_focus.svg" alt="Checked" />
+                Set View
+              </button>
             </div>
           </motion.div>
         </div>

@@ -18,34 +18,36 @@ function ArticleComponent({ data, background, link }) {
   }, [inView, controls]);
   return (
     <section className={styles.article} style={{ background }} ref={ref}>
-      <motion.h3
-        className={styles.article__title}
-        initial={{ opacity: 0, y: 200 }}
-        animate={controls}
-        transition={{ duration: 0.3 }}
-      >
-        {data.label}
-      </motion.h3>
-      <motion.p
-        className={styles.article__desc}
-        initial={{ opacity: 0, y: 200 }}
-        animate={controls}
-        transition={{ duration: 0.4 }}
-      >
-        {data.text}
-      </motion.p>
-      {link && (
-        <motion.div
+      <div className={styles.article__container}>
+        <motion.h3
+          className={styles.article__title}
           initial={{ opacity: 0, y: 200 }}
           animate={controls}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
         >
-          <Link to="/why-us" className={styles.article__link}>
-            What makes us unique
-            <img src="/icons/Arrow_right_blue.svg" alt="Link" />
-          </Link>
-        </motion.div>
-      )}
+          {data.label}
+        </motion.h3>
+        <motion.p
+          className={styles.article__desc}
+          initial={{ opacity: 0, y: 200 }}
+          animate={controls}
+          transition={{ duration: 0.4 }}
+        >
+          {data.text}
+        </motion.p>
+        {link && (
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            animate={controls}
+            transition={{ duration: 0.5 }}
+          >
+            <Link to="/why-us" className={styles.article__link}>
+              What makes us unique
+              <img src="/icons/Arrow_right_blue.svg" alt="Link" />
+            </Link>
+          </motion.div>
+        )}
+      </div>
     </section>
   );
 }

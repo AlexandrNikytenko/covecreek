@@ -43,7 +43,7 @@ function University() {
     <div className={styles.container}>
       <section className={styles.top_section}>
         <h1 className={styles.title}>
-          360° virtual tour experiences trusted by leading universities
+          360° Virtual Tours Trusted By Leading Universities
         </h1>
         <Link to={"/contact"} className={styles.blue_button}>
           Schedule a Demo
@@ -72,7 +72,7 @@ function University() {
           </Link>
         </motion.div>
       </section>
-      <section style={{ background: "white", width: "100%" }}>
+      {/* <section style={{ background: "white", width: "100%" }}>
         <ArticleComponent
           data={ourComitten}
           background={
@@ -80,8 +80,8 @@ function University() {
           }
           link={true}
         />
-      </section>
-      <CaseComponent text={case_text} />
+      </section> */}
+      {/* <CaseComponent text={case_text} /> */}
       <ContactComponent />
     </div>
   );

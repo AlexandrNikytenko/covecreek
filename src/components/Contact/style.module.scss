@@ -44,7 +44,7 @@
     width: 616px;
     height: 724px;
     padding: 48px 28px;
-    margin: 100px 0 160px;
+    margin: 100px 0 100px;
   }
 
   &__small_title {
@@ -87,12 +87,13 @@
 
   @media (min-width: $breakMobile) {
     @include h-3;
-    margin: 30px 312px 60px;
+    margin: 30px 312px 0;
   }
 }
 
 .tip {
   @include a-2;
+  margin-block: 0;
 }
 
 .bottom {

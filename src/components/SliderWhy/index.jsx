@@ -6,8 +6,8 @@ import { useRef, useEffect } from "react";
 const slides = [
   {
     src: "/images/why-us/slider/Slider1.jpg",
-    altText: "The White House",
-    title: "The White House",
+    altText: "Suresnes American Cemetery",
+    title: "Suresnes American Cemetery",
   },
   {
     src: "/images/why-us/slider/Slider2.jpg",

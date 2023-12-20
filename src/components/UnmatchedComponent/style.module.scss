@@ -3,17 +3,30 @@
 @import "../../styles/colors.scss";
 
 .unmatched {
-  @include flex-column;
   background-color: $primary-white;
-  justify-content: space-between;
   width: 100%;
   padding: 0 1rem 3rem;
   z-index: 1;
+  box-sizing: border-box;
+  overflow: hidden;
 
   @media (min-width: $breakMobile) {
     padding: 160px 194px;
     flex-direction: row;
     gap: 0;
+  }
+
+  &__container {
+    max-width: 1400px;
+    margin: auto;
+    @include flex-column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @media (min-width: $breakMobile) {
+      flex-direction: row;
+      gap: 0;
+    }
   }
 
   &__title {

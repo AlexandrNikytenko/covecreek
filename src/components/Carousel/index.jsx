@@ -35,7 +35,7 @@ export function Carousel({ children }) {
       speed: 0.5,
     },
     pauseOnHover: true,
-    pauseOnFocus: true,
+    pauseOnFocus: false,
     arrows: false,
     pagination: false,
   };
@@ -71,7 +71,7 @@ export function HomeCarousel() {
         src="images/slides/indiana.jpg"
         altText="Indiana University"
         title="Indiana University"
-        url="https://tours.covecreekproductions.com/indiana-university/"
+        url="https://covecreekproductions.com/tours/indiana/"
       />
 
       <Slide
@@ -79,7 +79,7 @@ export function HomeCarousel() {
         src="images/slides/asu.jpg"
         altText="Arizona State University"
         title="Arizona State University"
-        url="https://tours.covecreekproductions.com/asu/"
+        url="https://covecreekproductions.com/tours/asu_football/"
       />
 
       <Slide
@@ -103,7 +103,7 @@ export function HomeCarousel() {
         src="images/slides/principia.jpg"
         altText="Principia College"
         title="Principia College"
-        url="https://tours.covecreekproductions.com/principia/"
+        url="https://tours.covecreekproductions.com/principia-cc/"
       />
     </Carousel>
   );
