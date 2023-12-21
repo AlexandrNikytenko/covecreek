@@ -63,12 +63,14 @@
     background-repeat: no-repeat;
     background-image: url("../../../public/images/Rectangle 70.png");
     border-radius: 20px;
-    height: 460px;
+
+    aspect-ratio: 3 / 2;
     width: calc(100vw - 40px);
     max-width: 100%;
 
     @media (min-width: $breakMobile) {
       height: 460px;
+      aspect-ratio: unset;
     }
 
     &_button {
