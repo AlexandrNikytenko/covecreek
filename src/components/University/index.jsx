@@ -6,7 +6,6 @@ import { UniversityCarousel } from "../Carousel";
 import ArticleComponent from "../ArticleComponent";
 import RobustComponent from "../RobustComponent";
 import UnmatchedComponent from "../UnmatchedComponent";
-import CaseComponent from "../CaseComponent";
 import ContactComponent from "../ContactComponent";
 
 import styles from "./style.module.scss";
@@ -72,16 +71,6 @@ function University() {
           </Link>
         </motion.div>
       </section>
-      {/* <section style={{ background: "white", width: "100%" }}>
-        <ArticleComponent
-          data={ourComitten}
-          background={
-            "linear-gradient(180deg, rgba(245, 245, 245, 0.00) 0%, #F5F5F5 100%)"
-          }
-          link={true}
-        />
-      </section> */}
-      {/* <CaseComponent text={case_text} /> */}
       <ContactComponent />
     </div>
   );

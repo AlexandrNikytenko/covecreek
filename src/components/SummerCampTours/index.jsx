@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import Row from "../AllTours/Row";
 import { cards } from "../../constants/summercamptours";
+import TourGrid from "../TourGrid";
 import ContactComponent from "../ContactComponent";
 import styles from "./style.module.scss";
 
@@ -14,12 +13,7 @@ function SummerCampTours() {
         </h1>
       </section>
 
-      <section className={styles.image_container}>
-        {cards.map((card, index) => (
-          <Row key={card.id} index={card.id} card={card} />
-        ))}
-      </section>
-
+      <TourGrid cards={cards} />
       <ContactComponent />
     </div>
   );
