@@ -25,7 +25,7 @@
   @include flex-column;
   position: relative;
   width: 100%;
-  margin-top: 20px;
+
   align-items: center;
   justify-content: center;
   user-select: none;
@@ -34,17 +34,20 @@
   overflow: hidden;
 
   @media (min-width: $breakMobile) {
+    margin-top: 20px;
     padding: 100px 0px 0px;
   }
 
   &__container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    height: 500px;
-    overflow: hidden;
+    display: none;
 
     @media (min-width: $breakMobile) {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+
       height: auto;
     }
   }
@@ -72,13 +75,15 @@
   &__button {
     @include button-blue;
     z-index: 2;
-    position: absolute;
-    top: 250px;
+
     width: 222px;
     height: 60px;
     border-radius: 50px;
+    margin-block: 0 2rem;
 
     @media (min-width: $breakMobile) {
+      position: absolute;
+
       top: 270px;
     }
   }
