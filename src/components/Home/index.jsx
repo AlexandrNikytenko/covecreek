@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import VideoHomeComponent from "./VideoHomeComponent";
 import { Container } from "../Container";
+import ROUTES from "src/constants/routes";
 
 function Home() {
   const controlsUnmached = useAnimation();
@@ -130,7 +131,7 @@ function Home() {
         animate={controlsLink}
         transition={{ duration: 0.3 }}
       >
-        <Link to="/portfolio" className={styles.button_see}>
+        <Link to={ROUTES.Portfolio} className={styles.button_see}>
           See Our Portfolio
         </Link>
       </motion.div>
@@ -148,7 +149,10 @@ function Home() {
               <p className={styles.presentation__desc_title}>
                 Attention to detail like you’ve never seen before
               </p>
-              <Link to="/why-us" className={styles.presentation__desc_bottom}>
+              <Link
+                to={ROUTES.WhyUs}
+                className={styles.presentation__desc_bottom}
+              >
                 What makes us unique
                 <img src="/icons/Arrow_right_blue.svg" alt="Checked" />
               </Link>

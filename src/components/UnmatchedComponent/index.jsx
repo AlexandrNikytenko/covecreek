@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import Container from "../Container";
+import ROUTES from "src/constants/routes";
 
 function UnmatchedComponent({ link }) {
   const controls = useAnimation();
@@ -42,7 +43,10 @@ function UnmatchedComponent({ link }) {
               possible for your campus
             </p>
             {link && (
-              <Link to="/portfolio" className={styles.unmatched__content_link}>
+              <Link
+                to={ROUTES.Portfolio}
+                className={styles.unmatched__content_link}
+              >
                 See Our Portfolio
               </Link>
             )}

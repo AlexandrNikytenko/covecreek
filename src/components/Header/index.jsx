@@ -1,14 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
-
+import ROUTES from "../../constants/routes";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   const location = useLocation();
-  const isPrivacy = location.pathname === "/privacy";
+  const isPrivacy = location.pathname === ROUTES.Privacy;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +50,7 @@ function Header() {
           ></Link>
           <div className={styles.buttons}>
             <Link
-              to="/contact"
+              to={ROUTES.Contact}
               className={`${styles.button_get} ${
                 !isPrivacy
                   ? styles.button_get__no_privacy
@@ -82,7 +82,7 @@ function Header() {
               ></Link>
               <div className={styles.buttons}>
                 <Link
-                  to="/contact"
+                  to={ROUTES.Contact}
                   onClick={() => setIsMenuOpen(false)}
                   className={`${styles.button_get} ${styles.button_get__no_privacy}`}
                 >
@@ -99,31 +99,31 @@ function Header() {
             </div>
             <div className={styles.links} onClick={() => setIsMenuOpen(false)}>
               <Link
-                to="/portfolio"
+                to={ROUTES.Portfolio}
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Portfolio
               </Link>
               <Link
-                to="/why-us"
+                to={ROUTES.WhyUs}
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Why Us
               </Link>
               <Link
-                to="/case-study"
+                to={ROUTES.CaseStudy}
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Case Study
               </Link>
               <Link
-                to="/careers"
+                to={ROUTES.Careers}
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Careers
               </Link>
               <Link
-                to="/contact"
+                to={ROUTES.Contact}
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Contact

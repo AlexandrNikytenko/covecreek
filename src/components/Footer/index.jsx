@@ -1,9 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, Routes, useLocation } from "react-router-dom";
 import styles from "./style.module.scss";
+import ROUTES from "../../constants/routes";
 
 function Footer() {
   const location = useLocation();
-  const isPrivacy = location.pathname === "/privacy";
+  const isPrivacy = location.pathname === ROUTES.Privacy;
 
   return (
     <div
@@ -29,22 +30,22 @@ function Footer() {
         <div className={styles.contact}>
           <h3 className={styles.title}>Our Work</h3>
 
-          <Link to="/portfolio" className={styles.link}>
+          <Link to={ROUTES.Portfolio} className={styles.link}>
             Portfolio
           </Link>
-          <Link to="/case-study" className={styles.link}>
+          <Link to={ROUTES.CaseStudy} className={styles.link}>
             Case Study
           </Link>
-          <Link to="/why-us" className={styles.link}>
+          <Link to={ROUTES.WhyUs} className={styles.link}>
             Why Us
           </Link>
         </div>
         <div className={styles.contact}>
           <h3 className={styles.title}>More</h3>
-          <Link to="/careers" className={styles.link}>
+          <Link to={ROUTES.Careers} className={styles.link}>
             Careers
           </Link>
-          <Link to="/contact" className={styles.link}>
+          <Link to={ROUTES.Contact} className={styles.link}>
             Contact
           </Link>
         </div>
@@ -53,7 +54,7 @@ function Footer() {
       <div className={`${styles.policy} ${styles.policy__text}`}>
         <p>Copyright © 2023 Cove Creek Productions</p>
         <p>
-          <Link to="/privacy" className={styles.policy__text}>
+          <Link to={ROUTES.Privacy} className={styles.policy__text}>
             Privacy Policy
           </Link>
         </p>
