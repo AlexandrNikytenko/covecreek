@@ -148,7 +148,7 @@ function Home() {
               <p className={styles.presentation__desc_title}>
                 Attention to detail like you’ve never seen before
               </p>
-              <Link to="/whyus" className={styles.presentation__desc_bottom}>
+              <Link to="/why-us" className={styles.presentation__desc_bottom}>
                 What makes us unique
                 <img src="/icons/Arrow_right_blue.svg" alt="Checked" />
               </Link>
@@ -178,10 +178,13 @@ function Home() {
               <p className={styles.presentation__desc_title}>
                 Make it yours in minutes with our advanced CMS
               </p>
-              <Link to="/whyus" className={styles.presentation__desc_bottom}>
+              <HashLink
+                to="/why-us#robust-cms"
+                className={styles.presentation__desc_bottom}
+              >
                 Learn more
                 <img src="/icons/Arrow_right_blue.svg" alt="Checked" />
-              </Link>
+              </HashLink>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: -1000 }}
