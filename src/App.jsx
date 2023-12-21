@@ -41,7 +41,7 @@ function App() {
             </Page>
           }
         />
-        {/* /virtual-tours */}
+
         <Route
           path={ROUTES.Portfolio}
           element={
