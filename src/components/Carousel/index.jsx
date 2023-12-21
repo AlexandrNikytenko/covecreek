@@ -26,13 +26,19 @@ export function Carousel({ children }) {
     width: "100%",
     gap: 20,
     fixedWidth: 420,
+    breakpoints: {
+      768: {
+        fixedWidth: 250,
+      },
+    },
     focus: "center",
     type: "loop",
     drag: "free",
-    autoplay: true,
+
     autoScroll: {
       pauseOnHover: true,
       speed: 0.5,
+      autoStart: true,
     },
     pauseOnHover: true,
     pauseOnFocus: false,
