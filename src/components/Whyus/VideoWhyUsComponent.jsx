@@ -1,4 +1,4 @@
-import ROUTES from "src/constants/routes";
+import PAGES from "src/constants/pages";
 import styles from "./style.module.scss";
 import { Link } from "react-router-dom";
 
@@ -21,7 +21,7 @@ function VideoWhyUsComponent() {
         </video>
       </div>
 
-      <Link to={ROUTES.Contact} className={styles.video_box__button}>
+      <Link to={PAGES.Contact.path} className={styles.video_box__button}>
         Schedule a Demo
       </Link>
     </section>

@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import Container from "../Container";
-import ROUTES from "src/constants/routes";
+import PAGES from "src/constants/pages";
 
 function ArticleComponent({ data, background, link }) {
   const controls = useAnimation();
@@ -44,7 +44,7 @@ function ArticleComponent({ data, background, link }) {
               animate={controls}
               transition={{ duration: 0.5 }}
             >
-              <Link to={ROUTES.WhyUs} className={styles.article__link}>
+              <Link to={PAGES.WhyUs.path} className={styles.article__link}>
                 What makes us unique
                 <img src="/icons/Arrow_right_blue.svg" alt="Link" />
               </Link>

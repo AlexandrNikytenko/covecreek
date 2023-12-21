@@ -17,7 +17,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import { Page } from "./components/Page";
 import YouvisitTours from "./components/YouvisitTours";
-import ROUTES from "./constants/routes";
+import PAGES from "./constants/pages";
 function App() {
   const location = useLocation();
 
@@ -25,7 +25,7 @@ function App() {
     <div
       className="App"
       style={
-        location.pathname === ROUTES.Privacy
+        location.pathname === PAGES.Privacy.path
           ? { backgroundColor: "#FFFFFF" }
           : { backgroundColor: "#09131D" }
       }
@@ -34,92 +34,92 @@ function App() {
       <Header />
       <Routes>
         <Route
-          path={ROUTES.Home}
+          path={PAGES.Home.path}
           element={
-            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+            <Page title={PAGES.Home.title}>
               <Home />
             </Page>
           }
         />
 
         <Route
-          path={ROUTES.Portfolio}
+          path={PAGES.Portfolio.path}
           element={
-            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+            <Page title={PAGES.Portfolio.title}>
               <Portfolio />
             </Page>
           }
         />
         <Route
-          path={ROUTES.WhyUs}
+          path={PAGES.WhyUs.path}
           element={
-            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+            <Page title={PAGES.WhyUs.title}>
               <Whyus />
             </Page>
           }
         />
         <Route
-          path={ROUTES.CaseStudy}
+          path={PAGES.CaseStudy.path}
           element={
-            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+            <Page title={PAGES.CaseStudy.title}>
               <Casestudy />
             </Page>
           }
         />
         <Route
-          path={ROUTES.Careers}
+          path={PAGES.Careers.path}
           element={
-            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+            <Page title={PAGES.Careers.title}>
               <Careers />
             </Page>
           }
         />
 
         <Route
-          path={ROUTES.Contact}
+          path={PAGES.Contact.path}
           element={
-            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+            <Page title={PAGES.Contact.title}>
               <Contact />
             </Page>
           }
         />
         <Route
-          path={ROUTES.University}
+          path={PAGES.University.path}
           element={
-            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+            <Page title={PAGES.University.title}>
               <University />
             </Page>
           }
         />
         <Route
-          path={ROUTES.Privacy}
+          path={PAGES.Privacy.path}
           element={
-            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+            <Page title={PAGES.Privacy.title}>
               <Privacy />
             </Page>
           }
         />
         <Route
-          path={ROUTES.AllTours}
+          path={PAGES.AllTours.path}
           element={
-            <Page title={"Cove Creek Productions | 360° Campus Virtual Tours"}>
+            <Page title={PAGES.AllTours.title}>
               <AllTours />
             </Page>
           }
         />
         <Route
-          path={ROUTES.SummerCampTours}
+          path={PAGES.SummerCamp.path}
           element={
-            <Page title={"Summer Camp Virtual Tours"}>
+            <Page title={PAGES.SummerCamp.title}>
               <SummerCampTours />
             </Page>
           }
         />
 
         <Route
-          path={ROUTES.YouVisit}
+          path={PAGES.YouVisit.path}
           element={
-            <Page title={"YouVisit Pricing | Cove Creek Productions"}>
+            <Page title={PAGES.YouVisit.title}>
               <YouvisitTours />
             </Page>
           }

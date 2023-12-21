@@ -14,7 +14,7 @@ import VideoWhyUsComponent from "./VideoWhyUsComponent";
 
 import styles from "./style.module.scss";
 import { Container } from "../Container";
-import ROUTES from "src/constants/routes";
+import PAGES from "src/constants/pages";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -101,7 +101,7 @@ function Whyus() {
                   transition={{ duration: 0.7 }}
                   className={styles.team__desc_bottom}
                 >
-                  <Link to={ROUTES.Careers}>View careers</Link>
+                  <Link to={PAGES.Careers.path}>View careers</Link>
                 </motion.div>
               </div>
             </div>

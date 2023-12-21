@@ -6,7 +6,7 @@ import ContactComponent from "../ContactComponent";
 import styles from "./style.module.scss";
 import CardPortfolio from "./CardPortfolio";
 import { HashLink } from "react-router-hash-link";
-import ROUTES from "src/constants/routes";
+import PAGES from "src/constants/pages";
 
 const data = [
   [
@@ -236,7 +236,7 @@ function Portfolio() {
             animate={controlsFrames}
             transition={{ duration: 0.9 }}
           >
-            <Link to={ROUTES.CaseStudy} className={styles.frame__link}>
+            <Link to={PAGES.CaseStudy.path} className={styles.frame__link}>
               View Case Study
             </Link>
           </motion.div>

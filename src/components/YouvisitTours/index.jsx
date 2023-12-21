@@ -5,7 +5,7 @@ import styles from "./style.module.scss";
 import SmallHeading from "../SmallHeading";
 import Container from "../Container";
 import Button from "../Button";
-import ROUTES from "src/constants/routes";
+import PAGES from "src/constants/pages";
 
 function YouvisitTours() {
   return (
@@ -13,7 +13,7 @@ function YouvisitTours() {
       <section className={styles.top_section}>
         <SmallHeading as="h1">Cove Creek vs. YouVisit</SmallHeading>
         <h2 className={styles.title}>See what makes us stand out</h2>
-        <Button variant={"transparent"} to={ROUTES.Contact}>
+        <Button variant={"transparent"} to={PAGES.Contact.path}>
           Schedule a Demo
         </Button>
         <TourGrid cards={cards} />

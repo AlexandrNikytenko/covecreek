@@ -10,7 +10,7 @@ import ContactComponent from "../ContactComponent";
 
 import styles from "./style.module.scss";
 import { Link } from "react-router-dom";
-import ROUTES from "src/constants/routes";
+import PAGES from "src/constants/pages";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -45,7 +45,7 @@ function University() {
         <h1 className={styles.title}>
           360° Virtual Tours Trusted By Leading Universities
         </h1>
-        <Link to={ROUTES.Contact} className={styles.blue_button}>
+        <Link to={PAGES.Contact.path} className={styles.blue_button}>
           Schedule a Demo
         </Link>
         <div className={styles.carousel_frame}>
@@ -67,7 +67,7 @@ function University() {
             Premium quality, intuitive control
           </p>
 
-          <Link to={ROUTES.Contact} className={styles.blue_button}>
+          <Link to={PAGES.Contact.path} className={styles.blue_button}>
             Schedule a Demo
           </Link>
         </motion.div>

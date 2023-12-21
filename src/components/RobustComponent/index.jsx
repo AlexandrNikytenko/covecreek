@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import ROUTES from "src/constants/routes";
+import PAGES from "src/constants/pages";
 
 function RobustComponent() {
   const controls = useAnimation();
@@ -73,7 +73,7 @@ function RobustComponent() {
           transition={{ duration: 0.8 }}
           className={styles.content__desc_bottom}
         >
-          <Link to={ROUTES.Contact}>Schedule a demo</Link>
+          <Link to={PAGES.Contact.path}>Schedule a demo</Link>
         </motion.div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import Container from "../Container";
-import ROUTES from "src/constants/routes";
+import PAGES from "src/constants/pages";
 
 function CaseComponent({ text }) {
   const controls = useAnimation();
@@ -56,7 +56,7 @@ function CaseComponent({ text }) {
             transition={{ duration: 0.3 }}
           >
             <Link
-              to={ROUTES.CaseStudy}
+              to={PAGES.CaseStudy.path}
               as="button"
               className={styles.case__image_button}
             >
