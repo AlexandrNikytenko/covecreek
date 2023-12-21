@@ -113,10 +113,12 @@
   letter-spacing: 1.3px;
   color: $primary-blue;
   text-transform: uppercase;
+  margin-block: 0.5rem;
   margin-block: 1rem;
 
   text-align: center;
   @media (min-width: $breakMobile) {
+    margin-block: 1rem;
     text-align: left;
   }
 }

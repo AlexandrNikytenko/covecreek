@@ -5,6 +5,7 @@ import styles from "./style.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import ArrowLink from "../ArrowLink";
 
 function Casestudy() {
   const controlsHonoring = useAnimation();
@@ -322,9 +323,8 @@ function Casestudy() {
             initial={{ opacity: 0, y: 200 }}
             animate={controlsScope}
             transition={{ duration: 0.9 }}
-            className={styles.link}
           >
-            <Link to="/all-tours">View all 30 tours</Link>
+            <ArrowLink to="/all-tours">View all 30 tours</ArrowLink>
           </motion.div>
         </div>
       </section>
@@ -437,7 +437,7 @@ function Casestudy() {
             transition={{ duration: 0.8 }}
             className={styles.link}
           >
-            <Link to="/all-tours">View all 30 tours</Link>
+            <ArrowLink to="/all-tours">View all 30 tours</ArrowLink>
           </motion.div>
         </div>
       </section>

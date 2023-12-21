@@ -5,7 +5,8 @@
 .unmatched {
   background-color: $primary-white;
   width: 100%;
-  padding: 0 1rem 3rem;
+  padding-block: 2rem;
+  padding-inline: 1rem;
   z-index: 1;
   box-sizing: border-box;
   overflow: hidden;
@@ -16,14 +17,13 @@
     gap: 0;
   }
 
-  &__container {
-    max-width: 1400px;
-    margin: auto;
+  &__inner {
     @include flex-column;
-    align-items: flex-start;
+
     justify-content: space-between;
 
     @media (min-width: $breakMobile) {
+      align-items: flex-start;
       flex-direction: row;
       gap: 0;
     }

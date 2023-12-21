@@ -82,7 +82,7 @@ function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
       key={card.id}
       ref={cardRef}
       className={styles.image_box}
-      style={{ perspective: "500px", zIndex }}
+      style={{ zIndex }}
     >
       <motion.div
         className={styles.image_box__container}
@@ -95,8 +95,12 @@ function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
       >
         <img src={card.imageSrc} alt={card.name} className={styles.image} />
         <figcaption>
-          <Link className={styles.link} to={card.link} target="_blank">
-            <h3 className={styles.image__title}>{card.name}</h3>
+          <Link
+            className={styles.image_box__link}
+            to={card.link}
+            target="_blank"
+          >
+            <h3 className={styles.image_box__title}>{card.name}</h3>
           </Link>
         </figcaption>
       </motion.div>

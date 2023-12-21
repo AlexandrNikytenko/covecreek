@@ -6,22 +6,22 @@
   z-index: 1;
   overflow: hidden;
   width: 100%;
-  padding: 0px 20px 60px;
+
   background-color: $primary-white;
+  box-sizing: border-box;
+  padding-block: 2rem;
+  padding-inline: 4em;
 
   @media (min-width: $breakMobile) {
     flex-direction: row;
-    padding: 160px 0;
+    padding-block: 10rem;
   }
 
-  &__container {
-    max-width: 1400px;
-    margin: auto;
+  &__inner {
     @include flex-column;
     @media (min-width: $breakMobile) {
       flex-direction: row;
     }
-    padding: 2rem;
   }
 
   &__desc {
@@ -68,7 +68,6 @@
 
     @media (min-width: $breakMobile) {
       height: 460px;
-      min-width: 740px;
     }
 
     &_button {

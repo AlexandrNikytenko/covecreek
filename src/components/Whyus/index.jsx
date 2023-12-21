@@ -13,6 +13,7 @@ import SliderWhy from "../SliderWhy";
 import VideoWhyUsComponent from "./VideoWhyUsComponent";
 
 import styles from "./style.module.scss";
+import { Container } from "../Container";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -56,53 +57,54 @@ function Whyus() {
       <ArticleComponent data={ourComitten} background={"white"} />
       <div style={{ background: "white", width: "100%" }}>
         <section className={styles.team} ref={refTeam}>
-          {/* container */}
-          <div className={styles.team__container}>
-            <motion.div
-              initial={{ opacity: 0, x: 200 }}
-              animate={controlsTeam}
-              transition={{ duration: 0.3 }}
-            >
-              <SliderWhy />
-            </motion.div>
-            <div className={styles.team__desc}>
-              <motion.h3
-                className={styles.team__desc_title}
-                initial={{ opacity: 0, x: 200 }}
-                animate={controlsTeam}
-                transition={{ duration: 0.4 }}
-              >
-                Our team
-              </motion.h3>
-              <motion.p
-                className={styles.team__desc_description}
-                initial={{ opacity: 0, x: 200 }}
-                animate={controlsTeam}
-                transition={{ duration: 0.5 }}
-              >
-                A team dedicated to bringing 360° photography to life
-              </motion.p>
-              <motion.p
-                className={styles.team__desc_text}
-                initial={{ opacity: 0, x: 200 }}
-                animate={controlsTeam}
-                transition={{ duration: 0.6 }}
-              >
-                Cove Creek's team is comprised of talented 360° photographers,
-                software developers, and support staff. Our team size provides
-                the efficiency to give personalized attention and deliver
-                amazing results.
-              </motion.p>
+          <Container>
+            <div className={styles.team__inner}>
               <motion.div
                 initial={{ opacity: 0, x: 200 }}
                 animate={controlsTeam}
-                transition={{ duration: 0.7 }}
-                className={styles.team__desc_bottom}
+                transition={{ duration: 0.3 }}
               >
-                <Link to="/careers">View careers</Link>
+                <SliderWhy />
               </motion.div>
+              <div className={styles.team__desc}>
+                <motion.h3
+                  className={styles.team__desc_title}
+                  initial={{ opacity: 0, x: 200 }}
+                  animate={controlsTeam}
+                  transition={{ duration: 0.4 }}
+                >
+                  Our team
+                </motion.h3>
+                <motion.p
+                  className={styles.team__desc_description}
+                  initial={{ opacity: 0, x: 200 }}
+                  animate={controlsTeam}
+                  transition={{ duration: 0.5 }}
+                >
+                  A team dedicated to bringing 360° photography to life
+                </motion.p>
+                <motion.p
+                  className={styles.team__desc_text}
+                  initial={{ opacity: 0, x: 200 }}
+                  animate={controlsTeam}
+                  transition={{ duration: 0.6 }}
+                >
+                  Cove Creek's team is comprised of talented 360° photographers,
+                  software developers, and support staff. Our team size provides
+                  the efficiency to give personalized attention and deliver
+                  amazing results.
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, x: 200 }}
+                  animate={controlsTeam}
+                  transition={{ duration: 0.7 }}
+                  className={styles.team__desc_bottom}
+                >
+                  <Link to="/careers">View careers</Link>
+                </motion.div>
+              </div>
             </div>
-          </div>
+          </Container>
         </section>
       </div>
 

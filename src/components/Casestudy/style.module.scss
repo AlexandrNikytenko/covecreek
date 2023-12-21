@@ -58,15 +58,15 @@
 
     &_name {
       @include a-2;
-
+      text-align: left;
       @media (min-width: $breakMobile) {
         right: 340px;
       }
     }
 
     &_title {
-      text-align: center;
       @include h-2;
+      text-align: left;
       color: $primary-white;
 
       @media (min-width: $breakMobile) {
@@ -80,19 +80,12 @@
 
 .small_heading {
   @include a-2;
-  text-transform: uppercase;
-  color: $primary-blue;
-  margin-bottom: 20px;
-  letter-spacing: 0.8px;
-
-  @media (min-width: $breakMobile) {
-    margin-bottom: 30px;
-    letter-spacing: 1.2px;
-  }
+  text-align: left;
 }
 
 .text_title {
   @include h-2;
+  text-align: left;
   line-height: 44px;
   margin-bottom: 20px;
 
@@ -117,12 +110,7 @@
 
   border-bottom: 1px solid $primary-white;
   border-top: 1px solid $primary-white;
-  text-align: center;
-
-  @media (min-width: $breakMobile) {
-    // padding: 120px 404px 80px;
-    text-align: left;
-  }
+  text-align: left;
 }
 
 .cemetry {
@@ -196,11 +184,13 @@
     @include h-4;
     letter-spacing: -0.48px;
     margin: 20px 20px 0;
+    text-align: left;
   }
 
   &__text {
     @include p-2;
     margin: 30px 20px;
+    text-align: left;
   }
 }
 
@@ -208,14 +198,14 @@
   @include flex-column;
   background-color: $primary-white;
   width: 100%;
-  padding: 60px 20px 40px;
+
+  padding-block: 2rem;
+  padding-inline: 1rem;
+
   border-bottom: 1px solid $primary-white;
   border-top: 1px solid $primary-white;
-  text-align: center;
+  text-align: left;
 
-  @media (min-width: $breakMobile) {
-    text-align: left;
-  }
   &__container {
     @include container-800;
   }
@@ -352,39 +342,21 @@
 
 .article_small_title {
   @include a-2;
-  text-align: center;
-  @media (min-width: $breakMobile) {
-    text-align: left;
-  }
+  text-align: left;
 }
 
 .article_title {
   @include h-3;
   margin-bottom: 34px;
-  text-align: center;
-
-  @media (min-width: $breakMobile) {
-    @include h-2;
-    text-align: left;
-  }
+  text-align: left;
 }
 
 .article_text {
   @include p-1;
   margin-block-end: 1rem;
+  text-align: left;
 
   &__link {
     color: $primary-black;
-  }
-}
-
-.link {
-  text-align: center;
-  @media (min-width: $breakMobile) {
-    text-align: left;
-  }
-
-  a {
-    @include arrow-link;
   }
 }

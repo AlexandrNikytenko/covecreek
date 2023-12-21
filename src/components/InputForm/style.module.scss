@@ -21,6 +21,7 @@
   border-radius: 8px;
   padding: 17px 20px;
   border: 1px solid $primary-white;
+  text-align: left;
 }
 
 .input_area {
@@ -60,6 +61,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-align: left;
   }
 
   &__button {
