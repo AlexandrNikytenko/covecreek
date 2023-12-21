@@ -7,14 +7,22 @@
   padding: 1rem 2rem;
   margin: 1rem;
   text-decoration: none;
+  transition: background-color 0.8s ease;
 }
 
 .blue_button {
   @include button-blue;
   @include button-base;
+
+  &:hover {
+    background-color: $primary-blue;
+  }
 }
 
 .transparent_button {
   @include button-transparent;
   @include button-base;
+  &:hover {
+    background-color: $primary-blue;
+  }
 }

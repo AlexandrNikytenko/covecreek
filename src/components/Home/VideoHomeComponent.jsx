@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
-function VideoHomeComponent({ scrollToSection, src }) {
+function VideoHomeComponent({ scrollToSection, src, placeholder }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [isAnimationEnabled, setIsAnimationEnabled] = useState(false);
@@ -65,6 +65,7 @@ function VideoHomeComponent({ scrollToSection, src }) {
             loop
             muted
             className={styles.video_box__video}
+            poster={placeholder}
           >
             <source src={src} type="video/mp4" />
             Your browser does not support the video tag.

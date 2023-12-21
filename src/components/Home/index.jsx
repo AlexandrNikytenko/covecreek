@@ -94,6 +94,7 @@ function Home() {
       <VideoHomeComponent
         scrollToSection={scrollToSection}
         src="https://player.vimeo.com/progressive_redirect/playback/894337365/rendition/540p/file.mp4?loc=external&log_user=0&signature=ecbf82ccad517945a5ffbaf26c2dc44f07f1efcb544370d4c532e513a00867b4"
+        placeholder="/images/video-placeholder.jpg"
       />
 
       <section ref={refLeading} className={styles.leading} id="homepage-hero">
