@@ -25,7 +25,6 @@
     "node-sass": "^7.0.3",
     "nodemailer": "^6.9.7",
     "react": "^18.2.0",
-    "react-alice-carousel": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-id-swiper": "^4.0.0",
     "react-intersection-observer": "^9.5.3",
