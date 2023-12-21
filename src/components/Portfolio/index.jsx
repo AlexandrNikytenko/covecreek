@@ -195,7 +195,10 @@ function Portfolio() {
             animate={controlsFrames}
             transition={{ duration: 0.7 }}
           >
-            <HashLink to="/why-us#robust-cms" className={styles.frame__link}>
+            <HashLink
+              to={PAGES.WhyUs + "#robust-cms"}
+              className={styles.frame__link}
+            >
               Discover Our CMS
             </HashLink>
           </motion.div>
