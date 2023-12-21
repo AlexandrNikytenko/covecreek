@@ -1,8 +1,9 @@
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css"; // Import default Splide CSS
-import styles from "./style.module.scss"; // Adjust the path to your SCSS module
 import { useRef, useEffect } from "react";
-// Slide data, you can add more slides as needed
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+
+import styles from "./style.module.scss";
+
 const slides = [
   {
     src: "/images/why-us/slider/Slider1.jpg",
@@ -31,10 +32,10 @@ const slides = [
   },
 ];
 
-export function Slide({ src, altText, title, onClick }) {
+export function Slide({ src, altText, title }) {
   return (
     <SplideSlide>
-      <div className={styles.slide} onClick={onClick}>
+      <div className={styles.slide}>
         <figure className={styles.image_container}>
           <img src={src} alt={altText} />
           <figcaption>
@@ -60,12 +61,9 @@ export function SliderWhy() {
     pagination: false,
     speed: 800,
     easing: "ease-out",
+    width: "100%",
   };
   const ref = useRef();
-
-  const nextSlide = () => {
-    ref.current.splide.go(">");
-  };
 
   useEffect(() => {
     // set options again. animations don't seem to initialize properly without this
@@ -73,12 +71,12 @@ export function SliderWhy() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.slider}>
       <Splide
         options={options}
         ref={ref}
         onMounted={(Splide) => {
-          Splide.Components.Autoplay.play();
+          // Splide.Components.Autoplay.play();
         }}
       >
         {slides.map((slide, index) => (
@@ -87,7 +85,6 @@ export function SliderWhy() {
             src={slide.src}
             altText={slide.altText}
             title={slide.title}
-            onClick={nextSlide}
           />
         ))}
       </Splide>

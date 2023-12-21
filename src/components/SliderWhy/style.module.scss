@@ -2,47 +2,42 @@
 @import "../../styles/variables.scss";
 @import "../../styles/colors.scss";
 
-.container,
-.slide {
-  width: 100%;
-  height: 40vh;
+.slider {
   @media (min-width: $breakMobile) {
     width: 440px;
-    height: 550px;
   }
 }
 
-.container {
-  position: relative;
-  // overflow: hidden;
+.slide {
+  cursor: pointer;
+
+  width: 100%;
+  height: 100%;
 }
 
-.slide {
-  width: 100%;
-
-  // overflow: hidden;
-  cursor: pointer;
+figure {
+  margin: 0;
 }
 
 .image_container {
   display: grid;
   grid-template-rows: auto min-content;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  margin: 0;
 
   img {
     grid-row: 1;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    max-height: 300px;
     object-fit: cover;
     border-radius: 20px;
+
+    @media (min-width: $breakMobile) {
+      max-height: unset;
+    }
   }
 
   figcaption {
     grid-row: 2;
+
     h2 {
       @include a-1;
       text-align: center;
