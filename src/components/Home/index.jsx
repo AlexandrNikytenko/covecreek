@@ -183,7 +183,7 @@ function Home() {
                 Make it yours in minutes with our advanced CMS
               </p>
               <HashLink
-                to={PAGES.WhyUs + "#robust-cms"}
+                to={PAGES.WhyUs.path + "#robust-cms"}
                 className={styles.presentation__desc_bottom}
               >
                 Learn more

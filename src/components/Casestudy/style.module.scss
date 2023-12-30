@@ -250,6 +250,9 @@
       &__bottom {
         @include a-2;
         margin: 0;
+        @media (min-width: $breakMobile) {
+          margin: 0;
+        }
         display: flex;
         align-items: center;
         justify-content: center;

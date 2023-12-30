@@ -78,12 +78,12 @@ function VideoHomeComponent({ scrollToSection, src, placeholder }) {
             Premium Quality, Intuitive Control
           </h2>
         </div>
-        <img
-          src="/icons/Arrow_down_blue.svg"
-          alt="Logo"
+        <div
           className={styles.video_box__arrow_down}
           onClick={() => scrollToSection("homepage-hero")}
-        />
+        >
+          <img src="/icons/Arrow_down_blue.svg" alt="Logo" />
+        </div>
       </motion.section>
     </div>
   );

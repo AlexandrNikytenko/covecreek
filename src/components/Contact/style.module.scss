@@ -82,7 +82,7 @@
   @include h-4;
   position: relative;
   margin: 0px 20px 0px;
-  text-align: center;
+  text-align: center !important;
   color: $primary-white;
 
   @media (min-width: $breakMobile) {
