@@ -196,7 +196,7 @@ function Portfolio() {
             transition={{ duration: 0.7 }}
           >
             <HashLink
-              to={PAGES.WhyUs + "#robust-cms"}
+              to={PAGES.WhyUs.path + "#robust-cms"}
               className={styles.frame__link}
             >
               Discover Our CMS
