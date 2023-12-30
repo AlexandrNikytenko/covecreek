@@ -127,10 +127,6 @@ $arrowHeight: 27px;
 
     @media (min-width: $breakMobile) {
       display: block;
-      // position: absolute;
-      // top: calc(100vh - 100px - 27px - 1rem);
-      // top: calc(100vh - $headerHeight - $arrowHeight - 2rem);
-
       z-index: 2;
       cursor: pointer;
     }
