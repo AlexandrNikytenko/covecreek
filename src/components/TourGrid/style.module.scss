@@ -3,7 +3,6 @@
 @import "../../styles/colors.scss";
 
 .image_container {
-  overflow: hidden;
   display: grid;
   position: relative;
   z-index: 2;
@@ -39,7 +38,6 @@ figure {
   position: relative;
   cursor: pointer;
   border-radius: 20px;
-  overflow: hidden;
 
   figcaption {
     transition: transform 0.3s linear;
@@ -56,6 +54,7 @@ figure {
   }
   &__overlay {
     opacity: 0;
+    display: none;
     transition: opacity 0.3s linear;
   }
 
@@ -66,8 +65,9 @@ figure {
       rgba(48, 118, 190, 1) 100%
     );
 
-    opacity: 1;
+    display: block;
 
+    opacity: 1;
     border-radius: 20px;
     box-sizing: border-box;
     position: absolute;
