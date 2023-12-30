@@ -19,15 +19,12 @@
   }
 }
 .image_row {
-  max-width: 300px;
+  max-width: 400px;
   margin-inline: auto;
 
-  display: flex;
-  flex-wrap: wrap;
   width: 100%;
 
   @media (min-width: $breakMobile) {
-    flex-wrap: nowrap;
     max-width: unset;
   }
 }
@@ -37,7 +34,6 @@ figure {
 }
 
 .image_box {
-  max-width: 400px;
   margin-inline: auto;
   perspective: 500px;
   width: 100%;
