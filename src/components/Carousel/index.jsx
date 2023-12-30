@@ -9,10 +9,11 @@ export function Slide({ src, altText, title, url }) {
     <SplideSlide>
       <Link to={url} target="_blank">
         <div className={styles.slide}>
+          <div className={styles.slide__overlay}>Open Tour</div>
           <figure className={styles.image_container}>
             <img src={src} alt={altText} />
             <figcaption>
-              <h2 className={styles.title}>{title}</h2>
+              <h2 className={styles.slide__title}>{title}</h2>
             </figcaption>
           </figure>
         </div>
