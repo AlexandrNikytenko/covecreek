@@ -21,7 +21,6 @@
 .image_row {
   max-width: 400px;
   margin-inline: auto;
-
   width: 100%;
 
   @media (min-width: $breakMobile) {
@@ -38,8 +37,9 @@ figure {
   perspective: 500px;
   width: 100%;
   position: relative;
-
   cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
 
   figcaption {
     transition: transform 0.3s linear;
@@ -53,6 +53,39 @@ figure {
     padding-top: 2rem;
     padding-inline: 2rem;
     box-sizing: border-box;
+  }
+  &__overlay {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+  }
+
+  &:hover &__overlay {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(48, 118, 190, 1) 100%
+    );
+
+    opacity: 1;
+
+    border-radius: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include h-2;
+    @include text-shadow;
+    color: $primary-white;
+  }
+
+  &:hover &__title {
+    display: none;
   }
 
   &__container {

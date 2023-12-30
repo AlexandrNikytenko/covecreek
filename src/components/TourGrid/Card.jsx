@@ -93,16 +93,13 @@ function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
         animate={cardControls}
         ref={redRef}
       >
-        <img src={card.imageSrc} alt={card.name} className={styles.image} />
-        <figcaption>
-          <Link
-            className={styles.image_box__link}
-            to={card.link}
-            target="_blank"
-          >
+        <Link className={styles.image_box__link} to={card.link} target="_blank">
+          <img src={card.imageSrc} alt={card.name} className={styles.image} />
+          <div className={styles.image_box__overlay}>Open Tour</div>
+          <figcaption>
             <h3 className={styles.image_box__title}>{card.name}</h3>
-          </Link>
-        </figcaption>
+          </figcaption>
+        </Link>
       </motion.div>
     </motion.figure>
   );
