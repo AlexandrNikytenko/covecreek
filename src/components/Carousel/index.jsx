@@ -59,7 +59,7 @@ export function HomeCarousel() {
     <Carousel>
       <Slide
         key={1}
-        src="images/slides/toledo.jpg"
+        src="/images/slides/toledo.jpg"
         altText="Aerial view of the University of Toledo"
         title="The University of Toledo"
         url="https://tours.covecreekproductions.com/toledo/"
@@ -67,7 +67,7 @@ export function HomeCarousel() {
 
       <Slide
         key={2}
-        src="images/slides/seattle.jpg"
+        src="/images/slides/seattle.jpg"
         altText="Seattle University"
         title="Seattle University"
         url="https://tours.covecreekproductions.com/seattle-university-cc/"
@@ -75,7 +75,7 @@ export function HomeCarousel() {
 
       <Slide
         key={3}
-        src="images/slides/indiana.jpg"
+        src="/images/slides/indiana.jpg"
         altText="Indiana University"
         title="Indiana University"
         url="https://covecreekproductions.com/tours/indiana/"
@@ -83,7 +83,7 @@ export function HomeCarousel() {
 
       <Slide
         key={4}
-        src="images/slides/asu.jpg"
+        src="/images/slides/asu.jpg"
         altText="Arizona State University"
         title="Arizona State University"
         url="https://covecreekproductions.com/tours/asu_football/"
@@ -91,7 +91,7 @@ export function HomeCarousel() {
 
       <Slide
         key={5}
-        src="images/slides/normandy.jpg"
+        src="/images/slides/normandy.jpg"
         altText="Normandy American Cemetery"
         title="Normandy American Cemetery"
         url="https://tours.covecreekproductions.com/normandy/"
@@ -99,7 +99,7 @@ export function HomeCarousel() {
 
       <Slide
         key={6}
-        src="images/slides/worldtour.jpg"
+        src="/images/slides/worldtour.jpg"
         altText="World Tour"
         title="World Tour"
         url="https://tours.covecreekproductions.com/world-tour/"
@@ -107,7 +107,7 @@ export function HomeCarousel() {
 
       <Slide
         key={7}
-        src="images/slides/principia.jpg"
+        src="/images/slides/principia.jpg"
         altText="Principia College"
         title="Principia College"
         url="https://tours.covecreekproductions.com/principia-cc/"
@@ -124,7 +124,7 @@ export function UniversityCarousel() {
     <Carousel>
       <Slide
         key={1}
-        src="images/slides/toledo.jpg"
+        src="/images/slides/toledo.jpg"
         altText="Aerial view of the University of Toledo"
         title="The University of Toledo"
         url="https://tours.covecreekproductions.com/toledo/"
@@ -132,7 +132,7 @@ export function UniversityCarousel() {
 
       <Slide
         key={2}
-        src="images/slides/seattle.jpg"
+        src="/images/slides/seattle.jpg"
         altText="Seattle University"
         title="Seattle University"
         url="https://tours.covecreekproductions.com/seattle-university-cc/"
@@ -140,7 +140,7 @@ export function UniversityCarousel() {
 
       <Slide
         key={3}
-        src="images/slides/indiana.jpg"
+        src="/images/slides/indiana.jpg"
         altText="Indiana University"
         title="Indiana University"
         url="https://tours.covecreekproductions.com/indiana-university/"
@@ -148,7 +148,7 @@ export function UniversityCarousel() {
 
       <Slide
         key={4}
-        src="images/slides/asu.jpg"
+        src="/images/slides/asu.jpg"
         altText="Arizona State University"
         title="Arizona State University"
         url="https://tours.covecreekproductions.com/asu/"
@@ -156,7 +156,7 @@ export function UniversityCarousel() {
 
       <Slide
         key={5}
-        src="images/slides/normandy.jpg"
+        src="/images/slides/normandy.jpg"
         altText="Normandy American Cemetery"
         title="Normandy American Cemetery"
         url="https://tours.covecreekproductions.com/normandy/"
@@ -164,7 +164,7 @@ export function UniversityCarousel() {
 
       <Slide
         key={6}
-        src="images/slides/worldtour.jpg"
+        src="/images/slides/worldtour.jpg"
         altText="World Tour"
         title="World Tour"
         url="https://tours.covecreekproductions.com/world-tour/"
@@ -172,7 +172,7 @@ export function UniversityCarousel() {
 
       <Slide
         key={7}
-        src="images/slides/principia.jpg"
+        src="/images/slides/principia.jpg"
         altText="Principia College"
         title="Principia College"
         url="https://tours.covecreekproductions.com/principia/"
