@@ -161,19 +161,22 @@ function Portfolio() {
       </section>
 
       <section className={styles.frames} ref={refFrames}>
-        <motion.div
+        <HashLink
+          to={PAGES.WhyUs.path + "#robust-cms"}
           className={styles.frame}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsFrames}
           transition={{ duration: 0.3 }}
         >
-          <motion.img
-            src="/images/portfolio/Portfolio_1.jpg"
+          <motion.div
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.4 }}
-            className={styles.frame__top}
-          />
+            className={styles.frame__image}
+          >
+            <img src="/images/portfolio/Portfolio_1.jpg" />
+          </motion.div>
+
           <motion.h3
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
@@ -195,28 +198,25 @@ function Portfolio() {
             animate={controlsFrames}
             transition={{ duration: 0.7 }}
           >
-            <HashLink
-              to={PAGES.WhyUs.path + "#robust-cms"}
-              className={styles.frame__link}
-            >
-              Discover Our CMS
-            </HashLink>
+            <button className={styles.frame__link}>Discover Our CMS</button>
           </motion.div>
-        </motion.div>
+        </HashLink>
 
-        <motion.div
+        <Link
+          to={PAGES.CaseStudy.path}
           className={`${styles.desktop_only} ${styles.frame}`}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsFrames}
           transition={{ duration: 0.5 }}
         >
-          <motion.img
-            src="/images/portfolio/Portfolio_4.jpg"
+          <motion.div
             initial={{ opacity: 0, y: 200 }}
             animate={controlsFrames}
             transition={{ duration: 0.6 }}
-            className={styles.frame__top}
-          />
+            className={styles.frame__image}
+          >
+            <img src="/images/portfolio/Portfolio_4.jpg" />
+          </motion.div>
 
           <motion.h3
             initial={{ opacity: 0, y: 200 }}
@@ -239,11 +239,9 @@ function Portfolio() {
             animate={controlsFrames}
             transition={{ duration: 0.9 }}
           >
-            <Link to={PAGES.CaseStudy.path} className={styles.frame__link}>
-              View Case Study
-            </Link>
+            <button className={styles.frame__link}>View Case Study</button>
           </motion.div>
-        </motion.div>
+        </Link>
       </section>
 
       <ContactComponent />
