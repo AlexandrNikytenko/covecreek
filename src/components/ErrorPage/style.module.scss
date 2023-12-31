@@ -1,0 +1,46 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    text-align: center;
+    margin-top: 98px;
+    font-size: 72px;
+    line-height: 72px;
+    font-weight: 700;
+    letter-spacing: -1.44px;
+    color: $primary-white;
+    @include text-shadow;
+
+    @media (min-width: $breakMobile) {
+      white-space: nowrap;
+      @include t-1;
+      font-size: 5.5rem;
+    }
+
+    @media (min-width: 1200px) {
+      @include t-1;
+      margin-top: 164px;
+    }
+  }
+
+  &__desc {
+    text-align: center;
+    margin-top: 32px;
+    @include p-1;
+    color: $primary-white;
+
+    @media (min-width: $breakMobile) {
+      @include h-4;
+      font-weight: 600;
+      margin-top: 26px;
+      text-align: center;
+    }
+  }
+}

@@ -43,6 +43,10 @@ export const PAGES = {
     path: "/youvisit-pricing",
     title: "YouVisit Pricing | Cove Creek Productions",
   },
+  Notfound: {
+    path: "/404",
+    title: "404 Page Not Found | Cove Creek Productions",
+  },
 };
 
 export default PAGES;

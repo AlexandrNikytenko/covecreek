@@ -14,10 +14,11 @@ import Privacy from "./components/Privacy";
 import AllTours from "./components/AllTours";
 import SummerCampTours from "./components/SummerCampTours";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-
 import { Page } from "./components/Page";
 import YouvisitTours from "./components/YouvisitTours";
 import PAGES from "./constants/pages";
+import ErrorPage from "./components/ErrorPage";
+
 function App() {
   const location = useLocation();
 
@@ -41,7 +42,6 @@ function App() {
             </Page>
           }
         />
-
         <Route
           path={PAGES.Portfolio.path}
           element={
@@ -74,7 +74,6 @@ function App() {
             </Page>
           }
         />
-
         <Route
           path={PAGES.Contact.path}
           element={
@@ -115,12 +114,19 @@ function App() {
             </Page>
           }
         />
-
         <Route
           path={PAGES.YouVisit.path}
           element={
             <Page title={PAGES.YouVisit.title}>
               <YouvisitTours />
+            </Page>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Page title={PAGES.Notfound.title}>
+              <ErrorPage />
             </Page>
           }
         />
