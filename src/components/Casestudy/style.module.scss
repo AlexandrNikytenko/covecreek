@@ -161,19 +161,16 @@
     background-repeat: no-repeat;
 
     &_image_one {
-      background-image: url("../../../public/images/portfolio/Portfolio_4.jpg");
+      background-image: url("../../../public/images/case-study/normandy-abmc.jpg");
     }
-
     &_image_two {
-      background-image: url("../../../public/images/Rectangle 93.png");
+      background-image: url("../../../public/images/case-study/manila-abmc.jpg");
     }
-
     &_image_three {
-      background-image: url("../../../public/images/Rectangle 169.png");
+      background-image: url("../../../public/images/case-study/meuse-argonne-abmc.jpg");
     }
-
     &_image_four {
-      background-image: url("../../../public/images/Rectangle 170.png");
+      background-image: url("../../../public/images/case-study/sicily-rome-abmc.jpg");
     }
 
     @media (min-width: $breakMobile) {
