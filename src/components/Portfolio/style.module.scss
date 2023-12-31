@@ -95,6 +95,11 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    transition: transform 0.3s linear;
+  }
+
+  &:hover img {
+    transform: scale(1.15);
   }
 
   figcaption {
