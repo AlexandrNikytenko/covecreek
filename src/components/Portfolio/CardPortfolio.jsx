@@ -90,7 +90,9 @@ function CardPortfolio({
         style={isAnimationEnabled ? { rotateX, rotateY } : {}}
       >
         <Link to={url} className={styles.card__link} target="_blank">
-          <div className={styles.card__overlay}>Open Tour</div>
+          <div className={styles.card__overlay}>
+            <button className={styles.card__button}>Open in 360° </button>
+          </div>
           <img src={item.imageUrl} alt={item.title} />
           <figcaption>
             <h3 className={styles.card__title}>{item.title}</h3>
