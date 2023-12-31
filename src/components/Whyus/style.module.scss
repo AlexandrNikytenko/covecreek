@@ -83,8 +83,7 @@
 
     @media (min-width: $breakMobile) {
       position: absolute;
-
-      top: 270px;
+      bottom: 0;
     }
   }
 }
