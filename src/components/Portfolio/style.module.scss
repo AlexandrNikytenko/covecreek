@@ -26,6 +26,14 @@
   }
 }
 
+.title_container {
+  max-width: 1600px;
+
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    max-width: 1200px;
+  }
+}
+
 .title {
   @include h-3;
   margin: 1rem 1rem 2rem;
@@ -34,7 +42,7 @@
 
   @media (min-width: $breakMobile) {
     @include h-1;
-    margin: 80px 194px;
+    margin-block: 80px;
     text-align: center;
   }
 

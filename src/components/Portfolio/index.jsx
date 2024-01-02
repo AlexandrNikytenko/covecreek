@@ -7,6 +7,7 @@ import styles from "./style.module.scss";
 import CardPortfolio from "./CardPortfolio";
 import { HashLink } from "react-router-hash-link";
 import PAGES from "src/constants/pages";
+import Container from "../Container";
 
 const data = [
   [
@@ -130,17 +131,19 @@ function Portfolio() {
 
   return (
     <div className={styles.container}>
-      <motion.h1
-        className={styles.title}
-        ref={refTitle}
-        initial={{ opacity: 0, y: 200 }}
-        animate={controlsTitle}
-        transition={{ duration: 0.4 }}
-      >
-        We combine&nbsp;<span>beautiful imagery</span>&nbsp;and&nbsp;
-        <span>innovative design</span>&nbsp;to create a premium virtual tour
-        experience
-      </motion.h1>
+      <Container className={styles.title_container}>
+        <h1
+          className={styles.title}
+          ref={refTitle}
+          initial={{ opacity: 0, y: 200 }}
+          animate={controlsTitle}
+          transition={{ duration: 0.4 }}
+        >
+          We combine <span>beautiful imagery</span> and{" "}
+          <span>innovative design</span>&nbsp;to create a premium virtual tour{" "}
+          experience
+        </h1>
+      </Container>
       <section className={styles.grid_container}>
         <div className={styles.wave_top}></div>
         {data.map((row, index) => (
