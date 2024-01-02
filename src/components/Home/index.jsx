@@ -94,7 +94,7 @@ function Home() {
       <div className={styles.wave_top}></div>
       <VideoHomeComponent
         scrollToSection={scrollToSection}
-        src="https://player.vimeo.com/progressive_redirect/playback/894337365/rendition/540p/file.mp4?loc=external&log_user=0&signature=ecbf82ccad517945a5ffbaf26c2dc44f07f1efcb544370d4c532e513a00867b4"
+        src="https://player.vimeo.com/progressive_redirect/playback/899350477/rendition/720p/file.mp4?loc=external&log_user=0&signature=073196d8eb85ff15f8bdaa1184ef5585b727c8c39b4f1ef7e06237cb8c684743"
         placeholder="/images/video-placeholder.jpg"
       />
 
