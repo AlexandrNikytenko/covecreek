@@ -8,36 +8,8 @@ import animation360 from "../../animations/360.json";
 import styles from "./style.module.scss";
 
 export function Slide({ src, altText, title, url }) {
-  const [tooltip, setTooltip] = useState({ x: 0, y: 0, visible: false });
-
-  const handleMouseMove = (e) => {
-    const bounds = e.currentTarget.getBoundingClientRect();
-    setTooltip({
-      x: e.clientX - bounds.left,
-      y: e.clientY - bounds.top,
-      visible: true,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setTooltip({ ...tooltip, visible: false });
-  };
-
   return (
-    <SplideSlide onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-      {tooltip.visible && (
-        <div
-          className={styles.tooltip}
-          style={{ top: tooltip.y, left: tooltip.x }}
-        >
-          <Lottie
-            animationData={animation360}
-            width={96}
-            height={96}
-            speed={1.5}
-          />
-        </div>
-      )}
+    <SplideSlide>
       <Link to={url} target="_blank">
         <div className={styles.slide}>
           <div className={styles.slide__overlay}>
