@@ -95,7 +95,9 @@ function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
       >
         <Link className={styles.image_box__link} to={card.link} target="_blank">
           <img src={card.imageSrc} alt={card.name} className={styles.image} />
-          <div className={styles.image_box__overlay}>Open Tour</div>
+          <div className={styles.image_box__overlay}>
+            <button className={styles.image_box__button}>Open in 360° </button>
+          </div>
           <figcaption>
             <h3 className={styles.image_box__title}>{card.name}</h3>
           </figcaption>
