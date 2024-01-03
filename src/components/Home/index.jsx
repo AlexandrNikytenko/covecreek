@@ -8,7 +8,7 @@ import ContactComponent from "../ContactComponent";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import VideoHomeComponent from "./VideoHomeComponent";
+import { PerspectiveVideo } from "../PerspectiveVideo";
 import { Container } from "../Container";
 import PAGES from "src/constants/pages";
 
@@ -92,11 +92,25 @@ function Home() {
   return (
     <div className={styles.page_container}>
       <div className={styles.wave_top}></div>
-      <VideoHomeComponent
-        scrollToSection={scrollToSection}
+      <PerspectiveVideo
         src="https://player.vimeo.com/progressive_redirect/playback/899350477/rendition/720p/file.mp4?loc=external&log_user=0&signature=073196d8eb85ff15f8bdaa1184ef5585b727c8c39b4f1ef7e06237cb8c684743"
         placeholder="/images/video-placeholder.jpg"
-      />
+      >
+        <div className={styles.video_box__text}>
+          <h1 className={styles.video_box__text_title}>
+            360° Virtual&nbsp;Tours
+          </h1>
+          <h2 className={styles.video_box__text_desc}>
+            Premium Quality, Intuitive Control
+          </h2>
+        </div>
+        <div
+          className={styles.video_box__arrow_down}
+          onClick={() => scrollToSection("homepage-hero")}
+        >
+          <img src="/icons/Arrow_down_blue.svg" alt="Logo" />
+        </div>
+      </PerspectiveVideo>
 
       <section ref={refLeading} className={styles.leading} id="homepage-hero">
         <Container>

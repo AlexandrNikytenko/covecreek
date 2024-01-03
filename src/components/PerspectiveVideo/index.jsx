@@ -1,9 +1,8 @@
 import styles from "./style.module.scss";
-
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
-function VideoHomeComponent({ scrollToSection, src, placeholder }) {
+export function PerspectiveVideo({ src, placeholder, children }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [isAnimationEnabled, setIsAnimationEnabled] = useState(false);
@@ -71,24 +70,10 @@ function VideoHomeComponent({ scrollToSection, src, placeholder }) {
             Your browser does not support the video tag.
           </video>
         </motion.div>
-
-        <div className={styles.video_box__text}>
-          <h1 className={styles.video_box__text_title}>
-            360° Virtual&nbsp;Tours
-          </h1>
-          <h2 className={styles.video_box__text_desc}>
-            Premium Quality, Intuitive Control
-          </h2>
-        </div>
-        <div
-          className={styles.video_box__arrow_down}
-          onClick={() => scrollToSection("homepage-hero")}
-        >
-          <img src="/icons/Arrow_down_blue.svg" alt="Logo" />
-        </div>
+        {children}
       </motion.section>
     </div>
   );
 }
 
-export default VideoHomeComponent;
+export default PerspectiveVideo;
