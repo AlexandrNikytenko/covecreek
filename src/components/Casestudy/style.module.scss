@@ -154,6 +154,7 @@
   }
 
   figure {
+    overflow: hidden;
     margin: 0;
 
     img {
@@ -180,6 +181,10 @@
         text-align: left;
       }
     }
+  }
+
+  &:hover img {
+    scale: 1.2;
   }
 }
 
@@ -227,7 +232,7 @@
         width: calc(100% / 3 - 18.7px);
       }
 
-      &__image {
+      &__top {
         @include h-1;
         display: flex;
         flex-grow: 1;
