@@ -122,3 +122,45 @@
   width: 100%;
   background-color: $primary-white;
 }
+
+.video_box {
+  padding-block: 3rem 0;
+  &__text {
+    @include flex-column;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    @media (min-width: $breakMobile) {
+      padding: 0 60px;
+    }
+
+    &__title {
+      text-align: center;
+      @include h-3;
+      color: $primary-white;
+      margin-bottom: 60px;
+      @include text-shadow;
+
+      @media (min-width: $breakMobile) {
+        @include h-1;
+        text-align: center;
+        margin-top: 230px;
+      }
+    }
+  }
+
+  &__button {
+    @include button-blue;
+    width: 167px;
+    height: 50px;
+    border-radius: 40px;
+    margin-inline: auto;
+
+    @media (min-width: $breakMobile) {
+      width: 207px;
+      height: 60px;
+      border-radius: 50px;
+    }
+  }
+}

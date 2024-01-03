@@ -47,7 +47,7 @@ export function PerspectiveVideo({ src, placeholder, children }) {
       style={{ width: "100%", display: "flex", justifyContent: "center" }}
       onMouseEnter={() => setIsFirstHover(true)}
     >
-      <motion.section
+      <motion.div
         className={styles.video_box}
         onMouseMove={handleMouse}
         style={{
@@ -71,7 +71,7 @@ export function PerspectiveVideo({ src, placeholder, children }) {
           </video>
         </motion.div>
         {children}
-      </motion.section>
+      </motion.div>
     </div>
   );
 }

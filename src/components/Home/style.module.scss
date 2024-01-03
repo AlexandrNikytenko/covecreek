@@ -32,49 +32,15 @@ $arrowHeight: 27px;
 }
 
 .video_box {
-  @include flex-column;
-  position: relative;
-  width: 100%;
-  margin-top: 20px;
-  align-items: center;
-  justify-content: center;
-  width: calc(100vw - 40px);
-  border-radius: 20px;
+  box-sizing: border-box;
   overflow: hidden;
+  margin-bottom: 1rem;
 
   @media (min-width: $breakMobile) {
-    margin-top: 0px;
-    padding: 100px 200px 160px;
+    padding-block: 60px;
   }
-
-  &__container {
-    display: flex;
-    justify-content: center;
-    height: 40vh;
-    overflow: hidden;
-
-    @media (min-width: $breakMobile) {
-      height: 500px;
-      width: 750px;
-      border-radius: 32px;
-      margin-bottom: 10vh;
-      transition: transform 0.5s linear;
-    }
-  }
-
-  &__video {
-    @include flex-column;
-    align-items: center;
-    z-index: 1;
-    box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.25) inset;
-    background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0.2) 100%
-    );
-  }
-
   &__text {
+    margin-top: 98px;
     @include flex-column;
     z-index: 2;
     position: absolute;
@@ -82,12 +48,11 @@ $arrowHeight: 27px;
     padding: 0;
     @media (min-width: $breakMobile) {
       padding: 0 60px;
-      margin-top: 98px;
     }
 
     &_title {
       text-align: center;
-      margin-top: 98px;
+
       font-size: 3rem;
       font-weight: 900;
       letter-spacing: -0.05em;
@@ -100,10 +65,11 @@ $arrowHeight: 27px;
         white-space: nowrap;
         font-size: 5.5rem;
         line-height: 0.75em;
+        margin-top: 150px;
       }
 
       @media (min-width: 1200px) {
-        margin-top: 164px;
+        margin-top: 98px;
         font-size: 8rem;
       }
     }
@@ -126,6 +92,7 @@ $arrowHeight: 27px;
 
   &__arrow_down {
     display: none;
+    margin-top: 10vh;
 
     @media (min-width: $breakMobile) {
       display: block;

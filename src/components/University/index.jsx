@@ -7,7 +7,7 @@ import ArticleComponent from "../ArticleComponent";
 import RobustComponent from "../RobustComponent";
 import UnmatchedComponent from "../UnmatchedComponent";
 import ContactComponent from "../ContactComponent";
-
+import { PerspectiveVideo } from "../PerspectiveVideo";
 import styles from "./style.module.scss";
 import { Link } from "react-router-dom";
 import PAGES from "src/constants/pages";
@@ -56,21 +56,21 @@ function University() {
       <ArticleComponent data={whyCove} />
       <RobustComponent />
       <UnmatchedComponent link={false} />
-      <section className={styles.image_container} ref={ref}>
-        <motion.div
-          className={styles.image_premium}
-          initial={{ opacity: 0 }}
-          animate={controls}
-          transition={{ duration: 1 }}
+      <section className={styles.video_box}>
+        <PerspectiveVideo
+          src="https://player.vimeo.com/progressive_redirect/playback/899350477/rendition/720p/file.mp4?loc=external&log_user=0&signature=073196d8eb85ff15f8bdaa1184ef5585b727c8c39b4f1ef7e06237cb8c684743"
+          placeholder="/images/video-placeholder.jpg"
         >
-          <p className={styles.image_premium__title}>
-            Premium quality, intuitive control
-          </p>
+          <div className={styles.video_box__text}>
+            <h3 className={styles.video_box__text__title}>
+              Premium quality, intuitive control
+            </h3>
 
-          <Link to={PAGES.Contact.path} className={styles.blue_button}>
-            Schedule a Demo
-          </Link>
-        </motion.div>
+            <Link to={PAGES.Contact.path} className={styles.video_box__button}>
+              Schedule a Demo
+            </Link>
+          </div>
+        </PerspectiveVideo>
       </section>
       <ContactComponent />
     </div>
