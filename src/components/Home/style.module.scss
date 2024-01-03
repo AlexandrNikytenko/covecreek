@@ -89,24 +89,21 @@ $arrowHeight: 27px;
       text-align: center;
       margin-top: 98px;
       font-size: 72px;
-      line-height: 72px;
       font-weight: 900;
-      letter-spacing: -10px;
+      letter-spacing: -0.05em;
+      line-height: 0.75em;
+
       color: $primary-white;
       @include text-shadow;
 
       @media (min-width: $breakMobile) {
         white-space: nowrap;
-        @include t-1;
-        font-weight: 900 !important;
-        letter-spacing: -10px !important;
-
         font-size: 5.5rem;
       }
 
       @media (min-width: 1200px) {
-        @include t-1;
         margin-top: 164px;
+        font-size: 8rem;
       }
     }
 
@@ -114,6 +111,7 @@ $arrowHeight: 27px;
       text-align: center;
       margin-top: 32px;
       @include p-1;
+      @include text-shadow;
       color: $primary-white;
 
       @media (min-width: $breakMobile) {
