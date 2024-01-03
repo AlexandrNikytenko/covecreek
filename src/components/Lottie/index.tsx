@@ -6,9 +6,15 @@ interface LottieProps {
   animationData: any;
   width: number;
   height: number;
+  speed?: number;
 }
 
-export const Lottie = ({ animationData, width, height }: LottieProps) => {
+export const Lottie = ({
+  animationData,
+  width,
+  height,
+  speed = 1,
+}: LottieProps) => {
   const element = useRef<HTMLDivElement>(null);
   const lottieInstance = useRef<any>();
 
@@ -18,11 +24,12 @@ export const Lottie = ({ animationData, width, height }: LottieProps) => {
         animationData,
         container: element.current,
       });
+      lottieInstance.current.setSpeed(speed);
     }
     return () => {
       lottieInstance.current?.destroy();
     };
-  }, [animationData]);
+  }, [animationData, speed]);
 
   return <div style={{ width, height }} ref={element}></div>;
 };
