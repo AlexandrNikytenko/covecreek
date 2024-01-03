@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/tours/:slug",
-      "destination": "https://tours.covecreekproductions.com/:slug",
+      "source": "/tours/:path*",
+      "destination": "https://tours.covecreekproductions.com/:path*",
       "permanent": true
     }
   ],
