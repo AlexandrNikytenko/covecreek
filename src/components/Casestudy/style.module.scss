@@ -139,10 +139,58 @@
 .frame {
   @include flex-column;
   overflow: hidden;
+  position: relative;
   align-items: left;
   width: 100%;
   border-radius: 20px;
-  background-color: $middle-grey;
+  background: radial-gradient(circle at center, #27425e 0%, #09141e 100%);
+  box-shadow: 0 0 10px 2px #09141e81;
+
+  &__image {
+    overflow: hidden;
+  }
+
+  &:hover &__button,
+  &:hover &__overlay {
+    opacity: 1;
+    display: block;
+  }
+
+  &__overlay {
+    display: none;
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    align-items: self-start;
+    box-sizing: border-box;
+
+    padding: 1rem;
+    @include text-shadow;
+    color: $primary-white;
+  }
+
+  &__button {
+    display: none;
+    opacity: 0;
+    @include h-5;
+    @include text-shadow;
+    color: $primary-white;
+    text-align: right;
+    width: 100%;
+
+    border-radius: 50px;
+  }
+
+  &:hover {
+    border: 1px solid #3076be;
+    box-shadow: 0px 0px 8px 2px #3076be;
+    background: radial-gradient(circle at center, #6ea4d7 0%, #3076be 100%);
+  }
 
   @media (min-width: $breakMobile) {
     width: 50%;
@@ -154,10 +202,10 @@
   }
 
   figure {
-    overflow: hidden;
     margin: 0;
 
     img {
+      transition: scale 0.3s ease;
       width: 100%;
       aspect-ratio: 14 / 9;
       object-fit: cover;
@@ -167,18 +215,22 @@
     figcaption {
       @include h-4;
       letter-spacing: -0.48px;
-      margin: 20px 20px 0;
+      padding: 1rem 2rem 2rem;
       text-align: left;
 
       .frame__title {
-        margin: 20px 20px 0;
+        margin-block: 1rem;
+        font-size: 1.65rem;
         text-align: left;
+        color: $primary-white;
+        @include text-shadow;
       }
 
       .frame__text {
         @include p-2;
-        margin: 30px 20px;
         text-align: left;
+        color: $primary-white;
+        @include text-shadow;
       }
     }
   }
@@ -250,7 +302,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: $primary-blue;
+        // background-color: $primary-blue;
+        background: #0f2337;
         height: 29px;
         color: $primary-white;
         letter-spacing: 1.3px;

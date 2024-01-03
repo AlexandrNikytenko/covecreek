@@ -135,11 +135,17 @@ function Casestudy() {
               target="_blank"
             >
               <figure>
-                <img
-                  src="/images/case-study/normandy-abmc.jpg"
-                  className={styles.frame__image}
-                  alt="Normandy American Cemetery"
-                />
+                <div className={styles.frame__image}>
+                  <div className={styles.frame__overlay}>
+                    <button className={styles.frame__button}>
+                      Open in 360°{" "}
+                    </button>
+                  </div>
+                  <img
+                    src="/images/case-study/normandy-abmc.jpg"
+                    alt="Normandy American Cemetery"
+                  />
+                </div>
                 <figcaption>
                   <motion.h3
                     className={styles.frame__title}
@@ -177,11 +183,18 @@ function Casestudy() {
               target="_blank"
             >
               <figure>
-                <img
-                  src="/images/case-study/manila-abmc.jpg"
-                  className={styles.frame__image}
-                  alt="Manila American Cemetery"
-                />
+                <div className={styles.frame__image}>
+                  <div className={styles.frame__overlay}>
+                    <button className={styles.frame__button}>
+                      Open in 360°{" "}
+                    </button>
+                  </div>
+
+                  <img
+                    src="/images/case-study/manila-abmc.jpg"
+                    alt="Manila American Cemetery"
+                  />
+                </div>
                 <figcaption>
                   <motion.h3
                     className={styles.frame__title}
@@ -220,11 +233,17 @@ function Casestudy() {
               target="_blank"
             >
               <figure>
-                <img
-                  src="/images/case-study/meuse-argonne-abmc.jpg"
-                  className={styles.frame__image}
-                  alt="Meuse-Argonne American Cemetery"
-                />
+                <div className={styles.frame__image}>
+                  <div className={styles.frame__overlay}>
+                    <button className={styles.frame__button}>
+                      Open in 360°{" "}
+                    </button>
+                  </div>
+                  <img
+                    src="/images/case-study/meuse-argonne-abmc.jpg"
+                    alt="Meuse-Argonne American Cemetery"
+                  />
+                </div>
                 <figcaption>
                   <motion.h3
                     className={styles.frame__title}
@@ -261,11 +280,17 @@ function Casestudy() {
               target="_blank"
             >
               <figure>
-                <img
-                  src="/images/case-study/sicily-rome-abmc.jpg"
-                  className={styles.frame__image}
-                  alt="Sicily-Rome American Cemetery"
-                />
+                <div className={styles.frame__image}>
+                  <div className={styles.frame__overlay}>
+                    <button className={styles.frame__button}>
+                      Open in 360°{" "}
+                    </button>
+                  </div>
+                  <img
+                    src="/images/case-study/sicily-rome-abmc.jpg"
+                    alt="Sicily-Rome American Cemetery"
+                  />
+                </div>
                 <figcaption>
                   <motion.h3
                     className={styles.frame__title}
