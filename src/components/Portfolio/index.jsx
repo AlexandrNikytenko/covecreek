@@ -140,7 +140,7 @@ function Portfolio() {
           transition={{ duration: 0.4 }}
         >
           We combine <span>beautiful imagery</span> and{" "}
-          <span>innovative design</span>&nbsp;to create a premium virtual tour{" "}
+          <span>innovative design</span> to create a premium virtual tour{" "}
           experience
         </h1>
       </Container>
