@@ -30,7 +30,7 @@ export function Slide({ src, altText, title, url }) {
           className={styles.tooltip}
           style={{ top: tooltip.y, left: tooltip.x }}
         >
-          <Lottie animationData={Animation360} width={64} height={64} />
+          <Lottie animationData={Animation360} width={96} height={96} />
         </div>
       )}
       <Link to={url} target="_blank">
