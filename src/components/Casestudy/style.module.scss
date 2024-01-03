@@ -114,7 +114,7 @@
   text-align: left;
 }
 
-.cemetry {
+.cemetery {
   @include flex-column;
   width: 100%;
   background-color: $primary-white;
@@ -127,7 +127,6 @@
   width: 100%;
   max-width: 1100px;
   margin-inline: auto;
-
   padding-inline: 1rem;
   padding-block: 1rem;
   gap: 28px;
@@ -154,41 +153,33 @@
     color: $primary-black;
   }
 
-  &__top {
-    width: 100%;
-    aspect-ratio: 14 / 9;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  figure {
+    margin: 0;
 
-    &_image_one {
-      background-image: url("../../../public/images/case-study/normandy-abmc.jpg");
-    }
-    &_image_two {
-      background-image: url("../../../public/images/case-study/manila-abmc.jpg");
-    }
-    &_image_three {
-      background-image: url("../../../public/images/case-study/meuse-argonne-abmc.jpg");
-    }
-    &_image_four {
-      background-image: url("../../../public/images/case-study/sicily-rome-abmc.jpg");
+    img {
+      width: 100%;
+      aspect-ratio: 14 / 9;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
     }
 
-    @media (min-width: $breakMobile) {
+    figcaption {
+      @include h-4;
+      letter-spacing: -0.48px;
+      margin: 20px 20px 0;
+      text-align: left;
+
+      .frame__title {
+        margin: 20px 20px 0;
+        text-align: left;
+      }
+
+      .frame__text {
+        @include p-2;
+        margin: 30px 20px;
+        text-align: left;
+      }
     }
-  }
-
-  &__title {
-    @include h-4;
-    letter-spacing: -0.48px;
-    margin: 20px 20px 0;
-    text-align: left;
-  }
-
-  &__text {
-    @include p-2;
-    margin: 30px 20px;
-    text-align: left;
   }
 }
 

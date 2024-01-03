@@ -121,7 +121,7 @@ function Casestudy() {
         </div>
       </section>
 
-      <section className={styles.cemetry}>
+      {/* <section className={styles.cemetry}>
         <div className={styles.frames} ref={refFramesFirst}>
           <motion.div
             className={styles.frame}
@@ -255,6 +255,175 @@ function Casestudy() {
                 One of two Italian American Cemeteries, located on the Italian
                 coast, south of Rome.
               </motion.p>
+            </Link>
+          </motion.div>
+        </div>
+      </section> */}
+      <section className={styles.cemetery}>
+        <div className={styles.frames} ref={refFramesFirst}>
+          {/* Normandy American Cemetery */}
+          <motion.div
+            className={styles.frame}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFramesFirst}
+            transition={{ duration: 0.3 }}
+          >
+            <Link
+              to="https://tours.covecreekproductions.com/normandy/"
+              target="_blank"
+            >
+              <figure>
+                <img
+                  src="/images/case-study/normandy-abmc.jpg"
+                  className={styles.frame__top}
+                  alt="Normandy American Cemetery"
+                />
+                <figcaption>
+                  <motion.h3
+                    className={styles.frame__title}
+                    initial={{ opacity: 0, y: 200 }}
+                    animate={controlsFramesFirst}
+                    transition={{ duration: 0.5 }}
+                  >
+                    Normandy American Cemetery
+                  </motion.h3>
+                  <motion.p
+                    className={styles.frame__text}
+                    initial={{ opacity: 0, y: 200 }}
+                    animate={controlsFramesFirst}
+                    transition={{ duration: 0.7 }}
+                  >
+                    Located on the site of D-Day landings, over 1 million people
+                    per year visit this historically important site. 9,387 war
+                    dead are buried here, and an additional 1,557 are inscribed
+                    on the Walls of the Missing.
+                  </motion.p>
+                </figcaption>
+              </figure>
+            </Link>
+          </motion.div>
+
+          {/* Manila American Cemetery */}
+          <motion.div
+            className={styles.frame}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFramesFirst}
+            transition={{ duration: 0.3 }}
+          >
+            <Link
+              to="https://tours.covecreekproductions.com/manila/"
+              target="_blank"
+            >
+              <figure>
+                <img
+                  src="/images/case-study/manila-abmc.jpg"
+                  className={styles.frame__top}
+                  alt="Manila American Cemetery"
+                />
+                <figcaption>
+                  <motion.h3
+                    className={styles.frame__title}
+                    initial={{ opacity: 0, y: 200 }}
+                    animate={controlsFramesFirst}
+                    transition={{ duration: 0.5 }}
+                  >
+                    Manila American Cemetery
+                  </motion.h3>
+                  <motion.p
+                    className={styles.frame__text}
+                    initial={{ opacity: 0, y: 200 }}
+                    animate={controlsFramesFirst}
+                    transition={{ duration: 0.7 }}
+                  >
+                    The largest overseas American cemetery, located within urban
+                    Manila (BGC), lays to rest over 16,000 who died in the
+                    Pacific, and honors over 36,000 missing in action.
+                  </motion.p>
+                </figcaption>
+              </figure>
+            </Link>
+          </motion.div>
+        </div>
+
+        <div className={styles.frames} ref={refFramesSecond}>
+          {/* Meuse-Argonne American Cemetery */}
+          <motion.div
+            className={styles.frame}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFramesSecond}
+            transition={{ duration: 0.3 }}
+          >
+            <Link
+              to="https://tours.covecreekproductions.com/meuse-argonne/"
+              target="_blank"
+            >
+              <figure>
+                <img
+                  src="/images/case-study/meuse-argonne-abmc.jpg"
+                  className={styles.frame__top}
+                  alt="Meuse-Argonne American Cemetery"
+                />
+                <figcaption>
+                  <motion.h3
+                    className={styles.frame__title}
+                    initial={{ opacity: 0, y: 200 }}
+                    animate={controlsFramesSecond}
+                    transition={{ duration: 0.5 }}
+                  >
+                    Meuse-Argonne American Cemetery
+                  </motion.h3>
+                  <motion.p
+                    className={styles.frame__text}
+                    initial={{ opacity: 0, y: 200 }}
+                    animate={controlsFramesSecond}
+                    transition={{ duration: 0.7 }}
+                  >
+                    The largest World War 1 cemetery, and the largest American
+                    cemetery in Europe. Most lost their lives in the
+                    Meuse-Argonne Offensive of 1918.
+                  </motion.p>
+                </figcaption>
+              </figure>
+            </Link>
+          </motion.div>
+
+          {/* Sicily-Rome American Cemetery */}
+          <motion.div
+            className={styles.frame}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsFramesSecond}
+            transition={{ duration: 0.3 }}
+          >
+            <Link
+              to="https://tours.covecreekproductions.com/sicily-rome/"
+              target="_blank"
+            >
+              <figure>
+                <img
+                  src="/images/case-study/sicily-rome-abmc.jpg"
+                  className={styles.frame__top}
+                  alt="Sicily-Rome American Cemetery"
+                />
+                <figcaption>
+                  <motion.h3
+                    className={styles.frame__title}
+                    initial={{ opacity: 0, y: 200 }}
+                    animate={controlsFramesSecond}
+                    transition={{ duration: 0.5 }}
+                  >
+                    Sicily-Rome American Cemetery
+                  </motion.h3>
+                  <motion.p
+                    className={styles.frame__text}
+                    initial={{ opacity: 0, y: 200 }}
+                    animate={controlsFramesSecond}
+                    transition={{ duration: 0.7 }}
+                  >
+                    One of two Italian American Cemeteries, located on the
+                    Italian coast, south of Rome.
+                  </motion.p>
+                </figcaption>
+              </figure>
             </Link>
           </motion.div>
         </div>
