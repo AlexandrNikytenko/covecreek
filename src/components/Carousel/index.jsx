@@ -4,6 +4,8 @@ import "@splidejs/react-splide/css/core";
 import styles from "./style.module.scss";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import Lottie from "../Lottie";
+import Animation360 from "../../animations/360.json";
 
 export function Slide({ src, altText, title, url }) {
   const [tooltip, setTooltip] = useState({ x: 0, y: 0, visible: false });
@@ -28,8 +30,7 @@ export function Slide({ src, altText, title, url }) {
           className={styles.tooltip}
           style={{ top: tooltip.y, left: tooltip.x }}
         >
-          {/* Open in 360° */}
-          <img src="/icons/360.svg" alt="360°" width={64} height={64} />
+          <Lottie animationData={Animation360} width={64} height={64} />
         </div>
       )}
       <Link to={url} target="_blank">
