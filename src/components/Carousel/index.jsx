@@ -33,7 +33,10 @@ export function Slide({ src, altText, title, url }) {
       )}
       <Link to={url} target="_blank">
         <div className={styles.slide}>
-          <div className={styles.slide__overlay}>Open Tour</div>
+          <div className={styles.slide__overlay}>
+            <button className={styles.slide__button}>Open in 360° </button>
+          </div>
+
           <figure className={styles.image_container}>
             <img src={src} alt={altText} />
             <figcaption>
