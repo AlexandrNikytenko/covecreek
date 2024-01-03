@@ -3,10 +3,34 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css/core";
 import styles from "./style.module.scss";
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 export function Slide({ src, altText, title, url }) {
+  const [tooltip, setTooltip] = useState({ x: 0, y: 0, visible: false });
+
+  const handleMouseMove = (e) => {
+    const bounds = e.currentTarget.getBoundingClientRect();
+    setTooltip({
+      x: e.clientX - bounds.left + 10, // 10px right of the cursor
+      y: e.clientY - bounds.top + 10, // 10px below the cursor
+      visible: true,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setTooltip({ ...tooltip, visible: false });
+  };
+
   return (
-    <SplideSlide>
+    <SplideSlide onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+      {tooltip.visible && (
+        <div
+          className={styles.tooltip}
+          style={{ top: tooltip.y, left: tooltip.x }}
+        >
+          <img src="/icons/360.svg" alt="360°" width={64} height={64} />
+        </div>
+      )}
       <Link to={url} target="_blank">
         <div className={styles.slide}>
           <div className={styles.slide__overlay}>Open Tour</div>
@@ -24,6 +48,7 @@ export function Slide({ src, altText, title, url }) {
 
 export function Carousel({ children }) {
   const options = {
+    start: 2,
     width: "100%",
     gap: 20,
     fixedWidth: 420,
