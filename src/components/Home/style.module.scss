@@ -38,7 +38,6 @@ $arrowHeight: 27px;
   margin-top: 20px;
   align-items: center;
   justify-content: center;
-  // user-select: none;
   width: calc(100vw - 40px);
   border-radius: 20px;
   overflow: hidden;
@@ -51,7 +50,7 @@ $arrowHeight: 27px;
   &__container {
     display: flex;
     justify-content: center;
-    height: 500px;
+    height: 40vh;
     overflow: hidden;
 
     @media (min-width: $breakMobile) {
@@ -80,18 +79,19 @@ $arrowHeight: 27px;
     z-index: 2;
     position: absolute;
     top: 0;
-    padding: 0 60px;
+    padding: 0;
     @media (min-width: $breakMobile) {
+      padding: 0 60px;
       margin-top: 98px;
     }
 
     &_title {
       text-align: center;
       margin-top: 98px;
-      font-size: 72px;
+      font-size: 3rem;
       font-weight: 900;
       letter-spacing: -0.05em;
-      line-height: 0.75em;
+      line-height: 1em;
 
       color: $primary-white;
       @include text-shadow;
@@ -99,6 +99,7 @@ $arrowHeight: 27px;
       @media (min-width: $breakMobile) {
         white-space: nowrap;
         font-size: 5.5rem;
+        line-height: 0.75em;
       }
 
       @media (min-width: 1200px) {
@@ -109,7 +110,7 @@ $arrowHeight: 27px;
 
     &_desc {
       text-align: center;
-      margin-top: 32px;
+      margin-block: 0.5rem;
       @include p-1;
       @include text-shadow;
       color: $primary-white;
@@ -117,7 +118,7 @@ $arrowHeight: 27px;
       @media (min-width: $breakMobile) {
         @include h-4;
         font-weight: 600;
-        margin-top: 26px;
+        margin-block: 26px;
         text-align: center;
       }
     }

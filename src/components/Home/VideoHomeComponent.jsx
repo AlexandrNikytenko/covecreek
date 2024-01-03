@@ -73,7 +73,9 @@ function VideoHomeComponent({ scrollToSection, src, placeholder }) {
         </motion.div>
 
         <div className={styles.video_box__text}>
-          <h1 className={styles.video_box__text_title}>360° Virtual Tours</h1>
+          <h1 className={styles.video_box__text_title}>
+            360° Virtual&nbsp;Tours
+          </h1>
           <h2 className={styles.video_box__text_desc}>
             Premium Quality, Intuitive Control
           </h2>
