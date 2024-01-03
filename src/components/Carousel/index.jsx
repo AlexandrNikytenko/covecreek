@@ -11,8 +11,8 @@ export function Slide({ src, altText, title, url }) {
   const handleMouseMove = (e) => {
     const bounds = e.currentTarget.getBoundingClientRect();
     setTooltip({
-      x: e.clientX - bounds.left + 10, // 10px right of the cursor
-      y: e.clientY - bounds.top + 10, // 10px below the cursor
+      x: e.clientX - bounds.left,
+      y: e.clientY - bounds.top,
       visible: true,
     });
   };
@@ -28,6 +28,7 @@ export function Slide({ src, altText, title, url }) {
           className={styles.tooltip}
           style={{ top: tooltip.y, left: tooltip.x }}
         >
+          {/* Open in 360° */}
           <img src="/icons/360.svg" alt="360°" width={64} height={64} />
         </div>
       )}

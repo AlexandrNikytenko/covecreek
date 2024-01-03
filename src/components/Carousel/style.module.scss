@@ -4,8 +4,8 @@
 
 .tooltip {
   position: absolute;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.05rem;
+  background-color: #000000c7;
   color: white;
   border-radius: 4px;
   font-size: 14px;
@@ -13,6 +13,7 @@
   pointer-events: none;
   z-index: 999;
   border-radius: 100%;
+  box-shadow: 0px 0px 8px 2px #00000076;
 }
 
 .slide {
