@@ -1,11 +1,11 @@
+import { useState } from "react";
 import { Splide, SplideTrack, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css/core";
-import styles from "./style.module.scss";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
 import Lottie from "../Lottie";
-import Animation360 from "../../animations/360.json";
+import animation360 from "../../animations/360.json";
+import styles from "./style.module.scss";
 
 export function Slide({ src, altText, title, url }) {
   const [tooltip, setTooltip] = useState({ x: 0, y: 0, visible: false });
@@ -31,7 +31,7 @@ export function Slide({ src, altText, title, url }) {
           style={{ top: tooltip.y, left: tooltip.x }}
         >
           <Lottie
-            animationData={Animation360}
+            animationData={animation360}
             width={96}
             height={96}
             speed={1.5}
