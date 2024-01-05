@@ -6,29 +6,39 @@ import styles from "./style.module.scss";
 
 const slides = [
   {
-    src: "/images/why-us/slider/Slider1.jpg",
+    src: "/images/why-us/slider/suresnes-abmc.jpg",
     altText: "Suresnes American Cemetery",
     title: "Suresnes American Cemetery",
   },
   {
-    src: "/images/why-us/slider/Slider2.jpg",
+    src: "/images/why-us/slider/indiana-university.jpg",
     altText: "Indiana University",
     title: "Indiana University",
   },
   {
-    src: "/images/why-us/slider/Slider3.jpg",
+    src: "/images/why-us/slider/state-tech.jpg",
     altText: "State Tech (MO)",
     title: "State Tech (MO)",
   },
   {
-    src: "/images/why-us/slider/Slider4.jpg",
+    src: "/images/why-us/slider/ww2-memorial.jpg",
     altText: "World War II Memorial",
     title: "World War II Memorial",
   },
   {
-    src: "/images/why-us/slider/Slider5.jpg",
+    src: "/images/why-us/slider/post-production-office.jpg",
     altText: "Post Production Office",
     title: "Post Production Office",
+  },
+  {
+    src: "/images/why-us/slider/north-african-abmc.jpg",
+    altText: "North African American Cemetery",
+    title: "North African American Cemetery",
+  },
+  {
+    src: "/images/why-us/slider/austin-texas.jpg",
+    altText: "Austin Texas",
+    title: "Austin Texas",
   },
 ];
 
