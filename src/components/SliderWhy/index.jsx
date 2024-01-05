@@ -1,35 +1,8 @@
 import { useRef, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-
 import styles from "./style.module.scss";
-
 const slides = [
-  {
-    src: "/images/why-us/slider/suresnes-abmc.jpg",
-    altText: "Suresnes American Cemetery",
-    title: "Suresnes American Cemetery",
-  },
-  {
-    src: "/images/why-us/slider/indiana-university.jpg",
-    altText: "Indiana University",
-    title: "Indiana University",
-  },
-  {
-    src: "/images/why-us/slider/state-tech.jpg",
-    altText: "State Tech (MO)",
-    title: "State Tech (MO)",
-  },
-  {
-    src: "/images/why-us/slider/ww2-memorial.jpg",
-    altText: "World War II Memorial",
-    title: "World War II Memorial",
-  },
-  {
-    src: "/images/why-us/slider/post-production-office.jpg",
-    altText: "Post Production Office",
-    title: "Post Production Office",
-  },
   {
     src: "/images/why-us/slider/north-african-abmc.jpg",
     altText: "North African American Cemetery",
@@ -40,14 +13,45 @@ const slides = [
     altText: "Austin Texas",
     title: "Austin Texas",
   },
+  {
+    src: "/images/why-us/slider/ww2-memorial.jpg",
+    altText: "World War II Memorial",
+    title: "World War II Memorial",
+  },
+  {
+    src: "/images/why-us/slider/indiana-university.jpg",
+    altText: "Indiana University",
+    title: "Indiana University",
+  },
+  {
+    src: "/images/why-us/slider/suresnes-abmc.jpg",
+    altText: "Suresnes American Cemetery",
+    title: "Suresnes American Cemetery",
+  },
+  {
+    src: "/images/why-us/slider/state-tech.jpg",
+    altText: "State Tech (MO)",
+    title: "State Tech (MO)",
+  },
+  {
+    src: "/images/why-us/slider/post-production-office.jpg",
+    altText: "Post Production Office",
+    title: "Post Production Office",
+  },
 ];
 
-export function Slide({ src, altText, title }) {
+export function Slide({ src, mobileSrc = src, altText, title }) {
+  const isMobile = window.innerWidth < 768;
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      isMobile = window.innerWidth < 768;
+    });
+  }, []);
   return (
     <SplideSlide>
       <div className={styles.slide}>
         <figure className={styles.image_container}>
-          <img src={src} alt={altText} />
+          <img src={isMobile ? mobileSrc : src} alt={altText} />
           <figcaption>
             <h2 className={styles.title}>{title}</h2>
           </figcaption>
@@ -86,7 +90,7 @@ export function SliderWhy() {
         options={options}
         ref={ref}
         onMounted={(Splide) => {
-          // Splide.Components.Autoplay.play();
+          Splide.Components.Autoplay.play();
         }}
       >
         {slides.map((slide, index) => (
