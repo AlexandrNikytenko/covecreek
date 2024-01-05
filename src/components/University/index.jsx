@@ -9,6 +9,7 @@ import UnmatchedComponent from "../UnmatchedComponent";
 import ContactComponent from "../ContactComponent";
 import { PerspectiveVideo } from "../PerspectiveVideo";
 import styles from "./style.module.scss";
+import contactStyles from "./contact.style.module.scss";
 import { Link } from "react-router-dom";
 import PAGES from "src/constants/pages";
 
@@ -38,7 +39,8 @@ function University() {
       controls.start({ opacity: 1, y: 0 });
     }
   }, [inView, controls]);
-
+  console.log(contactStyles);
+  console.log(styles.contact);
   return (
     <div className={styles.container}>
       <section className={styles.top_section}>
@@ -72,7 +74,7 @@ function University() {
           </div>
         </PerspectiveVideo>
       </section>
-      <ContactComponent />
+      <ContactComponent customStyles={contactStyles} />
     </div>
   );
 }

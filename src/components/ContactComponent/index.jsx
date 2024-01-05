@@ -1,4 +1,5 @@
-import styles from "./style.module.scss";
+import defaultStyles from "./style.module.scss";
+import { mergeStyles } from "../../utils";
 
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -15,7 +16,7 @@ import {
   FormStates,
 } from "../InputForm";
 
-function ContactComponent() {
+function ContactComponent({ customStyles = {} }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -39,6 +40,8 @@ function ContactComponent() {
       controls.start({ opacity: 1, y: 0 });
     }
   }, [inView, controls]);
+
+  const styles = mergeStyles(defaultStyles, customStyles);
 
   return (
     <section className={styles.container} ref={ref}>
