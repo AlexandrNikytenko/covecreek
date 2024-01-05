@@ -14,9 +14,7 @@ function Header() {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       requestAnimationFrame(() => {
-        setIsHeaderVisible(
-          prevScrollPos > currentScrollPos || currentScrollPos < 10
-        );
+        setIsHeaderVisible(prevScrollPos > currentScrollPos);
       });
       setPrevScrollPos(currentScrollPos);
     };
