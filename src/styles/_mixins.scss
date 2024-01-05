@@ -15,6 +15,12 @@
   cursor: pointer;
   background-color: $primary-blue;
   color: $primary-white;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary-white;
+      color: $primary-blue;
+    }
+  }
 }
 
 @mixin button-transparent {
@@ -24,6 +30,13 @@
   cursor: pointer;
   border: 1.5px solid $primary-blue;
   color: $primary-white;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary-blue;
+      color: $primary-white;
+    }
+  }
 }
 
 @mixin button-blur {
