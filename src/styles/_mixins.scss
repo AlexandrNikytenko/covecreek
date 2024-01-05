@@ -19,6 +19,7 @@
     &:hover {
       background-color: $primary-white;
       color: $primary-blue;
+      border: 1px solid $primary-blue;
     }
   }
 }
