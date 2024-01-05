@@ -12,6 +12,7 @@ import styles from "./style.module.scss";
 import contactStyles from "./contact.style.module.scss";
 import { Link } from "react-router-dom";
 import PAGES from "src/constants/pages";
+import { concatStyles } from "src/utils";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -64,7 +65,9 @@ function University() {
           placeholder="/images/video-placeholder.jpg"
         >
           <div className={styles.video_box__text}>
-            <h3 className={styles.video_box__text__title}>
+            <h3
+              className={`${styles.video_box__text__title} ${styles.desktop_only}`}
+            >
               Premium quality, intuitive control
             </h3>
 

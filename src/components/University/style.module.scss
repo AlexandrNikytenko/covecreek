@@ -1,6 +1,7 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 @import "../../styles/colors.scss";
+@import "../../styles/utils.scss";
 
 .container {
   @include flex-column;
@@ -127,25 +128,27 @@
   padding-block: 3rem 0;
   &__text {
     @include flex-column;
+    height: 100%;
     z-index: 2;
     position: absolute;
     top: 0;
     padding: 0;
+    justify-content: flex-end;
     @media (min-width: $breakMobile) {
       padding: 0 60px;
+      justify-content: center;
     }
 
     &__title {
       text-align: center;
       @include h-3;
       color: $primary-white;
-      margin-bottom: 60px;
+      margin-bottom: 1rem;
       @include text-shadow;
 
       @media (min-width: $breakMobile) {
         @include h-1;
         text-align: center;
-        margin-top: 230px;
       }
     }
   }
@@ -156,8 +159,9 @@
     height: 50px;
     border-radius: 40px;
     margin-inline: auto;
-
+    margin-block: 2rem;
     @media (min-width: $breakMobile) {
+      margin-block: 0;
       width: 207px;
       height: 60px;
       border-radius: 50px;
