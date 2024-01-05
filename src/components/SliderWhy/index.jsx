@@ -41,7 +41,7 @@ const slides = [
 ];
 
 export function Slide({ src, mobileSrc = src, altText, title }) {
-  const isMobile = window.innerWidth < 768;
+  let isMobile = window.innerWidth < 768;
   useEffect(() => {
     window.addEventListener("resize", () => {
       isMobile = window.innerWidth < 768;
