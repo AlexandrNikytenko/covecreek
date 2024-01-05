@@ -35,6 +35,9 @@ export function Carousel({ children }) {
     breakpoints: {
       768: {
         fixedWidth: 250,
+        autoScroll: {
+          speed: 0.25,
+        },
       },
     },
     focus: "center",
