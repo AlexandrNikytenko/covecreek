@@ -6,15 +6,16 @@
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover &__button,
+    &:hover &__overlay {
+      opacity: 1;
+      display: block;
+    }
 
-  &:hover &__button,
-  &:hover &__overlay {
-    opacity: 1;
-    display: block;
-  }
-
-  &:hover img {
-    transform: scale(1.2) !important;
+    &:hover img {
+      transform: scale(1.2) !important;
+    }
   }
 
   &__overlay {
@@ -49,9 +50,11 @@
 
   border: 2px solid transparent;
   border-radius: 20px;
-  &:hover {
-    border: 2px solid $primary-white;
-    box-shadow: 0px 0px 8px 2px #ffffff76;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border: 2px solid $primary-white;
+      box-shadow: 0px 0px 8px 2px #ffffff76;
+    }
   }
 
   &__title {

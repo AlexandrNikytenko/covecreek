@@ -35,9 +35,11 @@
     color: $primary-blue;
     transition: color 0.3s ease, background-color 0.3s ease;
 
-    &:hover {
-      background-color: $primary-blue;
-      color: $primary-white;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: $primary-blue;
+        color: $primary-white;
+      }
     }
   }
 }
@@ -72,9 +74,11 @@
     color: $primary-blue;
     transition: color 0.3s ease, background-color 0.3s ease;
 
-    &:hover {
-      background-color: $primary-blue;
-      color: $primary-white;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: $primary-blue;
+        color: $primary-white;
+      }
     }
   }
 }
@@ -158,8 +162,10 @@
     color: $primary-white;
     transition: background-color 0.3s ease;
 
-    &:hover {
-      background-color: $primary-blue;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: $primary-blue;
+      }
     }
   }
 }

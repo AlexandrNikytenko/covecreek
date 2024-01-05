@@ -56,8 +56,10 @@ figure {
       fill: white;
     }
 
-    &:hover {
-      background-color: darken($primary-blue, 10%);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: darken($primary-blue, 10%);
+      }
     }
   }
 }

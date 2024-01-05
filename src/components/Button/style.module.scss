@@ -13,16 +13,19 @@
 .blue_button {
   @include button-blue;
   @include button-base;
-
-  &:hover {
-    background-color: $primary-blue;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary-blue;
+    }
   }
 }
 
 .transparent_button {
   @include button-transparent;
   @include button-base;
-  &:hover {
-    background-color: $primary-blue;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary-blue;
+    }
   }
 }

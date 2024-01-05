@@ -162,8 +162,10 @@ $arrowHeight: 27px;
   color: $primary-white;
   transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: $primary-blue;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary-blue;
+    }
   }
 
   @media (min-width: $breakMobile) {

@@ -83,8 +83,10 @@
   &__no_privacy {
     background-image: url("../../../public/icons/Logo-White.svg");
 
-    &:hover {
-      background-image: url("../../../public/icons/Logo-Fill.svg");
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-image: url("../../../public/icons/Logo-Fill.svg");
+      }
     }
   }
 
@@ -134,8 +136,10 @@
   &__no_privacy {
     @include button-transparent;
 
-    &:hover {
-      background-color: $primary-blue;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: $primary-blue;
+      }
     }
   }
 
@@ -213,8 +217,10 @@
       transition: width 0.3s ease;
     }
 
-    &:hover::after {
-      width: 100%;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover::after {
+        width: 100%;
+      }
     }
 
     @media (min-width: $breakMobile) {

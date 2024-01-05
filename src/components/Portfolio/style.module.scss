@@ -115,10 +115,12 @@
     height: 100%;
   }
 
-  &:hover &__button,
-  &:hover &__overlay {
-    opacity: 1;
-    display: block;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover &__button,
+    &:hover &__overlay {
+      opacity: 1;
+      display: block;
+    }
   }
 
   &__overlay {
@@ -152,9 +154,12 @@
   }
 
   border: 2px solid transparent;
-  &:hover {
-    border: 2px solid $primary-white;
-    box-shadow: 0px 0px 8px 2px #ffffff76;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border: 2px solid $primary-white;
+      box-shadow: 0px 0px 8px 2px #ffffff76;
+    }
   }
 
   &__title {
@@ -247,8 +252,10 @@
     }
   }
 
-  &:hover &__image img {
-    transform: scale(1.2) !important; // needed to override motion
+  @media (hover: hover) and (pointer: fine) {
+    &:hover &__image img {
+      transform: scale(1.2) !important; // needed to override motion
+    }
   }
 
   &__title {

@@ -150,10 +150,12 @@
     overflow: hidden;
   }
 
-  &:hover &__button,
-  &:hover &__overlay {
-    opacity: 1;
-    display: block;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover &__button,
+    &:hover &__overlay {
+      opacity: 1;
+      display: block;
+    }
   }
 
   &__overlay {
@@ -186,10 +188,12 @@
     border-radius: 50px;
   }
 
-  &:hover {
-    border: 1px solid #3076be;
-    box-shadow: 0px 0px 8px 2px #3076be;
-    background: radial-gradient(circle at center, #6ea4d7 0%, #3076be 100%);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border: 1px solid #3076be;
+      box-shadow: 0px 0px 8px 2px #3076be;
+      background: radial-gradient(circle at center, #6ea4d7 0%, #3076be 100%);
+    }
   }
 
   @media (min-width: $breakMobile) {
@@ -235,8 +239,10 @@
     }
   }
 
-  &:hover img {
-    scale: 1.2;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover img {
+      scale: 1.2;
+    }
   }
 }
 
