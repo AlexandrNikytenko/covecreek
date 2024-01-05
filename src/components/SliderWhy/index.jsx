@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Intersection } from "@splidejs/splide-extension-intersection";
 import "@splidejs/react-splide/css";
 import styles from "./style.module.scss";
 const slides = [
@@ -76,6 +77,14 @@ export function SliderWhy() {
     speed: 800,
     easing: "ease-out",
     width: "100%",
+    intersection: {
+      inView: {
+        autoplay: true,
+      },
+      outView: {
+        autoplay: false,
+      },
+    },
   };
   const ref = useRef();
 
@@ -86,13 +95,7 @@ export function SliderWhy() {
 
   return (
     <div className={styles.slider}>
-      <Splide
-        options={options}
-        ref={ref}
-        onMounted={(Splide) => {
-          Splide.Components.Autoplay.play();
-        }}
-      >
+      <Splide options={options} ref={ref} extensions={{ Intersection }}>
         {slides.map((slide, index) => (
           <Slide
             key={index}

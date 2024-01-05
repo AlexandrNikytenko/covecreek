@@ -3,8 +3,6 @@ import { Splide, SplideTrack, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css/core";
 import { Link } from "react-router-dom";
-import Lottie from "../Lottie";
-import animation360 from "../../animations/360.json";
 import styles from "./style.module.scss";
 
 export function Slide({ src, altText, title, url }) {
