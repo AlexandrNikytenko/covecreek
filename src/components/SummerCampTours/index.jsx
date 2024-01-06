@@ -8,8 +8,8 @@ function SummerCampTours() {
     <div className={styles.container}>
       <section className={styles.top_section}>
         <h1 className={styles.title}>
-          For over a decade, Cove Creek has showcased summer camp to new campers
-          and staff members.
+          For over a decade, Cove Creek has showcased summer camps to new
+          campers and staff members
         </h1>
       </section>
 
