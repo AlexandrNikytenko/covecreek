@@ -61,7 +61,7 @@ function University() {
       <UnmatchedComponent link={false} />
       <section className={styles.video_box}>
         <PerspectiveVideo
-          src="https://player.vimeo.com/progressive_redirect/playback/899350477/rendition/720p/file.mp4?loc=external&log_user=0&signature=073196d8eb85ff15f8bdaa1184ef5585b727c8c39b4f1ef7e06237cb8c684743"
+          src="https://player.vimeo.com/progressive_redirect/playback/900288101/rendition/720p/file.mp4?loc=external&log_user=0&signature=c81045571fc430f4ac82bafb4ae494b3691f79d1cdd954e81d8a8ae57535d835"
           placeholder="/images/video-placeholder.jpg"
         >
           <div className={styles.video_box__text}>
