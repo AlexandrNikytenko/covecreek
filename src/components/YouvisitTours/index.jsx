@@ -46,19 +46,24 @@ function YouvisitTours() {
             <p>We've spent 10 years creating a clean and intuitive interface</p>
             <SmallHeading>Price</SmallHeading>
             <p>
-              Our tours are reasonably priced and our hosting fees are low.{" "}
+              Our tours and content management system are reasonably priced.
             </p>
             <SmallHeading>You own the Content</SmallHeading>
             <p>When you partner with Cove Creek, you own the content. </p>
-            <SmallHeading>No Multi-Year Contract</SmallHeading>
+            <SmallHeading>Content Management System</SmallHeading>
             <p>
-              We do not believe in locking our clients into long term contracts.
+              Cove Creek offers a robust content management system, allowing
+              universities to upload and control their own assets.
+            </p>
+            <SmallHeading>Slate Integration</SmallHeading>
+            <p>
+              Cove Creek tours easily integrates with your school's Slate forms.
             </p>
             <SmallHeading>Our Commitment</SmallHeading>
             <p>
-              We are committed to delivering the very best in virtual reality.
-              We are confident in our ability to showcase your school to its
-              full potential.
+              We are committed to delivering the very best virtual tour
+              experience. We are confident in our ability to showcase your
+              school to its full potential.
             </p>
           </div>
         </Container>
