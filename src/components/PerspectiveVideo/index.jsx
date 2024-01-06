@@ -7,6 +7,8 @@ export function PerspectiveVideo({ src, placeholder, children }) {
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [isAnimationEnabled, setIsAnimationEnabled] = useState(false);
   const [isFirstHover, setIsFirstHover] = useState(false);
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const isDesktop = window.innerWidth >= 768;
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -16,8 +18,8 @@ export function PerspectiveVideo({ src, placeholder, children }) {
       setWindowWidth(window.innerWidth);
       setWindowHeight(window.innerHeight);
     };
-    setIsAnimationEnabled(window.innerWidth >= 768);
-
+    // enable for desktop, but not for safari
+    setIsAnimationEnabled(isDesktop && !isSafari);
     window.addEventListener("resize", handleResize);
 
     x.set(window.innerWidth / 2);
