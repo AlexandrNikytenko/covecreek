@@ -45,11 +45,11 @@ export function Carousel({ children }) {
     drag: "free",
 
     autoScroll: {
-      pauseOnHover: true,
+      pauseOnHover: false,
       speed: 0.5,
       autoStart: true,
     },
-    pauseOnHover: true,
+    pauseOnHover: false,
     pauseOnFocus: false,
     arrows: false,
     pagination: false,

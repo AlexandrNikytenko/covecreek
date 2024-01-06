@@ -68,7 +68,7 @@ export function SliderWhy() {
     gap: "1rem",
     autoplay: "pause",
     interval: 2400,
-    pauseOnHover: true,
+    pauseOnHover: false,
     resetProgress: false,
     arrows: "slider",
     perPage: 1,
