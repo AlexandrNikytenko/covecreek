@@ -42,7 +42,7 @@ $arrowHeight: 27px;
   &__text {
     margin-top: 98px;
     @include flex-column;
-    z-index: 2;
+    z-index: 999;
     position: absolute;
     top: 0;
     padding: 0;
