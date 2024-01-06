@@ -9,7 +9,7 @@ export const PAGES = {
   },
   WhyUs: {
     path: "/why-us",
-    title: "Why Cove Creek Productions | 360° Virtual Tours",
+    title: "Why Cove Creek Productions",
   },
   CaseStudy: {
     path: "/case-study",
@@ -25,7 +25,7 @@ export const PAGES = {
   },
   University: {
     path: "/school-virtual-tours",
-    title: "College Virtual Tours YouVisit Concept3D Alternative",
+    title: "College & University Virtual Tours",
   },
   Privacy: {
     path: "/privacy",
@@ -41,7 +41,7 @@ export const PAGES = {
   },
   YouVisit: {
     path: "/youvisit-pricing",
-    title: "YouVisit Pricing | Cove Creek Productions",
+    title: "YouVisit Pricing and Cost",
   },
   Notfound: {
     path: "/404",
