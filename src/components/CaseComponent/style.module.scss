@@ -10,11 +10,12 @@
   background-color: $primary-white;
   box-sizing: border-box;
   padding-block: 2rem;
-  padding-inline: 4em;
+  padding-inline: 1em;
 
   @media (min-width: $breakMobile) {
     flex-direction: row;
     padding-block: 10rem;
+    padding-inline: 4em;
   }
 
   &__inner {
@@ -57,7 +58,7 @@
   &__image {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -71,6 +72,7 @@
     @media (min-width: $breakMobile) {
       height: 460px;
       aspect-ratio: unset;
+      align-items: center;
     }
 
     &_button {
@@ -78,6 +80,7 @@
       width: 203px;
       height: 60px;
       border-radius: 50px;
+      margin-block: 1rem;
     }
   }
 }
