@@ -11,8 +11,11 @@ function YouvisitTours() {
   return (
     <div className={styles.youvisit}>
       <section className={styles.top_section}>
-        <SmallHeading as="h1">Cove Creek vs. YouVisit</SmallHeading>
-        <h2 className={styles.title}>See what makes us stand out</h2>
+        <SmallHeading as="h1">College Virtual Tours</SmallHeading>
+        <h2 className={styles.title}>
+          Cove Creek provides high quality virtual tours at a reasonable cost to
+          universities
+        </h2>
         <Button variant={"transparent"} to={PAGES.Contact.path}>
           Schedule a Demo
         </Button>
