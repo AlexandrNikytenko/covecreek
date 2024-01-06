@@ -5,7 +5,7 @@ export const PAGES = {
   },
   Portfolio: {
     path: "/virtual-tours",
-    title: "Virtual Tour Portfolio | Cove Creek Productions",
+    title: "360° Campus Virtual Tours | Cove Creek Productions",
   },
   WhyUs: {
     path: "/why-us",
@@ -25,7 +25,7 @@ export const PAGES = {
   },
   University: {
     path: "/school-virtual-tours",
-    title: "School Virtual Tours | Cove Creek Productions",
+    title: "College Virtual Tours YouVisit Concept3D Alternative",
   },
   Privacy: {
     path: "/privacy",
@@ -37,7 +37,7 @@ export const PAGES = {
   },
   SummerCamp: {
     path: "/summer-camp-virtual-tours",
-    title: "Summer Camp Virtual Tours | Cove Creek Productions",
+    title: "Summer Camp Virtual Tours",
   },
   YouVisit: {
     path: "/youvisit-pricing",
