@@ -37,4 +37,4 @@ yarn-error.log*
 next-env.d.ts
 
 # :Zone.Identifier
-:Zone.Identifier
+*:Zone.Identifier
