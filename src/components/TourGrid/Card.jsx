@@ -19,6 +19,8 @@ function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
   });
 
   const cardControls = useAnimation();
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const isDesktop = window.innerWidth >= 768;
 
   function getRemainder(num) {
     const remainder = num % 3;
@@ -26,7 +28,7 @@ function Card({ zIndex, onMouseEnter, onMouseLeave, card }) {
   }
 
   useEffect(() => {
-    setIsAnimationEnabled(window.innerWidth >= 768);
+    setIsAnimationEnabled(isDesktop && !isSafari);
   }, []);
 
   useEffect(() => {
