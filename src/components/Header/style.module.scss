@@ -39,6 +39,7 @@
   z-index: 99;
   height: 77px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgb(9, 19, 29);
   transition: top ease 1s;
 
   @media (min-width: $breakMobile) {

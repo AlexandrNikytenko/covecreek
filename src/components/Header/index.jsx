@@ -9,6 +9,7 @@ function Header() {
 
   const location = useLocation();
   const isPrivacy = location.pathname === PAGES.Privacy.path;
+  const isMobile = window.innerWidth < 768;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +22,9 @@ function Header() {
       setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (!isMobile) {
+      window.addEventListener("scroll", handleScroll);
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -38,8 +41,8 @@ function Header() {
           className={styles.head}
           style={{
             top: isHeaderVisible ? "0px" : "-100px",
-            backgroundColor:
-              prevScrollPos === 0 ? "transparent" : "rgb(9, 19, 29)",
+            ...(!isMobile &&
+              prevScrollPos === 0 && { backgroundColor: "transparent" }),
           }}
         >
           <Link
