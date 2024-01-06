@@ -1,7 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-
 import { UniversityCarousel } from "../Carousel";
 import ArticleComponent from "../ArticleComponent";
 import RobustComponent from "../RobustComponent";
