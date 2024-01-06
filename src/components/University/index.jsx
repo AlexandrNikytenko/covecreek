@@ -12,7 +12,6 @@ import styles from "./style.module.scss";
 import contactStyles from "./contact.style.module.scss";
 import { Link } from "react-router-dom";
 import PAGES from "src/constants/pages";
-import { concatStyles } from "src/utils";
 
 const whyCove = {
   label: "Why Cove Creek",
