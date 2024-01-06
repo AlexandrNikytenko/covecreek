@@ -4,11 +4,7 @@
 
 .container {
   @include flex-column;
-  position: sticky;
-  top: 0;
-  z-index: 99;
-  background-color: rgb(9, 19, 29);
-  transition: top ease 1s;
+  position: relative;
 }
 
 .sticky {
@@ -34,6 +30,7 @@
 
 .head {
   display: flex;
+  position: fixed;
   box-sizing: border-box;
   top: 0;
   width: 100%;
@@ -42,6 +39,7 @@
   z-index: 99;
   height: 77px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: top ease 1s;
 
   @media (min-width: $breakMobile) {
     min-height: 100px;
