@@ -6,10 +6,10 @@ export function PerspectiveVideo({ src, placeholder, children }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [isAnimationEnabled, setIsAnimationEnabled] = useState(false);
+  const [isFirstHover, setIsFirstHover] = useState(false);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const [isFirstHover, setIsFirstHover] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -50,9 +50,7 @@ export function PerspectiveVideo({ src, placeholder, children }) {
       <motion.div
         className={styles.video_box}
         onMouseMove={handleMouse}
-        style={{
-          perspective: 800,
-        }}
+        style={{ perspective: 800 }}
       >
         <motion.div
           className={styles.video_box__container}

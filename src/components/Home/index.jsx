@@ -47,7 +47,6 @@ function Home() {
   useEffect(() => {
     if (inViewUnmached) {
       controlsUnmached.start({ opacity: 1, x: 0 });
-      console.log("inViewUnmached");
     }
 
     if (inViewAdvanced) {
