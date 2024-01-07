@@ -6,7 +6,7 @@
       "permanent": true
     },
     {
-      "source": "/tours/:path/",
+      "source": "/tours/:path*/",
       "destination": "https://tours.covecreekproductions.com/tours/:path",
       "permanent": true
     },
