@@ -52,7 +52,9 @@ function University() {
         <div className={styles.carousel_frame}>
           <UniversityCarousel />
         </div>
-        <button className={styles.transp_button}>See Our Portfolio</button>
+        <Link to={PAGES.Portfolio.path} className={styles.transp_button}>
+          See Our Portfolio
+        </Link>
       </section>
       <ArticleComponent data={whyCove} />
       <RobustComponent />
