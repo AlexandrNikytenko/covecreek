@@ -1,0 +1,141 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.image_container {
+  display: grid;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  grid-gap: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: 1fr;
+  @media (min-width: $breakMobile) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.image_row {
+  max-width: 400px;
+  margin-inline: auto;
+  width: 100%;
+
+  @media (min-width: $breakMobile) {
+    max-width: unset;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+.image_box {
+  margin-inline: auto;
+  perspective: 500px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  border-radius: 20px;
+
+  figcaption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+    padding-top: 2rem;
+    padding-inline: 2rem;
+    box-sizing: border-box;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover &__button,
+    &:hover &__overlay {
+      opacity: 1;
+      display: flex;
+    }
+
+    &:hover .image {
+      transform: scale(1.15);
+    }
+  }
+
+  &__overlay {
+    display: none;
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    align-items: self-start;
+    box-sizing: border-box;
+
+    padding: 1rem;
+    @include text-shadow;
+    color: $primary-white;
+  }
+
+  &__button {
+    display: none;
+    opacity: 0;
+    @include h-5;
+    @include text-shadow;
+    color: $primary-white;
+    text-align: center;
+    align-self: flex-end;
+    justify-content: center;
+    width: 100%;
+
+    border-radius: 50px;
+  }
+
+  &__container {
+    transition: transform 0.3s linear;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    overflow: hidden;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border: 2px solid $primary-white;
+        box-shadow: 0px 0px 8px 2px #ffffff76;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__title {
+    @include h-4;
+    @include text-shadow;
+    color: $primary-white;
+
+    text-align: center !important;
+    width: 100%;
+    @media (min-width: $breakMobile) {
+      @include h-3;
+      width: 100%;
+    }
+  }
+}
+
+.image {
+  @include flex-column;
+  position: relative;
+  align-items: center;
+  z-index: 2;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.3s linear;
+}

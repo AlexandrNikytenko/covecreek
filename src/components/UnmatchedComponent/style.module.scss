@@ -3,13 +3,13 @@
 @import "../../styles/colors.scss";
 
 .unmatched {
-  @include flex-column;
   background-color: $primary-white;
-  justify-content: space-between;
   width: 100%;
-  padding: 60px 20px;
-  gap: 30px;
+  padding-block: 2rem;
+  padding-inline: 1rem;
   z-index: 1;
+  box-sizing: border-box;
+  overflow: hidden;
 
   @media (min-width: $breakMobile) {
     padding: 160px 194px;
@@ -17,11 +17,21 @@
     gap: 0;
   }
 
+  &__inner {
+    @include flex-column;
+
+    justify-content: space-between;
+
+    @media (min-width: $breakMobile) {
+      align-items: flex-start;
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
   &__title {
     @include a-2;
     min-width: 266px;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
   }
 
   &__content {

@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import HomeCarousel from "../Carousel";
+import { WhyUsCarousel } from "../Carousel";
 import ArticleComponent from "../ArticleComponent";
 import RobustComponent from "../RobustComponent";
 import UnmatchedComponent from "../UnmatchedComponent";
@@ -13,6 +13,8 @@ import SliderWhy from "../SliderWhy";
 import VideoWhyUsComponent from "./VideoWhyUsComponent";
 
 import styles from "./style.module.scss";
+import { Container } from "../Container";
+import PAGES from "src/constants/pages";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -25,7 +27,7 @@ const ourComitten = {
 };
 
 const case_text =
-  "Explore 30 historical tours, from the shores of Normandy to the Pacific Theater Operations.  This ambitious project covered 11 countries and over 150 shooting days.F";
+  "Explore 30 historical tours, from the shores of Normandy to the Pacific Theater Operations.  This ambitious project covered 11 countries and over 150 shooting days.";
 
 function Whyus() {
   const controlsTeam = useAnimation();
@@ -51,61 +53,67 @@ function Whyus() {
       <RobustComponent />
       <UnmatchedComponent link={true} />
       <section className={styles.carousel}>
-        <HomeCarousel />
+        <WhyUsCarousel />
       </section>
       <ArticleComponent data={ourComitten} background={"white"} />
       <div style={{ background: "white", width: "100%" }}>
         <section className={styles.team} ref={refTeam}>
-          <motion.div
-            initial={{ opacity: 0, x: 200 }}
-            animate={controlsTeam}
-            transition={{ duration: 0.3 }}
-          >
-            <SliderWhy />
-          </motion.div>
-          <div className={styles.team__desc}>
-            <motion.p
-              className={styles.team__desc_title}
-              initial={{ opacity: 0, x: 200 }}
-              animate={controlsTeam}
-              transition={{ duration: 0.4 }}
-            >
-              Our team
-            </motion.p>
-            <motion.p
-              className={styles.team__desc_description}
-              initial={{ opacity: 0, x: 200 }}
-              animate={controlsTeam}
-              transition={{ duration: 0.5 }}
-            >
-              A team dedicated to bringing 360° photography to life
-            </motion.p>
-            <motion.p
-              className={styles.team__desc_text}
-              initial={{ opacity: 0, x: 200 }}
-              animate={controlsTeam}
-              transition={{ duration: 0.6 }}
-            >
-              Cove Creek's team is comprised of talented 360° photographers,
-              software developers, and support staff. Our lean team size
-              provides the efficiency to give personalized attention and deliver
-              amazing results.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, x: 200 }}
-              animate={controlsTeam}
-              transition={{ duration: 0.7 }}
-            >
-              <Link to="/careers" className={styles.team__desc_bottom}>
-                View careers
-                <img src="/icons/Arrow_right_blue.svg" alt="Link" />
-              </Link>
-            </motion.div>
-          </div>
+          <Container>
+            <div className={styles.team__inner}>
+              <motion.div
+                initial={{ opacity: 0, x: 200 }}
+                animate={controlsTeam}
+                transition={{ duration: 0.3 }}
+              >
+                <SliderWhy />
+              </motion.div>
+              <div className={styles.team__desc}>
+                <motion.h3
+                  className={styles.team__desc_title}
+                  initial={{ opacity: 0, x: 200 }}
+                  animate={controlsTeam}
+                  transition={{ duration: 0.4 }}
+                >
+                  Our team
+                </motion.h3>
+                <motion.p
+                  className={styles.team__desc_description}
+                  initial={{ opacity: 0, x: 200 }}
+                  animate={controlsTeam}
+                  transition={{ duration: 0.5 }}
+                >
+                  A team dedicated to bringing 360° photography to life
+                </motion.p>
+                <motion.p
+                  className={styles.team__desc_text}
+                  initial={{ opacity: 0, x: 200 }}
+                  animate={controlsTeam}
+                  transition={{ duration: 0.6 }}
+                >
+                  Cove Creek's team is comprised of talented 360° photographers,
+                  software developers, and support staff. Our team size provides
+                  the efficiency to give personalized attention and deliver
+                  amazing results.
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, x: 200 }}
+                  animate={controlsTeam}
+                  transition={{ duration: 0.7 }}
+                  className={styles.team__desc_bottom}
+                >
+                  <Link to={PAGES.Careers.path}>View careers</Link>
+                </motion.div>
+              </div>
+            </div>
+          </Container>
         </section>
       </div>
 
-      <CaseComponent text={case_text} />
+      <CaseComponent
+        text={
+          "Explore 30 historical tours, from the shores of Normandy to the Pacific Theater Operations.  This ambitious project covered 11 countries and over 150 shooting days."
+        }
+      />
       <ContactComponent />
     </div>
   );

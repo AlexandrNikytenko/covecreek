@@ -1,29 +1,30 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
-
+import PAGES from "../../constants/pages";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
 
   const location = useLocation();
-  const isPrivacy = location.pathname === "/privacy";
+  const isPrivacy = location.pathname === PAGES.Privacy.path;
+  const isMobile = window.innerWidth < 768;
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-
-      if (currentScrollPos > prevScrollPos) {
-        setIsHeaderVisible(false);
-      } else {
-        setIsHeaderVisible(true);
-      }
-
+      requestAnimationFrame(() => {
+        setIsHeaderVisible(
+          prevScrollPos > currentScrollPos || currentScrollPos < 10
+        );
+      });
       setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (!isMobile) {
+      window.addEventListener("scroll", handleScroll);
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -40,8 +41,8 @@ function Header() {
           className={styles.head}
           style={{
             top: isHeaderVisible ? "0px" : "-100px",
-            backgroundColor:
-              prevScrollPos === 0 ? "transparent" : "rgb(9, 19, 29)",
+            ...(!isMobile &&
+              prevScrollPos === 0 && { backgroundColor: "transparent" }),
           }}
         >
           <Link
@@ -52,7 +53,7 @@ function Header() {
           ></Link>
           <div className={styles.buttons}>
             <Link
-              to="/contact"
+              to={PAGES.Contact.path}
               className={`${styles.button_get} ${
                 !isPrivacy
                   ? styles.button_get__no_privacy
@@ -84,7 +85,7 @@ function Header() {
               ></Link>
               <div className={styles.buttons}>
                 <Link
-                  to="/contact"
+                  to={PAGES.Contact.path}
                   onClick={() => setIsMenuOpen(false)}
                   className={`${styles.button_get} ${styles.button_get__no_privacy}`}
                 >
@@ -101,31 +102,31 @@ function Header() {
             </div>
             <div className={styles.links} onClick={() => setIsMenuOpen(false)}>
               <Link
-                to="/portfolio"
+                to={PAGES.Portfolio.path}
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Portfolio
               </Link>
               <Link
-                to="/whyus"
+                to={PAGES.WhyUs.path}
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Why Us
               </Link>
               <Link
-                to="/case_study"
+                to={PAGES.CaseStudy.path}
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Case Study
               </Link>
               <Link
-                to="/careers"
+                to={PAGES.Careers.path}
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Careers
               </Link>
               <Link
-                to="/contact"
+                to={PAGES.Contact.path}
                 className={`${styles.link} ${styles.link__underline}`}
               >
                 Contact
@@ -143,12 +144,7 @@ function Header() {
                 info@covecreekproductions.com
               </a>
               <div className={styles.contacts__devider}></div>
-              <a
-                className={styles.contacts__link}
-                href="https://www.google.com/maps/search/?api=1&query=2390+E+Camelback+Rd%2C+Phoenix%2C+AZ+85016"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a className={styles.contacts__link}>
                 2390 E Camelback Rd, Phoenix, AZ 85016
               </a>
             </div>

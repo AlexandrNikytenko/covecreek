@@ -1,0 +1,44 @@
+<head>
+  <link rel="stylesheet" href="style.css" data-inline="data-inline" />
+</head>
+<body>
+  <div class="container">
+    <div>
+      <img src="cid:logoimg" />
+    </div>
+
+    <h2>Cove Creek Inquiry</h2>
+
+    <div class="sent">
+      <div class="sent--name">Sent On</div>
+      <% if (date && time) { %>
+      <div class="sent--date"><%= date %></div>
+      <div class="sent--time"><%= time %></div>
+      <% } %>
+    </div>
+
+    <div class="fields">
+      <% if (name) { %>
+      <div class="field text">
+        <div class="field--name">Name</div>
+        <div class="field--value"><%= name %></div>
+      </div>
+      <% } %> <% if (email) { %>
+      <div class="field text">
+        <div class="field--name">Email</div>
+        <div class="field--value"><%= email %></div>
+      </div>
+      <% } %> <% if (phone) { %>
+      <div class="field text">
+        <div class="field--name">Phone</div>
+        <div class="field--value"><%= phone %></div>
+      </div>
+      <% } %> <% if (message) { %>
+      <div class="field textarea">
+        <div class="field--name">Tell us about your project</div>
+        <div class="field--value"><%= message %></div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</body>

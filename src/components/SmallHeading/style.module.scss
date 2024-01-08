@@ -1,0 +1,18 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.small_heading {
+  @include a-2;
+  text-transform: uppercase;
+  color: $primary-blue;
+
+  letter-spacing: 0.8px;
+  text-wrap: nowrap;
+  text-align: center;
+
+  @media (min-width: $breakMobile) {
+    letter-spacing: 1.2px;
+    text-align: left;
+  }
+}

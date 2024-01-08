@@ -1,6 +1,7 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 @import "../../styles/colors.scss";
+@import "../../styles/utils.scss";
 
 .container {
   @include flex-column;
@@ -11,20 +12,21 @@
   @include flex-column;
   align-items: center;
   position: relative;
-  padding: 60px 0 80px;
+  padding-block: 1rem 2rem;
   width: 100%;
 
   @media (min-width: $breakMobile) {
     background-position: center top 330px;
     background-repeat: no-repeat;
     background-image: url("../../../public/icons/Waves_7.svg");
-    padding: 80px 0 160px;
+    padding-block: 5rem;
   }
 }
 
 .title {
   @include h-3;
-  margin: 0 20px 40px;
+  margin-inline: 1.25rem;
+  margin-block: 0 1rem;
   text-align: center;
   color: $primary-white;
   z-index: 2;
@@ -33,15 +35,15 @@
     @include t-2;
     margin: 0 194px 40px;
     letter-spacing: -1.8px;
+    text-align: center;
   }
 }
 
 .carousel_frame {
   width: 100%;
-  margin: 60px 0 80px;
-
+  margin-block: 2rem;
   @media (min-width: $breakMobile) {
-    margin: 160px 0 80px;
+    margin-block: 10rem 5rem;
   }
 }
 
@@ -80,7 +82,7 @@
   background-color: $primary-white;
 
   @media (min-width: $breakMobile) {
-    padding: 0px 194px;
+    padding: 0 194px 80px;
   }
 }
 
@@ -90,12 +92,13 @@
   justify-content: center;
   z-index: 2;
   width: calc(100vw - 40px);
-  height: 648px;
+  height: 400px;
   border-radius: 20px;
   background-image: url("../../../public/images/Rectangle 92.png");
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 2rem;
 
   @media (min-width: $breakMobile) {
     aspect-ratio: 3 / 4.125;
@@ -107,9 +110,11 @@
     color: $primary-white;
     margin-bottom: 60px;
     text-align: center;
+    @include text-shadow;
 
     @media (min-width: $breakMobile) {
       @include h-1;
+      text-align: center;
     }
   }
 }
@@ -117,4 +122,49 @@
 .carousel {
   width: 100%;
   background-color: $primary-white;
+}
+
+.video_box {
+  padding-block: 3rem 0;
+  &__text {
+    @include flex-column;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    justify-content: flex-end;
+    @media (min-width: $breakMobile) {
+      padding: 0 60px;
+      justify-content: center;
+    }
+
+    &__title {
+      text-align: center;
+      @include h-3;
+      color: $primary-white;
+      margin-bottom: 1rem;
+      @include text-shadow;
+
+      @media (min-width: $breakMobile) {
+        @include h-1;
+        text-align: center;
+      }
+    }
+  }
+
+  &__button {
+    @include button-blue;
+    width: 167px;
+    height: 50px;
+    border-radius: 40px;
+    margin-inline: auto;
+    margin-block: 2rem;
+    @media (min-width: $breakMobile) {
+      margin-block: 0;
+      width: 207px;
+      height: 60px;
+      border-radius: 50px;
+    }
+  }
 }

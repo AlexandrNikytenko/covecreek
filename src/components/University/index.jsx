@@ -1,15 +1,16 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-
-import HomeCarousel from "../Carousel";
+import { UniversityCarousel } from "../Carousel";
 import ArticleComponent from "../ArticleComponent";
 import RobustComponent from "../RobustComponent";
 import UnmatchedComponent from "../UnmatchedComponent";
-import CaseComponent from "../CaseComponent";
 import ContactComponent from "../ContactComponent";
-
+import { PerspectiveVideo } from "../PerspectiveVideo";
 import styles from "./style.module.scss";
+import contactStyles from "./contact.style.module.scss";
+import { Link } from "react-router-dom";
+import PAGES from "src/constants/pages";
 
 const whyCove = {
   label: "Why Cove Creek",
@@ -37,46 +38,46 @@ function University() {
       controls.start({ opacity: 1, y: 0 });
     }
   }, [inView, controls]);
-
+  console.log(contactStyles);
+  console.log(styles.contact);
   return (
     <div className={styles.container}>
       <section className={styles.top_section}>
         <h1 className={styles.title}>
-          360° virtual tour experiences trusted by leading universities
+          360° Virtual Tours Trusted By Leading Universities
         </h1>
-        <button className={styles.blue_button}>Schedule a Demo</button>
+        <Link to={PAGES.Contact.path} className={styles.blue_button}>
+          Schedule a Demo
+        </Link>
         <div className={styles.carousel_frame}>
-          <HomeCarousel />
+          <UniversityCarousel />
         </div>
-        <button className={styles.transp_button}>See Our Portfolio</button>
+        <Link to={PAGES.Portfolio.path} className={styles.transp_button}>
+          See Our Portfolio
+        </Link>
       </section>
       <ArticleComponent data={whyCove} />
       <RobustComponent />
       <UnmatchedComponent link={false} />
-      <section className={styles.image_container} ref={ref}>
-        <motion.div
-          className={styles.image_premium}
-          initial={{ opacity: 0 }}
-          animate={controls}
-          transition={{ duration: 1 }}
+      <section className={styles.video_box}>
+        <PerspectiveVideo
+          src="https://player.vimeo.com/progressive_redirect/playback/900288101/rendition/720p/file.mp4?loc=external&log_user=0&signature=c81045571fc430f4ac82bafb4ae494b3691f79d1cdd954e81d8a8ae57535d835"
+          placeholder="/images/video-placeholder.jpg"
         >
-          <p className={styles.image_premium__title}>
-            Premium quality, intuitive control
-          </p>
-          <button className={styles.blue_button}>Schedule a Demo</button>
-        </motion.div>
+          <div className={styles.video_box__text}>
+            <h3
+              className={`${styles.video_box__text__title} ${styles.desktop_only}`}
+            >
+              Premium quality, intuitive control
+            </h3>
+
+            <Link to={PAGES.Contact.path} className={styles.video_box__button}>
+              Schedule a Demo
+            </Link>
+          </div>
+        </PerspectiveVideo>
       </section>
-      <section style={{ background: "white", width: "100%" }}>
-        <ArticleComponent
-          data={ourComitten}
-          background={
-            "linear-gradient(180deg, rgba(245, 245, 245, 0.00) 0%, #F5F5F5 100%)"
-          }
-          link={true}
-        />
-      </section>
-      <CaseComponent text={case_text} />
-      <ContactComponent />
+      <ContactComponent customStyles={contactStyles} />
     </div>
   );
 }

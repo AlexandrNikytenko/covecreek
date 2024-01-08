@@ -2,10 +2,18 @@
 @import "../../styles/variables.scss";
 @import "../../styles/colors.scss";
 
-.container {
+$headerHeight: 100px;
+$arrowHeight: 27px;
+
+.page_container {
   @include flex-column;
   position: relative;
   align-items: center;
+}
+
+.container {
+  max-width: 1700px;
+  margin-inline: auto;
 }
 
 .wave_top {
@@ -24,144 +32,121 @@
 }
 
 .video_box {
-  @include flex-column;
-  position: relative;
-  width: 100%;
-  margin-top: 20px;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  width: calc(100vw - 40px);
-  border-radius: 20px;
+  box-sizing: border-box;
   overflow: hidden;
+  margin-bottom: 1rem;
 
   @media (min-width: $breakMobile) {
-    margin-top: 0px;
-    padding: 100px 200px 160px;
+    padding-block: 60px;
   }
-
-  &__container {
-    display: flex;
-    justify-content: center;
-    height: 500px;
-    overflow: hidden;
-
-    @media (min-width: $breakMobile) {
-      height: 500px;
-      width: 750px;
-      border-radius: 32px;
-      margin-bottom: 120px;
-      transition: transform 0.5s linear;
-    }
-  }
-
-  &__video {
-    @include flex-column;
-    align-items: center;
-    z-index: 1;
-    box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.25) inset;
-    background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0.2) 100%
-    );
-  }
-
   &__text {
+    margin-top: 98px;
     @include flex-column;
-    z-index: 2;
+    z-index: 999;
     position: absolute;
     top: 0;
-    padding: 0 60px;
+    padding: 0;
     @media (min-width: $breakMobile) {
-      margin-top: 98px;
+      padding: 0 60px;
     }
 
     &_title {
       text-align: center;
-      margin-top: 98px;
-      font-size: 72px;
-      line-height: 72px;
-      font-weight: 700;
-      letter-spacing: -1.44px;
+
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      line-height: 1em;
+
       color: $primary-white;
+      @include text-shadow;
 
       @media (min-width: $breakMobile) {
-        @include t-1;
-        margin-top: 164px;
         white-space: nowrap;
-        text-shadow: 0px 0px 40px rgba(0, 0, 0, 0.08);
+        font-size: 5.5rem;
+        line-height: 0.75em;
+        margin-top: 150px;
+      }
+
+      @media (min-width: 1200px) {
+        margin-top: 98px;
+        font-size: 8rem;
       }
     }
 
     &_desc {
       text-align: center;
-      margin-top: 32px;
+      margin-block: 0.5rem;
       @include p-1;
+      @include text-shadow;
       color: $primary-white;
 
       @media (min-width: $breakMobile) {
         @include h-4;
         font-weight: 600;
-        margin-top: 26px;
+        margin-block: 26px;
+        text-align: center;
       }
     }
   }
 
   &__arrow_down {
     display: none;
+    margin-top: 10vh;
 
     @media (min-width: $breakMobile) {
       display: block;
       z-index: 2;
       cursor: pointer;
-      margin-top: 60px;
     }
   }
 }
 
 .leading {
-  @include flex-column;
-  margin-bottom: 100px;
+  &__inner {
+    @include flex-column;
+    margin-bottom: 2rem;
 
-  @media (min-width: $breakMobile) {
-    flex-direction: row;
-    margin-bottom: 156px;
+    @media (min-width: $breakMobile) {
+      flex-direction: row;
+      margin-bottom: 156px;
+    }
   }
 
   &__tours {
     margin: 40px 20px 0;
-    font-size: 11px;
-    line-height: 13px;
+    @include a-2;
+    text-transform: uppercase;
     color: $primary-blue;
+    margin-bottom: 20px;
+    letter-spacing: 0.8px;
+
     text-align: center;
     text-wrap: nowrap;
-    text-transform: uppercase;
 
     @media (min-width: $breakMobile) {
-      @include a-2;
+      margin-bottom: 30px;
+      letter-spacing: 1.2px;
+
       text-align: left;
       margin: 6px 0 0 294px;
     }
   }
 
   &__desc {
-    margin: 20px 30px 0px 20px;
-    font-size: 32px;
-    line-height: 40px;
-    color: $primary-white;
+    @include h-3;
+    margin: 0 20px;
     text-align: center;
+    color: $primary-white;
+    z-index: 2;
 
     @media (min-width: $breakMobile) {
-      margin: 0 194px 0 126px;
       @include h-2;
-      text-align: left;
-      letter-spacing: -0.5px;
+      margin: 0 194px 0 126px;
     }
 
     span {
       color: $primary-blue;
-      text-decoration: underline;
     }
   }
 }
@@ -172,39 +157,45 @@
   width: 204px;
   height: 60px;
   border-radius: 50px;
-  margin: 40px 0 100px;
+  margin: 2rem 0 3rem;
   text-decoration: none;
   color: $primary-white;
   transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: $primary-blue;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary-blue;
+    }
   }
 
   @media (min-width: $breakMobile) {
-    margin: 80px 0 160px;
+    margin: 80px 0 80px;
   }
 }
 
 .presentation {
-  @include flex-column;
-  overflow: hidden;
   width: 100%;
-  padding: 102px 20px 0;
   background-color: $primary-white;
-  border-bottom: 1px solid $primary-white;
-  border-top: 1px solid $primary-white;
+  &__container {
+    max-width: 1700px;
+    margin-inline: auto;
+  }
 
-  @media (min-width: $breakMobile) {
-    flex-direction: row;
-    padding: 160px 0 0;
+  &__inner {
+    padding-block: 2rem;
+    padding-inline: 1rem;
+
+    @include flex-column;
+    overflow: hidden;
+    @media (min-width: $breakMobile) {
+      flex-direction: row;
+      padding: 160px 0 0;
+    }
   }
 
   &__direct {
-    padding-bottom: 100px;
     @media (min-width: $breakMobile) {
       flex-direction: row-reverse;
-      padding-bottom: 0;
     }
   }
 
@@ -233,10 +224,12 @@
       @include h-2;
       line-height: 44px;
       margin-bottom: 20px;
+      text-align: center;
 
       @media (min-width: $breakMobile) {
         @include h-1;
         margin-bottom: 30px;
+        text-align: left;
       }
     }
 
@@ -246,6 +239,10 @@
       @include p-1;
       text-decoration: none;
       color: $primary-blue;
+      align-self: center;
+      @media (min-width: $breakMobile) {
+        align-self: flex-start;
+      }
     }
   }
 
@@ -253,17 +250,23 @@
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 20px;
-    height: 467px;
+    height: 30vh;
     width: auto;
 
     @media (min-width: $breakMobile) {
       height: 546px;
       min-width: 50%;
+      background-size: cover;
+    }
+
+    @media (min-width: 1700px) {
+      background-size: unset;
     }
 
     &_att {
-      background-image: url("../../../public/images/Group_75.png");
+      background-image: url("../../../public/images/homepage/homepage_quality_rounded.jpg");
       @media (min-width: $breakMobile) {
         left: 15px;
       }
@@ -295,16 +298,15 @@
 }
 
 .preference {
-  display: flex;
-  padding: 80px 20px 0px;
+  background-color: $primary-white;
+  width: 100%;
+  padding-inline: 2rem;
+  padding-block: 2rem 3rem;
+  box-sizing: border-box;
 
   @media (min-width: $breakMobile) {
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    background-color: $primary-white;
-    width: 100%;
-    padding: 160px 190px;
+    padding-block: 10rem;
+    padding-inline: 10rem;
   }
 
   &__list {
@@ -316,20 +318,18 @@
     padding: 48px;
     gap: 16px;
 
-    @media (min-width: $breakMobile) {
-      flex-direction: row;
-    }
-
     &_items {
-      @include flex-column;
-      gap: 16px;
-    }
+      @include list-container;
 
-    &_item {
-      @include h-5;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      @media (min-width: $breakMobile) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      @media (min-width: $breakMobile) and (max-width: 1300px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 }

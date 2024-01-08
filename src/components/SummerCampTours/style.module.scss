@@ -1,0 +1,59 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.container {
+  @include flex-column;
+  align-items: center;
+}
+
+.top_section {
+  @include flex-column;
+  align-items: center;
+  padding-inline: 1rem;
+  width: 100%;
+  z-index: 2;
+
+  @media (min-width: $breakMobile) {
+    padding-block: 5rem;
+  }
+}
+
+.title {
+  @include h-3;
+  margin-inline: 1rem;
+  text-align: center;
+  color: $primary-white;
+  z-index: 2;
+
+  @media (min-width: $breakMobile) {
+    @include h-1;
+    margin: 0 12.5rem;
+    text-align: center;
+  }
+}
+
+.blue_button {
+  @include button-blue;
+  @include p-1;
+  color: $primary-white;
+  width: 203px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+.image_container {
+  display: grid;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  grid-gap: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));
+
+  @media (min-width: $breakMobile) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}

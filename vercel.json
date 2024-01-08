@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/tours/:path*",
+      "destination": "https://tours.covecreekproductions.com/tours/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tours/:path*/",
+      "destination": "https://tours.covecreekproductions.com/tours/:path",
+      "permanent": true
+    },
+    {
+      "source": "/tours/:path/index.html",
+      "destination": "https://tours.covecreekproductions.com/tours/:path",
+      "permanent": true
+    }
+  ],
+  "functions": {
+    "api/*": {
+      "memory": 512
+    }
+  }
+}

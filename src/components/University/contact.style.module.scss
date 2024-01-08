@@ -1,0 +1,9 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.container {
+  @media (min-width: $breakMobile) {
+    padding-block: 60px 60px;
+  }
+}

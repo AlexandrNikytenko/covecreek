@@ -1,10 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
-
+import { Link, Routes, useLocation } from "react-router-dom";
 import styles from "./style.module.scss";
+import PAGES from "../../constants/pages";
 
 function Footer() {
   const location = useLocation();
-  const isPrivacy = location.pathname === "/privacy";
+  const isPrivacy = location.pathname === PAGES.Privacy.path;
 
   return (
     <div
@@ -14,7 +14,8 @@ function Footer() {
       {!isPrivacy && <div className={styles.bottom}></div>}
       <div className={styles.contacts}>
         <div className={styles.contact}>
-          <p className={styles.title}>Get in touch</p>
+          <h3 className={styles.title}>Get in touch</h3>
+
           <a className={styles.link} href="tel:+12137708211">
             213-770-8211
           </a>
@@ -24,33 +25,27 @@ function Footer() {
           >
             info@covecreekproductions.com
           </a>
-          <a
-            className={styles.link}
-            href="https://www.google.com/maps/search/?api=1&query=2390+E+Camelback+Rd%2C+Phoenix%2C+AZ+85016"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            2390 E Camelback Rd, Phoenix, AZ 85016
-          </a>
+          <a className={styles.link}>2390 E Camelback Rd, Phoenix, AZ 85016</a>
         </div>
         <div className={styles.contact}>
-          <p className={styles.title}>Our Work</p>
-          <Link to="/portfolio" className={styles.link}>
+          <h3 className={styles.title}>Our Work</h3>
+
+          <Link to={PAGES.Portfolio.path} className={styles.link}>
             Portfolio
           </Link>
-          <Link to="/case_study" className={styles.link}>
+          <Link to={PAGES.CaseStudy.path} className={styles.link}>
             Case Study
           </Link>
-          <Link to="/whyus" className={styles.link}>
+          <Link to={PAGES.WhyUs.path} className={styles.link}>
             Why Us
           </Link>
         </div>
         <div className={styles.contact}>
-          <p className={styles.title}>More</p>
-          <Link to="/careers" className={styles.link}>
+          <h3 className={styles.title}>More</h3>
+          <Link to={PAGES.Careers.path} className={styles.link}>
             Careers
           </Link>
-          <Link to="/contact" className={styles.link}>
+          <Link to={PAGES.Contact.path} className={styles.link}>
             Contact
           </Link>
         </div>
@@ -59,12 +54,8 @@ function Footer() {
       <div className={`${styles.policy} ${styles.policy__text}`}>
         <p>Copyright © 2023 Cove Creek Productions</p>
         <p>
-          <Link to="/privacy" className={styles.policy__text}>
+          <Link to={PAGES.Privacy.path} className={styles.policy__text}>
             Privacy Policy
-          </Link>
-          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          <Link to="/" className={styles.policy__text}>
-            Terms of Use
           </Link>
         </p>
       </div>

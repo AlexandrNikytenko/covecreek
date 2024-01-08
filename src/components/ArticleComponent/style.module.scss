@@ -3,35 +3,35 @@
 @import "../../styles/colors.scss";
 
 .article {
-  @include flex-column;
-  align-items: center;
   z-index: 1;
   width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
   background: $middle-grey;
-  padding: 60px 20px 40px;
+  padding-inline: 1rem;
+  padding-block: 2rem;
 
   @media (min-width: $breakMobile) {
-    padding: 160px 200px 160px;
+    padding-block: 8rem;
+  }
+
+  &__inner {
+    @include flex-column;
+    align-items: center;
   }
 
   &__title {
     @include a-2;
-    text-transform: uppercase;
-    margin-bottom: 35px;
-    align-self: baseline;
-
-    @media (min-width: $breakMobile) {
-      align-self: center;
-    }
   }
 
   &__desc {
     @include h-3;
     text-align: center;
-    margin-bottom: 40px;
+    margin-block-end: 1rem;
 
     @media (min-width: $breakMobile) {
       @include h-2;
+      text-align: center;
     }
   }
 
@@ -41,5 +41,8 @@
     @include p-1;
     color: $primary-blue;
     text-decoration: none;
+
+    @media (min-width: $breakMobile) {
+    }
   }
 }

@@ -86,3 +86,7 @@ body {
 :root {
   --font-family-inter: "Inter", sans-serif;
 }
+
+html {
+  background: #09131d;
+}

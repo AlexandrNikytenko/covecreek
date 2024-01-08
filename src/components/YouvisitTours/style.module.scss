@@ -1,0 +1,50 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+.youvisit {
+  @include flex-column;
+  align-items: center;
+  .top_section {
+    @include flex-column;
+    align-items: center;
+    padding-inline: 1rem;
+    width: 100%;
+    z-index: 2;
+
+    @media (min-width: $breakMobile) {
+      padding-block: 5rem;
+    }
+  }
+
+  &__text {
+    background: $primary-white;
+    width: 100%;
+  }
+
+  &__inner {
+    padding-block: 4rem;
+    padding-inline: 4rem;
+  }
+
+  p {
+    @include p-1;
+    color: $primary-black;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .title {
+    @include h-3;
+    margin-inline: 1rem;
+    text-align: center;
+    color: $primary-white;
+    z-index: 2;
+
+    @media (min-width: $breakMobile) {
+      @include h-1;
+      margin: 0 12.5rem;
+      text-align: center;
+    }
+  }
+}

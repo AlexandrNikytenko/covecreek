@@ -1,0 +1,31 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+
+@mixin button-base {
+  border-radius: 40px;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  text-decoration: none;
+  transition: background-color 0.8s ease;
+}
+
+.blue_button {
+  @include button-blue;
+  @include button-base;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary-blue;
+    }
+  }
+}
+
+.transparent_button {
+  @include button-transparent;
+  @include button-base;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary-blue;
+    }
+  }
+}

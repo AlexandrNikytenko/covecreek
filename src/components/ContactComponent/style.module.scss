@@ -5,7 +5,7 @@
 .container {
   @include flex-column;
   position: relative;
-  padding: 100px 20px 0;
+  padding: 40px 20px 0;
 
   @media (min-width: $breakMobile) {
     flex-direction: row;
@@ -32,9 +32,11 @@
 .get {
   @include flex-column;
   z-index: 2;
+  text-align: center;
 
   @media (min-width: $breakMobile) {
     padding-top: 38px;
+    text-align: left;
   }
 }
 
@@ -62,4 +64,17 @@
     letter-spacing: 0px;
     padding-right: 180px;
   }
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.form {
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
 }

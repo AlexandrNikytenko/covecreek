@@ -1,21 +1,21 @@
-import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import InputForm from "../InputForm";
+import {
+  InputForm,
+  TextInput,
+  SubmitButton,
+  TextareaInput,
+  SentMessage,
+  EndpointTypes,
+} from "../InputForm";
 
 import styles from "./style.module.scss";
 
 function Contact() {
-  const [isMessageSent, setIsMessageSent] = useState(false);
-
   const controls = useAnimation();
   const controlsBottom = useAnimation();
-
-  const fetchData = (data) => {
-    setIsMessageSent(data);
-  };
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -40,14 +40,14 @@ function Contact() {
       <div className={styles.wave_top}></div>
 
       <section className={styles.form} ref={ref}>
-        <motion.p
-          className={styles.tip}
+        <motion.h3
+          className={styles.form__small_title}
           initial={{ opacity: 0, y: 200 }}
           animate={controls}
           transition={{ duration: 0.3 }}
         >
           Get in touch
-        </motion.p>
+        </motion.h3>
         <motion.h1
           className={styles.form__title}
           initial={{ opacity: 0, y: 200 }}
@@ -56,23 +56,49 @@ function Contact() {
         >
           Get started on your 360° virtual tour today
         </motion.h1>
-        {!isMessageSent ? (
-          <InputForm buttonText={"Send Message"} fetchData={fetchData} />
-        ) : (
-          <div className={styles.form__sent}>Message sent!</div>
-        )}
+        <InputForm endpoint="/api/contact" endpointType={EndpointTypes.JSON}>
+          <TextInput
+            name="name"
+            autoComplete="name"
+            type="text"
+            placeholder="Name"
+            required
+          />
+          <TextInput
+            name="email"
+            autoComplete="email"
+            type="email"
+            placeholder="Email"
+            required
+          />
+          <TextInput
+            name="phone"
+            autoComplete="tel"
+            type="text"
+            placeholder="Phone"
+            required
+          />
+          <TextareaInput
+            name="message"
+            placeholder="Tell us about your project..."
+            required
+            rows={4}
+          />
+          <SentMessage message="Thank you for contacting us. We will get back to you shortly." />
+          <SubmitButton buttonText={"Send Message"} />
+        </InputForm>
       </section>
 
       <div className={styles.bottom} ref={refBottom}>
-        <motion.p
+        <motion.h3
           className={styles.tip}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsBottom}
           transition={{ duration: 0.3 }}
         >
           Our commitment to you
-        </motion.p>
-        <motion.h2
+        </motion.h3>
+        <motion.h4
           className={styles.title}
           initial={{ opacity: 0, y: 200 }}
           animate={controlsBottom}
@@ -81,7 +107,7 @@ function Contact() {
           We are committed to delivering the very best virtual tours. While we
           are proud of what we have accomplished, we are constantly striving to
           raise the bar.
-        </motion.h2>
+        </motion.h4>
       </div>
     </div>
   );

@@ -3,21 +3,32 @@
 @import "../../styles/colors.scss";
 
 .case {
-  @include flex-column;
   z-index: 1;
   overflow: hidden;
   width: 100%;
-  padding: 0px 20px 60px;
+
   background-color: $primary-white;
+  box-sizing: border-box;
+  padding-block: 2rem;
+  padding-inline: 1em;
 
   @media (min-width: $breakMobile) {
     flex-direction: row;
-    padding: 160px 194px;
+    padding-block: 10rem;
+    padding-inline: 4em;
+  }
+
+  &__inner {
+    @include flex-column;
+    @media (min-width: $breakMobile) {
+      flex-direction: row;
+    }
   }
 
   &__desc {
     @include flex-column;
-    padding: 60px 20px;
+
+    padding-block: 0 1rem;
 
     @media (min-width: $breakMobile) {
       padding: 60px 44px 0 0px;
@@ -25,14 +36,11 @@
 
     &_title {
       @include a-2;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
     }
 
     &_description {
       @include h-3;
       text-align: center;
-      margin-top: 30px;
 
       @media (min-width: $breakMobile) {
         text-align: left;
@@ -50,18 +58,21 @@
   &__image {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("../../../public/images/Rectangle 70.png");
     border-radius: 20px;
-    height: 460px;
+
+    aspect-ratio: 3 / 2;
     width: calc(100vw - 40px);
+    max-width: 100%;
 
     @media (min-width: $breakMobile) {
       height: 460px;
-      min-width: 740px;
+      aspect-ratio: unset;
+      align-items: center;
     }
 
     &_button {
@@ -69,6 +80,7 @@
       width: 203px;
       height: 60px;
       border-radius: 50px;
+      margin-block: 1rem;
     }
   }
 }
