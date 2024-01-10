@@ -19,7 +19,7 @@ export function PerspectiveVideo({ src, placeholder, children }) {
       setWindowHeight(window.innerHeight);
     };
     // enable for desktop, but not for safari
-    setIsAnimationEnabled(isDesktop && !isSafari);
+    setIsAnimationEnabled(isDesktop);
     window.addEventListener("resize", handleResize);
 
     x.set(window.innerWidth / 2);
