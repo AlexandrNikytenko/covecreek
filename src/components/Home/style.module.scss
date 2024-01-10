@@ -43,6 +43,7 @@ $arrowHeight: 27px;
     margin-top: 98px;
     @include flex-column;
     z-index: 999;
+    transform: translate3d(1px);
     position: absolute;
     top: 0;
     padding: 0;
