@@ -52,7 +52,7 @@ export function PerspectiveVideo({ src, placeholder, children }) {
       <motion.div
         className={styles.video_box}
         onMouseMove={handleMouse}
-        style={{ perspective: 800 }}
+        style={{ WebkitPerspective: 800, perspective: '800px' }}
       >
         <motion.div
           className={styles.video_box__container}

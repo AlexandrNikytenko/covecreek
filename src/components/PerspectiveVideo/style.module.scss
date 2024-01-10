@@ -12,6 +12,7 @@
   width: calc(100vw - 40px);
   border-radius: 20px;
   overflow: hidden;
+  // perspective: 800px;
 
   @media (min-width: $breakMobile) {
     margin-top: 0px;

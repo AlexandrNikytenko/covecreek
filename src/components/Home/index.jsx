@@ -91,7 +91,7 @@ function Home() {
   return (
     <div className={styles.page_container}>
       <div className={styles.wave_top}></div>
-      <div className={styles.video_box}>
+      <div className={styles.video_box} >
         <PerspectiveVideo
           src="https://player.vimeo.com/progressive_redirect/playback/899350477/rendition/720p/file.mp4?loc=external&log_user=0&signature=073196d8eb85ff15f8bdaa1184ef5585b727c8c39b4f1ef7e06237cb8c684743"
           placeholder="/images/video-placeholder.jpg"
