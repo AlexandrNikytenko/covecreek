@@ -28,7 +28,7 @@ function CardPortfolio({
   const isDesktop = window.innerWidth >= 768;
 
   useEffect(() => {
-    setIsAnimationEnabled(isDesktop && !isSafari);
+    setIsAnimationEnabled(isDesktop);
   }, []);
 
   useEffect(() => {

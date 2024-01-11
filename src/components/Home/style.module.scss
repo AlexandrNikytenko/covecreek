@@ -43,7 +43,7 @@ $arrowHeight: 27px;
     margin-top: 98px;
     @include flex-column;
     z-index: 999;
-    transform: translate3d(0, 0, 1px);
+    transform: translate3d(0, 0, 100px);
     position: absolute;
     top: 0;
     padding: 0;
@@ -64,14 +64,14 @@ $arrowHeight: 27px;
 
       @media (min-width: $breakMobile) {
         white-space: nowrap;
-        font-size: 5.5rem;
+        font-size: 5rem;
         line-height: 0.75em;
-        margin-top: 150px;
+        margin-top: 160px;
       }
 
       @media (min-width: 1200px) {
-        margin-top: 98px;
-        font-size: 8rem;
+        margin-top: 125px;
+        font-size: 7rem;
       }
     }
 
